@@ -3,58 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hip Hop Lord Directory</title>
+    <title>Hip Hop Lord | Premium Music Industry Directory</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f12; color: #fff; margin: 0; padding: 20px; }
-        .header { text-align: center; margin-bottom: 30px; }
-        .controls { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px; }
-        .btn { background: #1f1f2e; color: #fff; border: 1px solid #333; padding: 10px 20px; border-radius: 6px; cursor: pointer; transition: 0.2s; }
-        .btn.active, .btn:hover { background: #ff0055; border-color: #ff0055; }
-        .search-box { padding: 10px 15px; border-radius: 6px; border: 1px solid #333; background: #1a1a24; color: #fff; width: 250px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
-        .card { background: #181824; border: 1px solid #2a2a3a; border-radius: 8px; padding: 15px; display: flex; flex-direction: column; justify-content: space-between; }
-        .card-tag { font-size: 12px; color: #ff0055; text-transform: uppercase; font-weight: bold; margin-bottom: 8px; }
-        .card-title { font-size: 16px; margin: 0 0 10px 0; line-height: 1.4; }
-        .card-btn { display: inline-block; text-align: center; background: #ff0055; color: #fff; text-decoration: none; padding: 8px 12px; border-radius: 5px; font-weight: bold; margin-top: 10px; }
-        .seo-cities { max-width: 1200px; margin: 50px auto 0; padding-top: 20px; border-top: 1px solid #222; text-align: center; }
-        .city-link { color: #888; text-decoration: none; margin: 0 10px; font-size: 14px; }
-        .city-link:hover { color: #ff0055; }
+        :root { --bg: #0b0c10; --card-bg: #1f2833; --accent: #66fcf1; --text: #c5c6c7; --highlight: #45a29e; }
+        body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 0; }
+        
+        /* Navigation Bar */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background: #111; border-bottom: 1px solid #222; }
+        .logo { font-size: 22px; font-weight: 900; color: #fff; letter-spacing: 1px; }
+        .logo span { color: var(--accent); }
+        .nav-links a { color: var(--text); text-decoration: none; margin-left: 20px; font-size: 14px; }
+        .btn-add { background: var(--accent); color: #000; padding: 8px 16px; border-radius: 4px; font-weight: bold; text-decoration: none; }
+
+        /* Hero Section */
+        .hero { text-align: center; padding: 60px 20px; background: linear-gradient(180deg, #111 0%, var(--bg) 100%); }
+        .hero h1 { font-size: 2.5rem; color: #fff; margin-bottom: 10px; }
+        
+        /* Controls */
+        .controls { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin: 30px 0; }
+        .search-input { padding: 12px 20px; background: #1a1a1a; border: 1px solid #333; color: #fff; border-radius: 6px; width: 300px; }
+        .filter-btn { padding: 12px 24px; background: #1a1a1a; border: 1px solid #333; color: #fff; border-radius: 6px; cursor: pointer; }
+        .filter-btn.active { background: var(--accent); color: #000; font-weight: bold; }
+
+        /* Grid & Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; padding: 0 50px; max-width: 1300px; margin: 0 auto; }
+        .card { background: #141619; border: 1px solid #222; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; transition: 0.3s; }
+        .card:hover { border-color: var(--accent); transform: translateY(-3px); }
+        .card-cat { font-size: 11px; text-transform: uppercase; color: var(--accent); letter-spacing: 1px; margin-bottom: 10px; }
+        .card-title { font-size: 16px; color: #fff; margin: 0 0 15px 0; line-height: 1.4; }
+        .card-btn { text-align: center; background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 10px; border-radius: 4px; text-decoration: none; font-weight: bold; transition: 0.2s; }
+        .card-btn:hover { background: var(--accent); color: #000; }
+
+        /* Footer */
+        footer { margin-top: 80px; padding: 40px 50px; background: #070709; border-top: 1px solid #1a1a1a; text-align: center; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #666; text-decoration: none; margin: 0 15px; font-size: 14px; }
+        .footer-links a:hover { color: var(--accent); }
     </style>
 </head>
 <body>
 
-<div class="header">
-    <h1>HIP HOP LORD DIRECTORY</h1>
-    <p>Find Top Producers, Engineers, Designers & Recording Studios</p>
-</div>
+<nav>
+    <div class="logo">HIPHOP<span>LORD</span></div>
+    <div class="nav-links">
+        <a href="index.html">Directory</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn-add">+ Add Listing</a>
+    </div>
+</nav>
 
-<div class="controls">
-    <input type="text" id="searchInput" class="search-box" placeholder="Search by name, city, state...">
-    <button class="btn active" onclick="filterCategory('All')">All</button>
-    <button class="btn" onclick="filterCategory('Producers')">Producers</button>
-    <button class="btn" onclick="filterCategory('Visuals')">Visuals</button>
-    <button class="btn" onclick="filterCategory('Sound Engineers')">Sound Engineers</button>
-    <button class="btn" onclick="filterCategory('Recording Studios')">Studios</button>
-</div>
+<section class="hero">
+    <h1>Find USA Music Professionals</h1>
+    <p>Connect with vetted Producers, Engineers, Visual Artists, and Recording Studios.</p>
+    
+    <div class="controls">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search by name, city, state...">
+        <button class="filter-btn active" onclick="filterCat('All')">All</button>
+        <button class="filter-btn" onclick="filterCat('Producers')">Producers</button>
+        <button class="filter-btn" onclick="filterCat('Visuals')">Visuals</button>
+        <button class="filter-btn" onclick="filterCat('Sound Engineers')">Sound Engineers</button>
+        <button class="filter-btn" onclick="filterCat('Recording Studios')">Studios</button>
+    </div>
+</section>
 
-<div class="grid" id="directoryGrid"></div>
+<main class="grid" id="directoryGrid"></main>
 
-<!-- Local SEO Section -->
-<div class="seo-cities">
-    <h3>Top US Cities for Recording Studios</h3>
-    <a href="#" class="city-link" onclick="searchCity('Atlanta')">Atlanta, GA</a> |
-    <a href="#" class="city-link" onclick="searchCity('Los Angeles')">Los Angeles, CA</a> |
-    <a href="#" class="city-link" onclick="searchCity('New York')">New York, NY</a> |
-    <a href="#" class="city-link" onclick="searchCity('Miami')">Miami, FL</a> |
-    <a href="#" class="city-link" onclick="searchCity('Chicago')">Chicago, IL</a> |
-    <a href="#" class="city-link" onclick="searchCity('Houston')">Houston, TX</a>
-</div>
+<footer>
+    <div class="footer-links">
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+    </div>
+    <p style="color: #444; font-size: 12px;">&copy; 2026 HipHopLord Directory. All rights reserved.</p>
+</footer>
 
 <script>
 let masterData = [];
 let currentCategory = 'All';
 
-fetch('directory.json')
+fetch('./directory.json')
     .then(res => res.json())
     .then(data => {
         masterData = data;
@@ -69,33 +98,27 @@ function renderCards(data) {
         const card = document.createElement('div');
         card.className = 'card';
         
-        let buttonHTML = '';
-        if(item.affiliate_url) {
-            buttonHTML = `<a href="${item.affiliate_url}" target="_blank" class="card-btn">View Service</a>`;
-        } else if(item.website) {
-            buttonHTML = `<a href="${item.website}" target="_blank" class="card-btn">Visit Website</a>`;
-        } else if(item.url) {
-            buttonHTML = `<a href="${item.url}" target="_blank" class="card-btn">Listen Now</a>`;
-        }
+        let targetUrl = item.affiliate_url || item.website || item.url;
+        let btnText = item.affiliate_url ? "View Service" : (item.website ? "Visit Website" : "Listen Portfolio");
 
-        let extraDetails = item.price ? `<p><strong>Price:</strong> ${item.price}</p>` : '';
-        if(item.address) extraDetails += `<p><small>${item.address}</small></p>`;
+        let details = item.price ? `<p style="color:#fff; font-size:14px;"><strong>Price:</strong> ${item.price}</p>` : '';
+        if(item.address) details += `<p style="font-size:12px; color:#888;">${item.address}</p>`;
 
         card.innerHTML = `
             <div>
-                <div class="card-tag">${item.category}</div>
+                <div class="card-cat">${item.category}</div>
                 <h3 class="card-title">${item.title}</h3>
-                ${extraDetails}
+                ${details}
             </div>
-            ${buttonHTML}
+            <a href="${targetUrl}" target="_blank" class="card-btn">${btnText}</a>
         `;
         grid.appendChild(card);
     });
 }
 
-function filterCategory(cat) {
+function filterCat(cat) {
     currentCategory = cat;
-    document.querySelectorAll('.btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     event.target.classList.add('active');
     applyFilters();
 }
@@ -103,20 +126,15 @@ function filterCategory(cat) {
 document.getElementById('searchInput').addEventListener('input', applyFilters);
 
 function applyFilters() {
-    const query = document.getElementById('searchInput').value.toLowerCase();
+    const q = document.getElementById('searchInput').value.toLowerCase();
     const filtered = masterData.filter(item => {
-        const matchesCat = (currentCategory === 'All' || item.category === currentCategory);
-        const matchesSearch = item.title.toLowerCase().includes(query) || 
-                              (item.city && item.city.toLowerCase().includes(query)) ||
-                              (item.address && item.address.toLowerCase().includes(query));
-        return matchesCat && matchesSearch;
+        const matchCat = (currentCategory === 'All' || item.category === currentCategory);
+        const matchSearch = item.title.toLowerCase().includes(q) || 
+                            (item.city && item.city.toLowerCase().includes(q)) ||
+                            (item.address && item.address.toLowerCase().includes(q));
+        return matchCat && matchSearch;
     });
     renderCards(filtered);
-}
-
-function searchCity(city) {
-    document.getElementById('searchInput').value = city;
-    filterCategory('Recording Studios');
 }
 </script>
 
