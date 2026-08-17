@@ -1,207 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HipHopLord Directory | Producers, Engineers, Designers & Studios</title>
-  <meta name="description" content="Find and connect with top underground hip-hop producers, mixing engineers, cover art designers, and recording studios worldwide.">
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hip Hop Lord Directory</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f12; color: #fff; margin: 0; padding: 20px; }
+        .header { text-align: center; margin-bottom: 30px; }
+        .controls { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px; }
+        .btn { background: #1f1f2e; color: #fff; border: 1px solid #333; padding: 10px 20px; border-radius: 6px; cursor: pointer; transition: 0.2s; }
+        .btn.active, .btn:hover { background: #ff0055; border-color: #ff0055; }
+        .search-box { padding: 10px 15px; border-radius: 6px; border: 1px solid #333; background: #1a1a24; color: #fff; width: 250px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+        .card { background: #181824; border: 1px solid #2a2a3a; border-radius: 8px; padding: 15px; display: flex; flex-direction: column; justify-content: space-between; }
+        .card-tag { font-size: 12px; color: #ff0055; text-transform: uppercase; font-weight: bold; margin-bottom: 8px; }
+        .card-title { font-size: 16px; margin: 0 0 10px 0; line-height: 1.4; }
+        .card-btn { display: inline-block; text-align: center; background: #ff0055; color: #fff; text-decoration: none; padding: 8px 12px; border-radius: 5px; font-weight: bold; margin-top: 10px; }
+        .seo-cities { max-width: 1200px; margin: 50px auto 0; padding-top: 20px; border-top: 1px solid #222; text-align: center; }
+        .city-link { color: #888; text-decoration: none; margin: 0 10px; font-size: 14px; }
+        .city-link:hover { color: #ff0055; }
+    </style>
 </head>
-<body class="bg-zinc-950 text-white font-sans antialiased min-h-screen flex flex-col justify-between">
+<body>
 
-  <div>
-    <!-- Navigation -->
-    <nav class="border-b border-zinc-800 bg-zinc-900/50 backdrop-blur sticky top-0 z-50">
-      <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="/" class="text-xl font-black tracking-wider text-purple-500">HIPHOPLORD</a>
-        <a href="#submit" class="bg-purple-600 hover:bg-purple-500 text-white text-sm font-semibold px-4 py-2 rounded-lg transition">Get Listed</a>
-      </div>
-    </nav>
+<div class="header">
+    <h1>HIP HOP LORD DIRECTORY</h1>
+    <p>Find Top Producers, Engineers, Designers & Recording Studios</p>
+</div>
 
-    <!-- Hero Section -->
-    <header class="max-w-4xl mx-auto text-center px-4 pt-16 pb-8">
-      <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white mb-4">
-        The Ultimate <span class="text-purple-500">Hip-Hop Ecosystem</span>
-      </h1>
-      <p class="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto">
-        Connect directly with verified beatmakers, audio engineers, graphic designers, and recording studios to finish your next music project.
-      </p>
-    </header>
+<div class="controls">
+    <input type="text" id="searchInput" class="search-box" placeholder="Search by name, city, state...">
+    <button class="btn active" onclick="filterCategory('All')">All</button>
+    <button class="btn" onclick="filterCategory('Producers')">Producers</button>
+    <button class="btn" onclick="filterCategory('Visuals')">Visuals</button>
+    <button class="btn" onclick="filterCategory('Sound Engineers')">Sound Engineers</button>
+    <button class="btn" onclick="filterCategory('Recording Studios')">Studios</button>
+</div>
 
-    <!-- Main Directory Section -->
-    <main class="max-w-6xl mx-auto px-4 pb-16">
-      
-      <!-- Category Filter Tabs -->
-      <div class="flex flex-wrap justify-center gap-3 mb-6">
-        <button onclick="filterCategory('all')" class="bg-zinc-900 border border-zinc-800 hover:border-purple-500 text-zinc-300 text-sm px-4 py-2 rounded-full transition">All Categories</button>
-        <button onclick="filterCategory('producers')" class="bg-zinc-900 border border-zinc-800 hover:border-purple-500 text-zinc-300 text-sm px-4 py-2 rounded-full transition">Producers & Beatmakers</button>
-        <button onclick="filterCategory('engineers')" class="bg-zinc-900 border border-zinc-800 hover:border-purple-500 text-zinc-300 text-sm px-4 py-2 rounded-full transition">Audio Engineers</button>
-        <button onclick="filterCategory('visuals')" class="bg-zinc-900 border border-zinc-800 hover:border-purple-500 text-zinc-300 text-sm px-4 py-2 rounded-full transition">Visuals & Design</button>
-        <button onclick="filterCategory('studios')" class="bg-zinc-900 border border-zinc-800 hover:border-purple-500 text-zinc-300 text-sm px-4 py-2 rounded-full transition">Studios & Spaces</button>
-      </div>
+<div class="grid" id="directoryGrid"></div>
 
-      <!-- 1️⃣ Live Search Bar Section -->
-      <div class="max-w-xl mx-auto mb-10">
-        <div class="relative">
-          <input 
-            type="text" 
-            id="searchInput" 
-            onkeyup="searchDirectory()" 
-            placeholder="Search beats, mixing, cover art, location, or keywords (e.g. Trap, London)..." 
-            class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-5 py-3.5 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-purple-500 transition shadow-lg"
-          >
-          <span class="absolute right-4 top-3.5 text-zinc-500">🔍</span>
-        </div>
-      </div>
+<!-- Local SEO Section -->
+<div class="seo-cities">
+    <h3>Top US Cities for Recording Studios</h3>
+    <a href="#" class="city-link" onclick="searchCity('Atlanta')">Atlanta, GA</a> |
+    <a href="#" class="city-link" onclick="searchCity('Los Angeles')">Los Angeles, CA</a> |
+    <a href="#" class="city-link" onclick="searchCity('New York')">New York, NY</a> |
+    <a href="#" class="city-link" onclick="searchCity('Miami')">Miami, FL</a> |
+    <a href="#" class="city-link" onclick="searchCity('Chicago')">Chicago, IL</a> |
+    <a href="#" class="city-link" onclick="searchCity('Houston')">Houston, TX</a>
+</div>
 
-      <!-- Grid Listings -->
-      <div id="directoryGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<script>
+let masterData = [];
+let currentCategory = 'All';
 
-        <!-- Item 1: Producer -->
-        <div class="directory-card producers bg-zinc-900 border border-zinc-800 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-700 transition">
-          <div>
-            <span class="text-xs font-bold text-purple-400 uppercase tracking-widest">Producers & Beatmakers</span>
-            <h2 class="text-xl font-bold text-white mt-1">Gritty Boom Bap Beatmaker & Sample Packs</h2>
-            <p class="text-zinc-400 text-sm mt-2">Specializing in 90s aesthetic gritty Boom Bap instrumentals, vinyl sampling, and heavy drum loops tailored for indie artists.</p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-zinc-800 flex justify-between items-center">
-            <span class="text-sm font-semibold text-zinc-300">From $35</span>
-            <a href="https://beatstars.com" target="_blank" rel="noopener" class="bg-purple-600 hover:bg-purple-500 text-white text-xs font-medium px-4 py-2 rounded-lg transition">Connect</a>
-          </div>
-        </div>
+fetch('directory.json')
+    .then(res => res.json())
+    .then(data => {
+        masterData = data;
+        renderCards(masterData);
+    });
 
-        <!-- Item 2: Engineer -->
-        <div class="directory-card engineers bg-zinc-900 border border-zinc-800 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-700 transition">
-          <div>
-            <span class="text-xs font-bold text-purple-400 uppercase tracking-widest">Audio Engineers</span>
-            <h2 class="text-xl font-bold text-white mt-1">Underground Rap Vocal Mixing & Analog Mastering</h2>
-            <p class="text-zinc-400 text-sm mt-2">Professional vocal tuning, analog warm mastering, and custom mixing chains optimized for Trap, Drill, and Boom Bap tracks.</p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-zinc-800 flex justify-between items-center">
-            <span class="text-sm font-semibold text-zinc-300">$65 / track</span>
-            <a href="https://instagram.com" target="_blank" rel="noopener" class="bg-purple-600 hover:bg-purple-500 text-white text-xs font-medium px-4 py-2 rounded-lg transition">Connect</a>
-          </div>
-        </div>
-
-        <!-- Item 3: Design -->
-        <div class="directory-card visuals bg-zinc-900 border border-zinc-800 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-700 transition">
-          <div>
-            <span class="text-xs font-bold text-purple-400 uppercase tracking-widest">Visuals & Design</span>
-            <h2 class="text-xl font-bold text-white mt-1">3D Music Video Visualizers & Cover Art Design</h2>
-            <p class="text-zinc-400 text-sm mt-2">High-quality cyberpunk and dark aesthetic album covers, 3D animated visualizers for YouTube, and graphic assets for indie releases.</p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-zinc-800 flex justify-between items-center">
-            <span class="text-sm font-semibold text-zinc-300">From $50</span>
-            <a href="https://behance.net" target="_blank" rel="noopener" class="bg-purple-600 hover:bg-purple-500 text-white text-xs font-medium px-4 py-2 rounded-lg transition">Connect</a>
-          </div>
-        </div>
-
-        <!-- Item 4: Studio -->
-        <div class="directory-card studios bg-zinc-900 border border-zinc-800 rounded-2xl p-6 flex flex-col justify-between hover:border-zinc-700 transition">
-          <div>
-            <span class="text-xs font-bold text-purple-400 uppercase tracking-widest">Studios & Spaces</span>
-            <h2 class="text-xl font-bold text-white mt-1">Acoustically Treated Vocal Recording Studio</h2>
-            <p class="text-zinc-400 text-sm mt-2">Fully equipped vocal booth with Neumann microphones, UAD Apollo interfaces, and an engineer included for independent rap sessions.</p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-zinc-800 flex justify-between items-center">
-            <span class="text-sm font-semibold text-zinc-300">$45 / hour</span>
-            <a href="https://example.com" target="_blank" rel="noopener" class="bg-purple-600 hover:bg-purple-500 text-white text-xs font-medium px-4 py-2 rounded-lg transition">Connect</a>
-          </div>
-        </div>
-
-      </div>
-    </main>
-
-    <!-- Submission Form Section -->
-    <section id="submit" class="border-t border-zinc-800 bg-zinc-900/40 py-16 px-4">
-      <div class="max-w-2xl mx-auto">
-        <div class="text-center mb-8">
-          <h2 class="text-3xl font-bold text-white">Join the Directory</h2>
-          <p class="text-zinc-400 text-sm mt-2">Are you a producer, mixing engineer, designer, or studio owner? Submit your details below to get listed.</p>
-        </div>
-
-        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
-          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-          <input type="hidden" name="subject" value="New HipHopLord Submission">
-
-          <div>
-            <label class="block text-xs font-semibold text-zinc-300 mb-1">Your Name / Brand Name</label>
-            <input type="text" name="name" required class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-purple-500">
-          </div>
-
-          <div>
-            <label class="block text-xs font-semibold text-zinc-300 mb-1">Email Address</label>
-            <input type="email" name="email" required class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-purple-500">
-          </div>
-
-          <div>
-            <label class="block text-xs font-semibold text-zinc-300 mb-1">Category</label>
-            <select name="category" required class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-purple-500">
-              <option value="Producers & Beatmakers">Producers & Beatmakers</option>
-              <option value="Audio Engineers">Audio Engineers</option>
-              <option value="Visuals & Design">Visuals & Design</option>
-              <option value="Studios & Spaces">Studios & Spaces</option>
-            </select>
-          </div>
-
-          <div>
-            <label class="block text-xs font-semibold text-zinc-300 mb-1">Service Title & Starting Price</label>
-            <input type="text" name="service_details" placeholder="e.g. Mixing & Mastering - From $50" required class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-purple-500">
-          </div>
-
-          <div>
-            <label class="block text-xs font-semibold text-zinc-300 mb-1">Portfolio or Social Link</label>
-            <input type="url" name="link" placeholder="https://" required class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-purple-500">
-          </div>
-
-          <button type="submit" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-semibold py-3 rounded-lg text-sm transition mt-2">Submit Listing Request</button>
-        </form>
-      </div>
-    </section>
-  </div>
-
-  <!-- 2️⃣ Footer Legal Pages Section -->
-  <footer class="border-t border-zinc-800 bg-zinc-900 py-8 px-4 text-center">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-xs text-zinc-500">&copy; 2026 HipHopLord Directory. All rights reserved.</p>
-      
-      <!-- Legal Links required for AdSense approval -->
-      <div class="flex flex-wrap justify-center gap-6 text-xs text-zinc-400">
-        <a href="/privacy-policy.html" class="hover:text-purple-400 transition">Privacy Policy</a>
-        <a href="/terms.html" class="hover:text-purple-400 transition">Terms of Service</a>
-        <a href="/about.html" class="hover:text-purple-400 transition">About Us</a>
-        <a href="/contact.html" class="hover:text-purple-400 transition">Contact Us</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Search & Filter Logic JS -->
-  <script>
-    function searchDirectory() {
-      let input = document.getElementById('searchInput').value.toLowerCase();
-      let cards = document.getElementsByClassName('directory-card');
-
-      for (let i = 0; i < cards.length; i++) {
-        let text = cards[i].innerText.toLowerCase();
-        if (text.includes(input)) {
-          cards[i].style.display = "flex";
-        } else {
-          cards[i].style.display = "none";
+function renderCards(data) {
+    const grid = document.getElementById('directoryGrid');
+    grid.innerHTML = '';
+    
+    data.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        
+        let buttonHTML = '';
+        if(item.affiliate_url) {
+            buttonHTML = `<a href="${item.affiliate_url}" target="_blank" class="card-btn">View Service</a>`;
+        } else if(item.website) {
+            buttonHTML = `<a href="${item.website}" target="_blank" class="card-btn">Visit Website</a>`;
+        } else if(item.url) {
+            buttonHTML = `<a href="${item.url}" target="_blank" class="card-btn">Listen Now</a>`;
         }
-      }
-    }
 
-    function filterCategory(category) {
-      let cards = document.getElementsByClassName('directory-card');
-      for (let i = 0; i < cards.length; i++) {
-        if (category === 'all' || cards[i].classList.contains(category)) {
-          cards[i].style.display = "flex";
-        } else {
-          cards[i].style.display = "none";
-        }
-      }
-    }
-  </script>
+        let extraDetails = item.price ? `<p><strong>Price:</strong> ${item.price}</p>` : '';
+        if(item.address) extraDetails += `<p><small>${item.address}</small></p>`;
+
+        card.innerHTML = `
+            <div>
+                <div class="card-tag">${item.category}</div>
+                <h3 class="card-title">${item.title}</h3>
+                ${extraDetails}
+            </div>
+            ${buttonHTML}
+        `;
+        grid.appendChild(card);
+    });
+}
+
+function filterCategory(cat) {
+    currentCategory = cat;
+    document.querySelectorAll('.btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+    applyFilters();
+}
+
+document.getElementById('searchInput').addEventListener('input', applyFilters);
+
+function applyFilters() {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    const filtered = masterData.filter(item => {
+        const matchesCat = (currentCategory === 'All' || item.category === currentCategory);
+        const matchesSearch = item.title.toLowerCase().includes(query) || 
+                              (item.city && item.city.toLowerCase().includes(query)) ||
+                              (item.address && item.address.toLowerCase().includes(query));
+        return matchesCat && matchesSearch;
+    });
+    renderCards(filtered);
+}
+
+function searchCity(city) {
+    document.getElementById('searchInput').value = city;
+    filterCategory('Recording Studios');
+}
+</script>
 
 </body>
 </html>
