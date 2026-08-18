@@ -749,6 +749,227 @@ def build_fiverr_category(base_dir, folder_key, category, label, id_prefix,
     return entries
 
 
+def generate_studio_curator_note(entry):
+    """Rule-based, honest 'why this listing is here' note for a Google-Places
+    studio entry. Built entirely from real fields already on the entry
+    (rating, reviewsCount, badges) -- no invented claims. Used as the base
+    layer for every studio listing; the 66 'featured' studios (rating >= 4.8
+    and reviews >= 100 -- see build_studios()) additionally get a hand-written
+    note via STUDIO_FEATURED_CURATOR_NOTES that overrides this."""
+    rating = entry.get("rating")
+    reviews = entry.get("reviewsCount") or 0
+    badges = entry.get("badges") or []
+
+    if rating and reviews > 0:
+        base = f"Rated {rating}★ from {reviews} Google review{'s' if reviews != 1 else ''}."
+    else:
+        base = ("No Google reviews yet on this listing -- worth confirming "
+                 "details directly before booking.")
+
+    if badges:
+        if len(badges) == 1:
+            amenity_text = badges[0]
+        elif len(badges) == 2:
+            amenity_text = f"{badges[0]} and {badges[1]}"
+        else:
+            amenity_text = ", ".join(badges[:-1]) + f", and {badges[-1]}"
+        base += f" Listed amenities: {amenity_text}."
+
+    return base
+
+
+# Hand-written, deeper editorial notes for the 66 "featured" studio listings
+# (rating >= 4.8 and reviews >= 100 -- see build_studios()). Every sentence
+# is grounded strictly in the listing's own real Google Places data (rating,
+# review count, opening hours, photo count, amenity badges, and Google's own
+# secondary category tags such as "event venue" or "music producer" on that
+# listing). Applied as an override after generate_studio_curator_note() has
+# already populated every other studio listing, so no entry is left without
+# a note -- the featured ones simply get more editorial depth.
+STUDIO_FEATURED_CURATOR_NOTES = {
+    "std-005": "A 5★-rated Atlanta studio with 116 Google reviews, open "
+               "daily from 9 AM to 11:30 PM and Wi-Fi on site.",
+    "std-011": "With 317 Google reviews at 4.8★ and 399 photos documenting "
+               "the space, this is one of the more established Atlanta "
+               "studios in our directory -- open 24 hours, wheelchair "
+               "accessible, with free parking, and it also doubles as an "
+               "event venue per its own Google listing.",
+    "std-018": "4.9★ from 130 Google reviews in Austin, open daily from 9 "
+               "AM to midnight, wheelchair accessible with Wi-Fi on site.",
+    "std-024": "A perfect 5★ across 452 Google reviews -- one of the "
+               "highest review counts among Baltimore studios in our "
+               "directory -- open 24 hours with Wi-Fi on site.",
+    "std-027": "4.8★ from 153 Google reviews, open 24 hours daily. Also "
+               "operates as a rehearsal space and instrument repair shop, "
+               "per its own Google listing.",
+    "std-031": "4.9★ from 167 Google reviews. Notably, this is registered "
+               "as a non-profit organization on Google -- a different model "
+               "from most for-profit studios in this directory -- with "
+               "wheelchair access, Wi-Fi and free parking.",
+    "std-032": "4.8★ from 184 Google reviews, open 24 hours, wheelchair "
+               "accessible with Wi-Fi on site.",
+    "std-039": "A perfect 5★ across 121 reviews in Charlotte, open late "
+               "(10 AM to 4 AM daily). Its Google listing also covers "
+               "acoustical consulting and music education, alongside "
+               "production and recording.",
+    "std-041": "5★ from 118 Google reviews, open 24 hours, wheelchair "
+               "accessible with Wi-Fi on site.",
+    "std-043": "4.9★ from 147 Google reviews, open daily until 2 AM, with "
+               "wheelchair access, Wi-Fi and free parking.",
+    "std-044": "4.8★ from 189 Google reviews. Its Google listing also "
+               "covers music education (learning center) alongside "
+               "recording and production, with both free and on-site parking.",
+    "std-045": "4.8★ from 127 Google reviews, open 24 hours, wheelchair "
+               "accessible with Wi-Fi on site.",
+    "std-052": "4.9★ from 123 Google reviews in Chicago, open 24 hours. "
+               "Its listing spans audio-visual consulting and video "
+               "duplication alongside recording, wheelchair accessible with "
+               "Wi-Fi on site.",
+    "std-062": "A perfect 5★ across 123 reviews, with 216 photos "
+               "documenting the space on Google -- more than most studios in "
+               "this directory. Open daily 7 AM to 10 PM, wheelchair "
+               "accessible with Wi-Fi.",
+    "std-068": "4.9★ from 131 Google reviews in Dallas, open daily 10 AM "
+               "to 7 PM, wheelchair accessible with Wi-Fi on site.",
+    "std-070": "4.8★ from 178 Google reviews, open daily until midnight, "
+               "with 166 photos on its Google listing and wheelchair access.",
+    "std-071": "4.8★ from 100 Google reviews, open daily 8 AM to 11 PM. "
+               "Also lists music management and promotion services alongside "
+               "recording.",
+    "std-076": "A perfect 5★ across 108 Google reviews in Denver, open 24 "
+               "hours daily, wheelchair accessible.",
+    "std-082": "4.8★ from 141 Google reviews, open 24 hours daily.",
+    "std-083": "4.8★ from 113 Google reviews, open 24 hours daily.",
+    "std-085": "4.8★ from 311 Google reviews -- one of the higher review "
+               "counts in the Denver area -- with 226 photos on its listing. "
+               "Also operates as a music conservatory and instrument store "
+               "alongside rehearsal space, wheelchair accessible.",
+    "std-089": "4.9★ from 117 Google reviews in Detroit, with Wi-Fi on site.",
+    "std-090": "4.8★ from 117 Google reviews, open daily noon to midnight, "
+               "with Wi-Fi on site.",
+    "std-098": "A perfect 5★ across 338 Google reviews -- one of the "
+               "strongest review counts in our directory -- open 24 hours, "
+               "wheelchair accessible with Wi-Fi on site.",
+    "std-100": "A perfect 5★ across 132 Google reviews, with defined "
+               "weekday (11 AM–10 PM) and weekend (8 AM–5 PM) hours -- useful "
+               "for artists who want to plan a session in advance.",
+    "std-101": "4.8★ from 111 Google reviews with 313 photos documenting "
+               "the space -- among the most photo-documented studios in this "
+               "directory. Open 24 hours, wheelchair accessible with Wi-Fi.",
+    "std-108": "4.9★ from 122 Google reviews in Houston, wheelchair "
+               "accessible with Wi-Fi on site.",
+    "std-109": "4.9★ from 136 Google reviews, with wheelchair access, "
+               "Wi-Fi and free parking.",
+    "std-118": "A perfect 5★ across 172 Google reviews in Las Vegas, open "
+               "24 hours, wheelchair accessible with Wi-Fi on site.",
+    "std-119": "A perfect 5★ across 122 Google reviews, open 24 hours. "
+               "Its listing also covers video production alongside "
+               "recording, wheelchair accessible with Wi-Fi.",
+    "std-122": "A perfect 5★ across 104 Google reviews, open 24 hours, "
+               "with wheelchair access, Wi-Fi and free parking.",
+    "std-123": "A perfect 5★ across 140 Google reviews, with defined "
+               "weekday hours (10 AM–8 PM, closed weekends) and free parking "
+               "on site.",
+    "std-127": "With 844 Google reviews at 4.9★, this is one of the "
+               "most-reviewed studios in the entire directory -- open 24 "
+               "hours, wheelchair accessible with Wi-Fi, and extensively "
+               "documented with 315 photos.",
+    "std-135": "A perfect 5★ across 113 Google reviews in Los Angeles, "
+               "open daily 8 AM to 1 AM, wheelchair accessible with Wi-Fi.",
+    "std-136": "A perfect 5★ across 117 Google reviews, open 24 hours. "
+               "Its listing spans acoustical consulting and music management "
+               "alongside recording and production.",
+    "std-137": "409 Google reviews at 4.9★ and 475 photos -- one of the "
+               "most extensively documented studios in our directory. Open "
+               "24 hours, wheelchair accessible, with Wi-Fi and free parking.",
+    "std-138": "240 Google reviews at 4.9★, open 24 hours with wheelchair "
+               "access, Wi-Fi and free parking. Its listing also covers "
+               "video production alongside recording.",
+    "std-140": "231 Google reviews at 4.8★, with 393 photos on its "
+               "listing. Open 24 hours, wheelchair accessible, with Wi-Fi "
+               "and free parking.",
+    "std-143": "4.8★ from 119 Google reviews, open 24 hours, wheelchair "
+               "accessible with Wi-Fi and on-site parking.",
+    "std-157": "By far the most-reviewed listing in our entire directory: "
+               "6,696 Google reviews at 4.8★, with an extraordinary 25,900 "
+               "photos documenting the space. Its Google listing also covers "
+               "a record store, museum and souvenir store alongside the "
+               "working studio -- a different kind of destination from a "
+               "typical commercial recording space, worth knowing before "
+               "booking a session there.",
+    "std-169": "548 Google reviews at 4.9★ -- one of the highest review "
+               "counts in our directory -- open 24 hours, wheelchair "
+               "accessible with Wi-Fi and free parking.",
+    "std-170": "4.9★ from 176 Google reviews, open 24 hours. Its listing "
+               "also covers music education alongside recording and mixing.",
+    "std-171": "4.9★ from 216 Google reviews in Miami, open 24 hours, "
+               "wheelchair accessible with Wi-Fi.",
+    "std-174": "4.8★ from 159 Google reviews, open 24 hours, with "
+               "wheelchair access, Wi-Fi and free parking.",
+    "std-176": "A perfect 5★ across 254 Google reviews in Nashville, open "
+               "24 hours with Wi-Fi on site.",
+    "std-179": "A perfect 5★ across 349 Google reviews -- among the "
+               "strongest in Nashville -- and notably tagged as a tourist "
+               "attraction on Google alongside its recording work, with 299 "
+               "photos, wheelchair access, Wi-Fi and free parking.",
+    "std-183": "4.9★ from 141 Google reviews with 351 photos -- one of "
+               "the most photo-documented studios in our directory. Open 24 "
+               "hours, wheelchair accessible with Wi-Fi and on-site parking.",
+    "std-184": "4.9★ from 149 Google reviews, with 214 photos on its "
+               "listing, wheelchair accessible with Wi-Fi and on-site parking.",
+    "std-185": "4.9★ from 120 Google reviews. Beyond recording, its "
+               "Google listing also covers coworking space, event venue and "
+               "live music venue -- a genuinely multi-purpose space, open 24 "
+               "hours with wheelchair access, Wi-Fi and free parking.",
+    "std-195": "A perfect 5★ across 101 Google reviews in New Orleans. "
+               "Its listing also covers event hosting and music management "
+               "alongside recording, with wheelchair access, Wi-Fi and free "
+               "parking.",
+    "std-204": "4.9★ from 106 Google reviews in New York, open 24 hours, "
+               "wheelchair accessible with Wi-Fi.",
+    "std-205": "4.9★ from 137 Google reviews, open 24 hours. Also lists "
+               "event hosting alongside recording, wheelchair accessible "
+               "with Wi-Fi.",
+    "std-207": "415 Google reviews at 4.9★ -- a strong review count for "
+               "New York -- open daily until 3 AM. Its listing also covers "
+               "photography alongside recording, wheelchair accessible with "
+               "Wi-Fi.",
+    "std-220": "823 Google reviews at 4.9★ and 1,400 photos on its "
+               "listing -- one of the most-reviewed and most "
+               "photo-documented studios in our entire directory. Open 24 "
+               "hours, wheelchair accessible, with Wi-Fi and free parking.",
+    "std-226": "A perfect 5★ across 113 Google reviews. Its listing also "
+               "spans video editing and production alongside recording, with "
+               "Wi-Fi and free parking.",
+    "std-228": "4.9★ from 146 Google reviews, open 24 hours, with Wi-Fi "
+               "on site.",
+    "std-230": "4.9★ from 146 Google reviews, open daily until 1 AM. Its "
+               "listing also covers event hosting and live music alongside "
+               "recording.",
+    "std-234": "4.8★ from 112 Google reviews, with Wi-Fi on site.",
+    "std-242": "4.9★ from 181 Google reviews in Phoenix, open daily 10 AM "
+               "to 10 PM. Its listing also covers music management and video "
+               "editing alongside recording, wheelchair accessible with Wi-Fi.",
+    "std-271": "A perfect 5★ across 149 Google reviews in Seattle, with "
+               "Wi-Fi and on-site parking.",
+    "std-277": "4.9★ from 173 Google reviews, open 24 hours, wheelchair "
+               "accessible with Wi-Fi and on-site parking.",
+    "std-278": "4.9★ from 103 Google reviews, open daily 9 AM to 11 PM. "
+               "Its listing also covers guitar instruction and video "
+               "production alongside recording, wheelchair accessible with "
+               "Wi-Fi.",
+    "std-279": "4.9★ from 127 Google reviews, with Wi-Fi on site.",
+    "std-284": "4.8★ from 152 Google reviews, with 180 photos on its "
+               "listing, wheelchair accessible, Wi-Fi and free parking.",
+    "std-288": "4.8★ from 100 Google reviews, open 24 hours. Its listing "
+               "also covers video production alongside recording, "
+               "wheelchair accessible with Wi-Fi.",
+    "std-290": "A perfect 5★ across 107 Google reviews in Washington, "
+               "D.C. Its listing also covers film and video production "
+               "alongside music recording, with Wi-Fi on site.",
+}
+
+
 # ---------------------------------------------------------------------------
 # STUDIOS  (Google Places crawler)
 # ---------------------------------------------------------------------------
@@ -1095,6 +1316,19 @@ def main():
     print("Building recording studios...")
     studios = build_studios(base_dir)
     print(f"  -> {len(studios)} curated studio listings")
+
+    algo_studio_notes = 0
+    featured_studio_notes = 0
+    for entry in studios:
+        entry["curatorNote"] = generate_studio_curator_note(entry)
+        algo_studio_notes += 1
+        manual_note = STUDIO_FEATURED_CURATOR_NOTES.get(entry.get("id"))
+        if manual_note:
+            entry["curatorNote"] = manual_note
+            featured_studio_notes += 1
+    print(f"  -> applied {algo_studio_notes} algorithmic curator notes to studio "
+          f"listings ({featured_studio_notes} upgraded to hand-written editorial "
+          f"notes for featured studios)")
 
     master_data = producers + engineers + visuals + studios
     before_removal = len(master_data)
