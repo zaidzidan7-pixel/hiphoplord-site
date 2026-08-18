@@ -522,6 +522,127 @@ def build_manual_producer_additions(start_index):
     return entries
 
 
+def generate_fiverr_curator_note(entry):
+    """Rule-based, honest 'why this listing is here' note for a Fiverr-sourced
+    engineer/designer entry. Built entirely from real fields already on the
+    entry (rating, reviewsCount, extraStats, badges) -- no invented claims.
+    Used as the base layer for all engineer/designer listings; higher-volume
+    featured listings additionally get a hand-written note via
+    FIVERR_FEATURED_CURATOR_NOTES that overrides this."""
+    rating = entry.get("rating")
+    reviews = entry.get("reviewsCount") or 0
+    extra_stats = entry.get("extraStats") or []
+    badges = entry.get("badges") or []
+    noun = "engineer" if entry.get("category") == "engineers" else "designer"
+
+    delivery = next((s for s in extra_stats if "delivery" in s), None)
+    languages = next((s for s in extra_stats if s.startswith("speaks")), None)
+    is_pro = "PRO Verified Seller" in badges
+
+    if rating and reviews >= 200:
+        base = f"A well-reviewed Fiverr {noun}: {rating}★ across {reviews} reviews"
+    elif rating and reviews >= 30:
+        base = f"A Fiverr {noun} with a solid review history: {rating}★ from {reviews} reviews"
+    elif rating and reviews > 0:
+        base = (f"A Fiverr {noun} with {reviews} review"
+                f"{'s' if reviews != 1 else ''} at {rating}★ so far")
+    else:
+        base = (f"A Fiverr {noun} with limited review history on this specific gig "
+                f"-- worth checking their full profile before booking")
+
+    extras = []
+    if is_pro:
+        extras.append("Fiverr Pro-verified")
+    if delivery:
+        extras.append(delivery)
+    if languages:
+        extras.append(languages)
+
+    return base + (f" ({', '.join(extras)})." if extras else ".")
+
+
+# Hand-written, deeper editorial notes for the 25 "featured" engineer/designer
+# listings (rating >= 4.9 and reviews >= 500 -- see build_fiverr_category()).
+# Every sentence below is grounded strictly in the listing's own real Fiverr
+# data (rating, review count, delivery time, languages, price, PRO status,
+# style tag). Applied as an override after generate_fiverr_curator_note() has
+# already populated every other engineer/designer listing, so no entry is
+# left without a note -- the featured ones simply get more editorial depth.
+FIVERR_FEATURED_CURATOR_NOTES = {
+    "eng-001": "With just under 7,000 reviews at 4.9★, this is the single "
+               "most-reviewed mixing engineer in our directory -- a 2-day "
+               "turnaround and pricing starting at $45 make it a low-risk "
+               "first booking for artists who want a proven track record.",
+    "eng-002": "A Fiverr Pro-verified engineer with a perfect 5★ across "
+               "4,117 reviews. Pricing starts higher (from $135), which tracks "
+               "with the 'major label standard' positioning and PRO status.",
+    "eng-003": "4.9★ across 3,204 reviews at a starting price of just $20 "
+               "-- one of the more budget-friendly options among the "
+               "higher-volume engineers, specializing specifically in rap "
+               "vocal mixing.",
+    "eng-005": "A Fiverr Pro-verified engineer fluent in German, English and "
+               "Turkish, with 2,405 reviews at 4.9★ -- a solid option for "
+               "artists who want multilingual communication during mixing.",
+    "eng-007": "A perfect 5★ rating across 1,595 reviews, with pricing "
+               "starting at $35 -- strong value for a proven mixing and "
+               "mastering track record.",
+    "eng-008": "Fiverr Pro-verified with 1,596 reviews at 4.9★. Based in "
+               "the US, which can simplify time-zone coordination for artists "
+               "working with US-based collaborators.",
+    "eng-009": "A 1-day delivery window paired with a perfect 5★ across "
+               "1,442 reviews -- one of the fastest turnarounds among our "
+               "higher-volume engineers.",
+    "eng-010": "Fiverr Pro-verified, 4.9★ across 1,291 reviews, and "
+               "trilingual (Greek, English, Spanish) -- a well-rounded, "
+               "established profile.",
+    "eng-011": "4.9★ across 848 reviews at a starting price of $15 -- "
+               "among the most affordable options in this category with a "
+               "genuinely large review history behind it.",
+    "eng-012": "A perfect 5★ across 793 reviews, 1-day delivery, and a "
+               "$15 starting price -- a fast, budget-friendly option with a "
+               "strong track record.",
+    "vis-001": "The most-reviewed cover art designer in our directory: 5,439 "
+               "reviews at 4.9★, specializing in photographic-style album "
+               "art with a 2-day turnaround.",
+    "vis-002": "4,599 reviews at 4.9★ with a 1-day delivery window and "
+               "pricing starting at just $20 -- strong volume and speed at a "
+               "low price point, plus a 9-image portfolio to review beforehand.",
+    "vis-003": "4,175 reviews at 4.9★ and 1-day delivery -- one of the "
+               "fastest-turnaround, highest-volume designers in the "
+               "photographic-style category.",
+    "vis-004": "4,047 reviews at 4.9★ in a typographic cover-art style. "
+               "Note the longer 14-day delivery window compared to most other "
+               "designers here -- worth confirming timing directly if it matters.",
+    "vis-005": "3,306 reviews at 4.9★, a 9-image portfolio, and a 3-day "
+               "turnaround -- a well-established photographic-style cover artist.",
+    "vis-006": "2,900 reviews at 4.9★ with pricing starting at $30 -- "
+               "strong review volume at a moderate price point.",
+    "vis-007": "Fiverr Pro-verified, 4.9★ across 1,467 reviews, "
+               "specializing in vintage-collage-style album art -- a distinct "
+               "visual niche among our designers.",
+    "vis-008": "1,369 reviews at 4.9★ with a 2-day turnaround and a $15 "
+               "starting price -- one of the most affordable high-volume "
+               "designers in the directory.",
+    "vis-009": "1,191 reviews at 4.9★, specializing in collage-style "
+               "artwork with a 7-image portfolio to preview before booking.",
+    "vis-011": "1,148 reviews at 4.9★, 1-day delivery, and a $10 starting "
+               "price -- the lowest entry price among our featured designers, "
+               "with a genuine review history behind it.",
+    "vis-012": "1,146 reviews at 4.9★ and an 8-image portfolio at a $10 "
+               "starting price -- solid value for artists on a tighter budget.",
+    "vis-013": "919 reviews at 4.9★ with 2-day delivery and a $10 "
+               "starting price.",
+    "vis-015": "585 reviews at 4.9★, trilingual (English, Arabic, "
+               "French), specializing in typographic album art.",
+    "vis-017": "A perfect 5★ across 511 reviews, specializing in "
+               "illustrative-style cover art -- a good pick for artists "
+               "wanting hand-drawn or painted visuals rather than photo "
+               "composites.",
+    "vis-018": "516 reviews at 4.9★, photographic-style cover art, "
+               "starting at $30.",
+}
+
+
 # ---------------------------------------------------------------------------
 # ENGINEERS + VISUALS  (Fiverr gig search)
 # ---------------------------------------------------------------------------
@@ -957,6 +1078,19 @@ def main():
             entry["link"] = override
             applied_overrides += 1
     print(f"  -> applied {applied_overrides} verified manual Fiverr affiliate links")
+
+    algo_notes = 0
+    featured_notes = 0
+    for entry in engineers + visuals:
+        entry["curatorNote"] = generate_fiverr_curator_note(entry)
+        algo_notes += 1
+        manual_note = FIVERR_FEATURED_CURATOR_NOTES.get(entry.get("id"))
+        if manual_note:
+            entry["curatorNote"] = manual_note
+            featured_notes += 1
+    print(f"  -> applied {algo_notes} algorithmic curator notes to engineer/designer "
+          f"listings ({featured_notes} upgraded to hand-written editorial notes "
+          f"for featured listings)")
 
     print("Building recording studios...")
     studios = build_studios(base_dir)
