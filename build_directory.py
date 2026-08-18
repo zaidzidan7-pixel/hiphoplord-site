@@ -60,10 +60,38 @@ HIP_HOP_GENRES = {"hip_hop", "rap", "trap", "drill", "lofi"}
 GENRE_PRIORITY = ["trap", "drill", "rap", "hip_hop", "r_b", "lofi", "edm", "pop", "rock"]
 ENGINEER_KEYWORDS = re.compile(r"\bmix|\bmaster|\btune|\bvocal", re.I)
 BEAT_SIGNAL = re.compile(
-    r"type beat|instrumental|prod\.?\s*by|beatmaker|free beat|beat tape|riddim|\bbeat\b",
+    r"type beat|instrumental|prod\.?\s*by|beatmaker|free beat|beat ?tape|riddim|"
+    r"boom ?bap|\bbeat\b",
     re.I,
 )
 MAX_REASONABLE_FIVERR_PRICE = 400  # filters out obvious outlier/mispriced gigs
+
+# SoundCloud uploaders that pass the automated BEAT_SIGNAL check (title/tag/
+# description keywords, or a "beatmaker"-style username) but turned out on
+# manual review to NOT actually be producers selling beats -- false positives
+# the regex can't catch on its own. Reviewed by hand against their full track
+# list before exclusion; reasons kept here for future re-review:
+#   - "Emad Saad Hip Hop": rapper/emcee releasing his own vocal songs
+#     ("Heavyweight Lyricist", features, verses) -- matched only because
+#     "boom bap" is used as his genre/style tag, not because he sells beats.
+#   - "Dgunzbeatz": mixing & mastering engineer ("M&M BY DGUNZ" credited on
+#     other artists' finished vocal songs) -- matched via a couple of
+#     "instrumental"-tagged tracks and one "prod by" credit, but the bulk of
+#     the catalog is mix/master work, not original instrumentals for sale.
+#   - "Lance O Smith": every track carries the same copy-pasted "Instrumental
+#     hiphop..." boilerplate description (a SoundCloud discovery/SEO tactic),
+#     but the actual titles ("Bad Bunny", "My Boo", "Track 1"..."Track 9")
+#     read as a DJ/remix repost account, not original productions.
+#   - "MagroTheHipHopArtist": rapper/emcee (rap-battle cypher entries,
+#     features, a Mac Miller tribute); one track's title credits a *different*
+#     person as producer ("Produced by @Dangertheproducer"), which is what
+#     tripped the filter.
+EXCLUDED_PRODUCER_USERNAMES = {
+    "Emad Saad Hip Hop",
+    "Dgunzbeatz",
+    "Lance O Smith",
+    "MagroTheHipHopArtist",
+}
 
 # Minimal ISO 3166-1 alpha-2 -> country name map, covering the codes that show
 # up in Fiverr/SoundCloud data. Falls back to the raw code for anything else.
@@ -130,13 +158,29 @@ def load_json_files(folder_names, base_dir):
 
 
 def make_fiverr_affiliate_link(raw_url):
+    """Build a Fiverr affiliate deep link to a specific gig page.
+
+    IMPORTANT: Fiverr's go.fiverr.com/visit/ redirector only honors the
+    param name "landingPage" (camelCase), NOT "landing_page" (snake_case) --
+    and it expects the target URL to be percent-encoded TWICE. Confirmed by
+    comparing against a real link generated from the Fiverr affiliate
+    dashboard's own "LP URL" tool:
+
+        ...&landingPage=https%253A%252F%252Fwww.fiverr.com%252F<user>%252F<gig>
+
+    Using "landing_page" (single-encoded, as this function did before) is
+    silently ignored by Fiverr and falls back to the generic homepage --
+    that was the root cause of every Engineers/Visuals card resolving to
+    the same non-specific Fiverr URL.
+    """
     if not raw_url or "fiverr.com" not in raw_url:
         return raw_url or ""
     clean_url = raw_url.split("?")[0]
-    encoded = urllib.parse.quote(clean_url, safe="")
+    encoded_once = urllib.parse.quote(clean_url, safe="")
+    encoded_twice = urllib.parse.quote(encoded_once, safe="")
     return (
         "https://go.fiverr.com/visit/"
-        f"?bta={FIVERR_AFFILIATE_ID}&brand=fiverrmarketplace&landing_page={encoded}"
+        f"?bta={FIVERR_AFFILIATE_ID}&brand=fiverrmarketplace&landingPage={encoded_twice}"
     )
 
 
@@ -178,6 +222,9 @@ def build_producers(base_dir):
 
     entries = []
     for username, tracks in by_user.items():
+        if username in EXCLUDED_PRODUCER_USERNAMES:
+            continue
+
         def has_signal(t):
             haystack = " ".join([
                 t.get("title") or "", t.get("tag_list") or "", t.get("description") or "",
