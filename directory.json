@@ -26,6 +26,26 @@
     "id": "prod-002",
     "category": "producers",
     "categoryLabel": "Producers & Beatmakers",
+    "title": "Tatooine",
+    "provider_name": "MF TOM",
+    "location": "",
+    "price": "Contact for licensing",
+    "description": "Original boom bap production from MF TOM, sampled from their SoundCloud catalog.",
+    "tags": [
+      "boom bap"
+    ],
+    "link": "https://soundcloud.com/mftom/tatooine-instrumental",
+    "linkLabel": "Listen on SoundCloud",
+    "embed_url": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fmftom%2Ftatooine-instrumental&color=%23e2a83f&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&visual=false",
+    "image": "https://i1.sndcdn.com/artworks-qPDmUmWgMGPflRK7-yjZhiA-large.jpg",
+    "likes": 41,
+    "featured": false,
+    "sample": false
+  },
+  {
+    "id": "prod-003",
+    "category": "producers",
+    "categoryLabel": "Producers & Beatmakers",
     "title": "Pista Instrumental Base de Rap  & Hip Hop   Beat de uso libre,  Boom Bap free 2016",
     "provider_name": "Shhak-BeatMaker-Boom Bap",
     "location": "Medellín, Colombia",
@@ -46,7 +66,27 @@
     "sample": false
   },
   {
-    "id": "prod-003",
+    "id": "prod-004",
+    "category": "producers",
+    "categoryLabel": "Producers & Beatmakers",
+    "title": "Watch How We Do It - DomBoomBap",
+    "provider_name": "DomBoomBap",
+    "location": "✈️✈️✈️, United States",
+    "price": "Contact for licensing",
+    "description": "Original hip-hop & rap production from DomBoomBap, sampled from their SoundCloud catalog.",
+    "tags": [
+      "vibe,rap,hip hop"
+    ],
+    "link": "https://soundcloud.com/d0m22/watch-how-we-do-it-1",
+    "linkLabel": "Listen on SoundCloud",
+    "embed_url": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fd0m22%2Fwatch-how-we-do-it-1&color=%23e2a83f&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&visual=false",
+    "image": "",
+    "likes": 2,
+    "featured": false,
+    "sample": false
+  },
+  {
+    "id": "prod-005",
     "category": "producers",
     "categoryLabel": "Producers & Beatmakers",
     "title": "\"Escape\" prod. by 8tm",
@@ -69,7 +109,7 @@
     "sample": false
   },
   {
-    "id": "prod-004",
+    "id": "prod-006",
     "category": "producers",
     "categoryLabel": "Producers & Beatmakers",
     "title": "Mac Miller x Wiz Khalifa Type Beat - \"Friends\" - Piano Hip hop instrumental beat",
@@ -104,7 +144,7 @@
       "rap",
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fneksofficial%2Fprofessionally-produce-and-master-song-or-clean-track-of-unwanted-noise-in-24h",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fneksofficial%252Fprofessionally-produce-and-master-song-or-clean-track-of-unwanted-noise-in-24h",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/1327374/original/fe202811b9c29242d64752403d80800d8e582ca9.jpg",
     "rating": 4.9,
@@ -124,7 +164,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Ferafoos%2Fmix-and-master-your-song-in-3-days",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Ferafoos%252Fmix-and-master-your-song-in-3-days",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/93623476/original/337f7b4ed6a4b3526a9cea70b09e3493f97703a4.jpg",
     "rating": 5,
@@ -146,7 +186,7 @@
       "rap",
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fglastudios%2Fprofessionally-mix-and-master-rap-vocals",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fglastudios%252Fprofessionally-mix-and-master-rap-vocals",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/102499949/original/8ab2980e527e9b2745e89a5f736b4dfcbefffe70.png",
     "rating": 4.9,
@@ -167,7 +207,7 @@
       "rap",
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fmadushdiwya%2Fprofessional-audio-mixing-and-mastering-for-your-music",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fmadushdiwya%252Fprofessional-audio-mixing-and-mastering-for-your-music",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/108925874/original/21c6cae1a8d1a36217646adf74dcad070faaa216.jpg",
     "rating": 4.8,
@@ -187,7 +227,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fkagenmusic%2Fprofessionally-mix-and-master-your-song",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fkagenmusic%252Fprofessionally-mix-and-master-your-song",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/140145041/original/bdcb314127109727907ede33b2f5c6c22a3dbe59.png",
     "rating": 4.9,
@@ -207,7 +247,7 @@
     "tags": [
       "rap"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Felemproducer%2Fmix-and-master-your-song-to-the-industry-standard",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Felemproducer%252Fmix-and-master-your-song-to-the-industry-standard",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/144349975/original/8eba79db7050692650da1a042cfa86294d878a28.jpg",
     "rating": 4.8,
@@ -227,7 +267,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fcarrotymusic%2Fprofessional-mix-and-mastering-streaming-standard",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fcarrotymusic%252Fprofessional-mix-and-mastering-streaming-standard",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/195714795/original/64843557da8905e7284f596b194820b35ab6b7ad.jpg",
     "rating": 5,
@@ -247,7 +287,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fbrendanreza%2Fskillfully-mix-your-songs-to-sweet-sweet-perfection",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fbrendanreza%252Fskillfully-mix-your-songs-to-sweet-sweet-perfection",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/126604425/original/22d618fc22dba203b4d69ef51fa253ae1a4ed42c.png",
     "rating": 4.9,
@@ -267,7 +307,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fmixedbyhill%2Fmaster-your-music-at-red-factory-studios",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fmixedbyhill%252Fmaster-your-music-at-red-factory-studios",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/136427503/original/930a43689f5c2536cbdf7049cdc7ea49d5da552b.jpg",
     "rating": 5,
@@ -287,7 +327,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fdankjellberg%2Fdo-pro-mixing-an-mastering-to-your-tracks-and-songs",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fdankjellberg%252Fdo-pro-mixing-an-mastering-to-your-tracks-and-songs",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/120759752/original/c279f7da105116bba014768479cee75aae87e0ce.jpg",
     "rating": 4.9,
@@ -308,7 +348,7 @@
       "rap",
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fthedripprovider%2Fprofessionally-mix-and-master-a-rap-or-hip-hop-track-for-you",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fthedripprovider%252Fprofessionally-mix-and-master-a-rap-or-hip-hop-track-for-you",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/147741287/original/04a434a42c3d89da24c7808f59ae59131031b0b0.png",
     "rating": 4.9,
@@ -328,7 +368,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fdespiczeljko%2Fmaster-your-song-pop-rock-trap-edm-any-genre",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fdespiczeljko%252Fmaster-your-song-pop-rock-trap-edm-any-genre",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/140255251/original/7a9957e6f6121286463ef5ae356331dd4b4436f8.png",
     "rating": 5,
@@ -350,7 +390,7 @@
       "rap",
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fjoshermes%2Fmix-and-master-your-hip-hop-trap-rap-song",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fjoshermes%252Fmix-and-master-your-hip-hop-trap-rap-song",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/344150792/original/5e34f5344b2dd12a43817487da08a8f099f6824d.png",
     "rating": 5,
@@ -372,7 +412,7 @@
       "rap",
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fbementallyrich%2Fdo-mix-and-master-to-your-song-in-my-professional-studio",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fbementallyrich%252Fdo-mix-and-master-to-your-song-in-my-professional-studio",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/168748342/original/f81ab8859860db3f641251affa95fe67b96eb062.png",
     "rating": 4.9,
@@ -393,7 +433,7 @@
       "rap",
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fenzosilvero%2Fmix-and-master-songs-to-make-them-sound-amazing",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fenzosilvero%252Fmix-and-master-songs-to-make-them-sound-amazing",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/152003651/original/917d41cfdeadd2f24bed6b913bfad763342e4344.jpg",
     "rating": 4.9,
@@ -413,7 +453,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Falfredoreed%2Fmix-and-mastering-your-song",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Falfredoreed%252Fmix-and-mastering-your-song",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/171399597/original/521771319fb8b56bf572f5bc203298162f2679f1.jpg",
     "rating": 5,
@@ -434,7 +474,7 @@
       "rap",
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Falexreverberi%2Fmix-and-master-your-urban-hiphop-rap-or-solo-singer-song",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Falexreverberi%252Fmix-and-master-your-urban-hiphop-rap-or-solo-singer-song",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/165174272/original/a99a00807c14778b4e5c1160970808484fed1e55.jpeg",
     "rating": 5,
@@ -455,7 +495,7 @@
       "rap",
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fjacksong1022%2Ftune-up-your-vocals",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fjacksong1022%252Ftune-up-your-vocals",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/198626343/original/1715682772accff57204585359cde24134786ba1.png",
     "rating": 4.9,
@@ -476,7 +516,7 @@
       "rap",
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fsilasbeats%2Fdo-same-day-mastering",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fsilasbeats%252Fdo-same-day-mastering",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/241383572/original/2befb0db59014270afcc129b39bd1df6dbb21da9.png",
     "rating": 5,
@@ -496,7 +536,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fmartinetestudio%2Fdo-a-pro-analog-mastering-to-your-mix",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fmartinetestudio%252Fdo-a-pro-analog-mastering-to-your-mix",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/260658195/original/69b167872457f42c6ffeeb67b50ba1ee4edc3174.jpg",
     "rating": 4.9,
@@ -517,7 +557,7 @@
       "rap",
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Ftherealbeanzy%2Fbe-your-hip-hop-mixing-engineer",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Ftherealbeanzy%252Fbe-your-hip-hop-mixing-engineer",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/419990139/original/ce305b970f09e0909a00555559910841a73d0bf8.png",
     "rating": 4.9,
@@ -539,7 +579,7 @@
       "rap",
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fprodbyrufuh%2Fmix-and-master-your-chill-drill-trap-uk-drill-song",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fprodbyrufuh%252Fmix-and-master-your-chill-drill-trap-uk-drill-song",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/405235659/original/7f69e8b10f59f0b3fb9e900289a6bbfe58d81b8f.png",
     "rating": 5,
@@ -561,7 +601,7 @@
       "rap",
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fpinavanucci%2Fmake-a-techno-song-for-you",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fpinavanucci%252Fmake-a-techno-song-for-you",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/244841634/original/6bdc409417a0a407d8779f5ebfb23c641017857f.png",
     "rating": 4.9,
@@ -582,7 +622,7 @@
       "rap",
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fdrtinkler%2Fmix-and-master-your-rap-or-hip-hop-track",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fdrtinkler%252Fmix-and-master-your-rap-or-hip-hop-track",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/316967102/original/54ccbae58ebb48499a427509727ae699dd3c83d3.jpeg",
     "rating": 4.8,
@@ -604,7 +644,7 @@
       "rap",
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fjaitay%2Fbe-mixing-and-mastering-your-rap-song-with-pitch-correction",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fjaitay%252Fbe-mixing-and-mastering-your-rap-song-with-pitch-correction",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/453170039/original/ae779c100fa5c6384262cff5ce03fc0a74141f98.jpg",
     "rating": 4.9,
@@ -625,7 +665,7 @@
       "rap",
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fsoufiandesigner%2Fmake-rap-trap-beat-in-less-than-12-hours",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fsoufiandesigner%252Fmake-rap-trap-beat-in-less-than-12-hours",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/288031461/original/1f7bbb147fe249080f5e1191f75ae254d755b07d.png",
     "rating": 5,
@@ -647,7 +687,7 @@
       "rap",
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fgabrieleim%2Fmix-and-master-your-song-in-a-clean-progessional-way",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fgabrieleim%252Fmix-and-master-your-song-in-a-clean-progessional-way",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/486348698/original/517aa99a5a068238172716140fcf527000760a1d.png",
     "rating": 4.9,
@@ -669,7 +709,7 @@
       "rap",
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fdoubledstudio%2Fmix-and-master-your-modern-trap-urban-song",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fdoubledstudio%252Fmix-and-master-your-modern-trap-urban-song",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/310485817/original/aa79f5d5536b95fc0dda308500d24bddc1ed885a.jpg",
     "rating": 5,
@@ -691,7 +731,7 @@
       "rap",
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fzaidiboybeats%2Fmake-fire-melody-for-you",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fzaidiboybeats%252Fmake-fire-melody-for-you",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/130700446/original/e83c452fcc72ab11a935a30bc88733e692f2e87e.jpg",
     "rating": 5,
@@ -712,7 +752,7 @@
       "trap",
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fwiktorcreator%2Fsend-you-more-than-350-professional-fl-studio-vocal-presets",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fwiktorcreator%252Fsend-you-more-than-350-professional-fl-studio-vocal-presets",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/460828615/original/173656f59fbfe508db0099414075c7e1ccd102c3.png",
     "rating": 5,
@@ -734,7 +774,7 @@
       "rap",
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fiamkaiethan%2Fbe-you-hip-hop-vocal-mix-engeneer",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fiamkaiethan%252Fbe-you-hip-hop-vocal-mix-engeneer",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/471060869/original/ca00ac0b252de52f99758ff59ebc2dabdac12d73.png",
     "rating": 5,
@@ -754,7 +794,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fseb_del_vecchio%2Fmaster-your-song-ready-for-digital-stores",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fseb_del_vecchio%252Fmaster-your-song-ready-for-digital-stores",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/247630492/original/f3d301fc5b8f4de315ab9bfa26a06e84304779c2.png",
     "rating": 5,
@@ -775,7 +815,7 @@
       "trap",
       "rap"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Ftonizmusic%2Fmix-your-reggaeton-or-latin-trap-vocals-professionally",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Ftonizmusic%252Fmix-your-reggaeton-or-latin-trap-vocals-professionally",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/498252301/original/9789631a17913cec7a32a629ca5a7b71f84095bf.png",
     "rating": 0,
@@ -796,7 +836,7 @@
       "trap",
       "rap"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Falexrivermusics%2Fbe-your-male-rapper-producer-and-mixing-engineer-for-rap-or-trap",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Falexrivermusics%252Fbe-your-male-rapper-producer-and-mixing-engineer-for-rap-or-trap",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/499674287/original/3b0b19ea98b14171fa66d56d3fab835d1f04ab40.png",
     "rating": 0,
@@ -817,7 +857,7 @@
       "rap",
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fjoeprod17%2Fprofessionally-mix-your-rap-trap-drill-or-reggaeton-vocals",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fjoeprod17%252Fprofessionally-mix-your-rap-trap-drill-or-reggaeton-vocals",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/497793882/original/49a023f83a357c2fc3bb98b279a32e16563603f7.jpeg",
     "rating": 0,
@@ -837,7 +877,7 @@
     "tags": [
       "trap"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fvicentedelsante%2Fmix-your-rap-trap-or-drill-vocals-professionally",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fvicentedelsante%252Fmix-your-rap-trap-or-drill-vocals-professionally",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/493345255/original/e0c0bcae4a03cc953859d32b03397a75c47c10d2.png",
     "rating": 0,
@@ -857,7 +897,7 @@
     "tags": [
       "trap"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Faudioaddict596%2Fbe-your-trap-metal-and-phonk-mixing-and-mastering-engineer",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Faudioaddict596%252Fbe-your-trap-metal-and-phonk-mixing-and-mastering-engineer",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/484658912/original/792ce18a68fc444fb85eba818dc37472d2fccf41.jpg",
     "rating": 0,
@@ -877,7 +917,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fmysellertop%2Fdesign-amazing-flyers-brochures",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fmysellertop%252Fdesign-amazing-flyers-brochures",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/31969220/original/009237fc6a34177e024aa355b85d886e5cf5a60e.jpg",
     "rating": 4.9,
@@ -897,7 +937,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fsummydesigns%2Fdesign-a-mixtape-or-album-cover",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fsummydesigns%252Fdesign-a-mixtape-or-album-cover",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/8635377/original/13499c767e6d7263ec97d23dbb73d66bb9b7ee9e.png",
     "rating": 4.9,
@@ -917,7 +957,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Ftoinggraphicss%2Fdo-advanced-quality-mixtape-covers-and-album-covers",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Ftoinggraphicss%252Fdo-advanced-quality-mixtape-covers-and-album-covers",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/113469410/original/b402bb7a056fdffcb9fee0f45991aa70eaeff3e1.jpg",
     "rating": 4.9,
@@ -937,7 +977,7 @@
     "tags": [
       "typographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fmirkodellamonic%2Fdesign-album-or-single-cover-art",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fmirkodellamonic%252Fdesign-album-or-single-cover-art",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/145063036/original/865f7c9537d097feaffed033f0114d82b385c774.jpg",
     "rating": 4.9,
@@ -957,7 +997,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fflorinbrl%2Fdesign-a-cover-for-your-music-release",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fflorinbrl%252Fdesign-a-cover-for-your-music-release",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/4355531/original/28938e3cf0d6f94fd316fb1958880cf6617b56f1.jpg",
     "rating": 4.9,
@@ -977,7 +1017,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Frichardesigns%2Fdesign-your-album-cover-ce4b",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Frichardesigns%252Fdesign-your-album-cover-ce4b",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/155222896/original/ff705b8dd33ef532502947fc40a37f818e6a2bcb.jpg",
     "rating": 4.9,
@@ -997,7 +1037,7 @@
     "tags": [
       "collage"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fspncrrbns%2Fcraft-your-individual-music-artwork",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fspncrrbns%252Fcraft-your-individual-music-artwork",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/123134930/original/dd4aedb68db09b50e3f850c53ee99d83d71a7e30.jpg",
     "rating": 4.9,
@@ -1017,7 +1057,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fkmdesignz%2Fdesign-a-stunning-album-art-or-cd-artwork",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fkmdesignz%252Fdesign-a-stunning-album-art-or-cd-artwork",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/109347498/original/140334ee8345342239671fe4f8ca44cd5131c329.jpg",
     "rating": 4.9,
@@ -1037,7 +1077,7 @@
     "tags": [
       "collage"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Flavidhiarsyad%2Fcollage-artwork-for-albums-cover-etc",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Flavidhiarsyad%252Fcollage-artwork-for-albums-cover-etc",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/145729502/original/f6d0a036c818bd7dcf37d6463ba6face5291d7cb.jpg",
     "rating": 4.9,
@@ -1057,7 +1097,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fsrdesign4u%2Fdesign-cd-covers-mixtapes-or-flyers",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fsrdesign4u%252Fdesign-cd-covers-mixtapes-or-flyers",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/111410578/original/ce5b41ba430c6d066ee7c8bb5301e82789030a37.jpg",
     "rating": 4.8,
@@ -1077,7 +1117,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fcrystalgfx%2Fdesign-awesome-single-or-mixtape-cover",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fcrystalgfx%252Fdesign-awesome-single-or-mixtape-cover",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/121713792/original/d7eaa5239d60a3a67f6f2c7f771bc0f0d221a2bf.jpg",
     "rating": 4.9,
@@ -1097,7 +1137,7 @@
     "tags": [
       "other"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Feemran910%2Fdesign-wonderful-album-art-or-cover",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Feemran910%252Fdesign-wonderful-album-art-or-cover",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/102344291/original/f143aabc8616b028d0df51fecca87ec24a7ce184.jpg",
     "rating": 4.9,
@@ -1117,7 +1157,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fdamagegliters%2Fdo-awesome-mixtape-covers-or-album-covers",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fdamagegliters%252Fdo-awesome-mixtape-covers-or-album-covers",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/106677673/original/a6745736c90d20a6b90a4353a919bf18198cd0b1.png",
     "rating": 4.9,
@@ -1137,7 +1177,7 @@
     "tags": [
       "collage"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fillevenx%2Fcreate-amazing-cover-art-for-your-album-mixtape-ep-song",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fillevenx%252Fcreate-amazing-cover-art-for-your-album-mixtape-ep-song",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/148194050/original/6612a5610b7ab5de2bb302107314d675ba90d689.jpg",
     "rating": 4.8,
@@ -1157,7 +1197,7 @@
     "tags": [
       "typographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Femoca_design%2Fdesign-your-music-album-cover-art-or-music-song-artwork",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Femoca_design%252Fdesign-your-music-album-cover-art-or-music-song-artwork",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/298441211/original/ba7b27d6284258a038162377572e90a1c5dfdea9.jpg",
     "rating": 4.9,
@@ -1177,7 +1217,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fwasan_seoexpert%2Fdesign-attractive-mixtape-cover-and-album-cover-art",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fwasan_seoexpert%252Fdesign-attractive-mixtape-cover-and-album-cover-art",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/213085007/original/ba02e9a0e6cccbada712c9e529bc3c84fdbe3e2d.jpg",
     "rating": 4.8,
@@ -1197,7 +1237,7 @@
     "tags": [
       "illustrative"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fchapeldesigns%2Fdesign-experimental-abstract-cover-art-for-your-single-or-album",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fchapeldesigns%252Fdesign-experimental-abstract-cover-art-for-your-single-or-album",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/261104048/original/4530ff481380c3707f09941d43954d777b307db1.jpg",
     "rating": 5,
@@ -1217,7 +1257,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Foleksandrkurta%2Fdesign-album-cover-or-single-cover-or-music-artwork",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Foleksandrkurta%252Fdesign-album-cover-or-single-cover-or-music-artwork",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/277596850/original/63a63e3b921b484019a883d0d5394041ba551a6b.jpg",
     "rating": 4.9,
@@ -1237,7 +1277,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fsujith_s%2Fdesign-mixtape-covers-album-covers-and-single-covers",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fsujith_s%252Fdesign-mixtape-covers-album-covers-and-single-covers",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/153968877/original/2f66313740892aa387b91f4b03ca529404f2673e.jpg",
     "rating": 4.8,
@@ -1257,7 +1297,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fviduboy%2Fdesign-album-or-single-cover-art-28e1",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fviduboy%252Fdesign-album-or-single-cover-art-28e1",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/143700525/original/ebc06be5955b9effac699501ba80dcc59f6b3a0f.jpg",
     "rating": 5,
@@ -1277,7 +1317,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fkgm1988%2Fcreate-digital-collage-album-cover-art-and-poster",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fkgm1988%252Fcreate-digital-collage-album-cover-art-and-poster",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/195754937/original/f0dc7dad58e269c5bfa9e22ff404229b61739ff1.png",
     "rating": 4.9,
@@ -1297,7 +1337,7 @@
     "tags": [
       "illustrative"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fnipz2003%2Fmixtape-cover-art-album-cover-art-or-single-cover",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fnipz2003%252Fmixtape-cover-art-album-cover-art-or-single-cover",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/208165686/original/2f1ea8e121beaf4b42e998b8a47520e25e932a67.jpg",
     "rating": 4.9,
@@ -1317,7 +1357,7 @@
     "tags": [
       "illustrative"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fdegeha%2Fcreate-trippy-psychedelic-surreal-illustration-album-band",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fdegeha%252Fcreate-trippy-psychedelic-surreal-illustration-album-band",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/156655435/original/6183b12d32af80d1c9dba48cef9f01442ab46d9d.jpg",
     "rating": 4.9,
@@ -1337,7 +1377,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fitommyfrank%2Fcreate-a-cyberpunk-or-sci-fi-illustration-for-you",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fitommyfrank%252Fcreate-a-cyberpunk-or-sci-fi-illustration-for-you",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/217178102/original/2e2849826f730d59d0e2d6123710c0c9463950cd.jpeg",
     "rating": 4.9,
@@ -1357,7 +1397,7 @@
     "tags": [
       "illustrative"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fzalmiart%2Fdesign-fantasy-sci-fi-horror-and-dystopian-book-cover-art",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fzalmiart%252Fdesign-fantasy-sci-fi-horror-and-dystopian-book-cover-art",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/432217723/original/0ffd004306566dbba739573bff6456f9becc3ac8.jpg",
     "rating": 4.9,
@@ -1377,7 +1417,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Flogo_champion%2Fdo-a-mixtape-cover-design-album-cover-or-flyer-c74a",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Flogo_champion%252Fdo-a-mixtape-cover-design-album-cover-or-flyer-c74a",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/123355952/original/91751ace2240573c7626fb21dce6bc8e0bff5aa0.jpg",
     "rating": 4.9,
@@ -1397,7 +1437,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fhumanoire%2Fcreate-a-high-quality-music-video",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fhumanoire%252Fcreate-a-high-quality-music-video",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/353676548/original/9dca4264f82aad3a54a1f71aebd39f45c17ab38a.png",
     "rating": 4.9,
@@ -1417,7 +1457,7 @@
     "tags": [
       "other"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fstndgraphics%2Fprepare-layouts-for-music-vinyl-records",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fstndgraphics%252Fprepare-layouts-for-music-vinyl-records",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/117147206/original/fa1b03198cc1f0c1519e50dc3606c35df03f2407.jpg",
     "rating": 5,
@@ -1437,7 +1477,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fjiyaakhtar%2Fdesign-music-album-cover-single-or-mixtape-artwork",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fjiyaakhtar%252Fdesign-music-album-cover-single-or-mixtape-artwork",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/422162535/original/c4513046e9b4704692fa17a9bdb41a3a1da2b048.jpg",
     "rating": 4.8,
@@ -1457,7 +1497,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fendryjay%2Fcreate-vaporwave-aesthetic-lofi-vintage-artwork",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fendryjay%252Fcreate-vaporwave-aesthetic-lofi-vintage-artwork",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/123590632/original/079243b7665e0ddbdf4808693dd8b3eda096f1f1.png",
     "rating": 4.7,
@@ -1477,7 +1517,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Faimasterdesign%2Fdesign-high-quality-historical-romance-or-fantasy-cover-fast",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Faimasterdesign%252Fdesign-high-quality-historical-romance-or-fantasy-cover-fast",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/330250385/original/1ae05ea1d733e8fe5505d4f85d9f9fbd2a6bec8f.jpg",
     "rating": 4.9,
@@ -1497,7 +1537,7 @@
     "tags": [
       "3d art"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fdilanpramoda94%2Fdesign-nft-art-or-cover-art",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fdilanpramoda94%252Fdesign-nft-art-or-cover-art",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/201684836/original/6250bc21f69d540a76d68aab1af4df019033c22c.jpg",
     "rating": 4.8,
@@ -1517,7 +1557,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fkxrvm07%2Fdraw-single-cover-or-mixtape-cover",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fkxrvm07%252Fdraw-single-cover-or-mixtape-cover",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/127997216/original/d940c29c7faa771bb865fba3ad342ac6f0da82f4.jpg",
     "rating": 4.9,
@@ -1537,7 +1577,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fgloomink%2Fcreate-a-custom-awesome-illustration-for-t-shirt-design",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fgloomink%252Fcreate-a-custom-awesome-illustration-for-t-shirt-design",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/146800289/original/039dbbc466316388f720f799b5a562a93181025e.jpeg",
     "rating": 5,
@@ -1557,7 +1597,7 @@
     "tags": [
       "illustrative"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fcloudbear59%2Fdo-design-a-hip-pop-single-cover-or-album-cover",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fcloudbear59%252Fdo-design-a-hip-pop-single-cover-or-album-cover",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/290570929/original/bdd47db008fbfe5755b410659429cb6133e591c6.png",
     "rating": 4.8,
@@ -1577,7 +1617,7 @@
     "tags": [
       "illustrative"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fxgoist_%2Fdesign-unique-album-cover-art-for-your-music-release",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fxgoist_%252Fdesign-unique-album-cover-art-for-your-music-release",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs2/444860931/original/96267f7ec046d81f61f20f4f0a460c53ed35150a.png",
     "rating": 4.9,
@@ -1597,7 +1637,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fshumaila1408%2Fdesign-unique-amazing-and-brilliant-album-cover-music-or-mixtape-cover",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fshumaila1408%252Fdesign-unique-amazing-and-brilliant-album-cover-music-or-mixtape-cover",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/186156189/original/9323ece1e04ebd3dee3742d9a733f34eec4a878a.jpg",
     "rating": 4.8,
@@ -1617,7 +1657,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Ffarwa_desin_art%2Fdesign-unique-cd-podcast-mixtape-single-album-cover",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Ffarwa_desin_art%252Fdesign-unique-cd-podcast-mixtape-single-album-cover",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/259819725/original/9da85b3ceca69ccca61e2ff45e4bd1bd55ada83c.png",
     "rating": 4.8,
@@ -1637,7 +1677,7 @@
     "tags": [
       "illustrative"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Ftazp27%2Fdesign-awesome-custom-artwork-for-your-album-cover",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Ftazp27%252Fdesign-awesome-custom-artwork-for-your-album-cover",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/328140171/original/dcc8639c137a1771aa204aa7de946d60cf7e7cdc.jpg",
     "rating": 5,
@@ -1657,7 +1697,7 @@
     "tags": [
       "illustrative"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fsabriabdo%2Fcreate-your-portrait-as-a-cartoon",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fsabriabdo%252Fcreate-your-portrait-as-a-cartoon",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/155755920/original/52fb0402b5b06b8946d7cba065cacaad591ec51c.jpeg",
     "rating": 4.9,
@@ -1677,7 +1717,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fjasonmgraphics%2Fstunning-album-cover-or-ep-single-cover-art",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fjasonmgraphics%252Fstunning-album-cover-or-ep-single-cover-art",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/328140413/original/7ca2936d38a47a71198cc2876c34260b64443349.jpg",
     "rating": 4.8,
@@ -1697,7 +1737,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fbonaedit%2Fdesign-a-stunning-album-or-single-cover-art",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fbonaedit%252Fdesign-a-stunning-album-or-single-cover-art",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/227878446/original/988c178a463f9ee0ae6de5947b7d7459e2357437.jpg",
     "rating": 4.9,
@@ -1717,7 +1757,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fcolorscape%2Fdesign-concept-art-and-photo-real-environments",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fcolorscape%252Fdesign-concept-art-and-photo-real-environments",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/164502603/original/25cde08be780e5134298382801d0e5695dfd8fd6.jpg",
     "rating": 5,
@@ -1737,7 +1777,7 @@
     "tags": [
       "illustrative"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fgraphicspro255%2Fdraw-a-cartoon-album-cover-art-for-your-music",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fgraphicspro255%252Fdraw-a-cartoon-album-cover-art-for-your-music",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/454398645/original/56ecd85e4387fa1c2dc8b20d57bedee461573206.png",
     "rating": 4.9,
@@ -1757,7 +1797,7 @@
     "tags": [
       "illustrative"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fbijoysana12%2Fdesign-a-professional-metal-album-cover-artwork-f322",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fbijoysana12%252Fdesign-a-professional-metal-album-cover-artwork-f322",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/371355696/original/c817e6592babf0e9a8a234e184e8680125d708f4.jpg",
     "rating": 4.8,
@@ -1777,7 +1817,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fbrookebagga%2Fcreate-a-custom-3d-vj-loop",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fbrookebagga%252Fcreate-a-custom-3d-vj-loop",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/441082353/original/c4bdd9a2834e72121f829b7099a90b783c0eaffa.png",
     "rating": 4.9,
@@ -1797,7 +1837,7 @@
     "tags": [
       "illustrative"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fnibera%2Fdesign-a-professional-album-cover-for-your-music",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fnibera%252Fdesign-a-professional-album-cover-for-your-music",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/306630297/original/e2c98366a98d86865eebba0769307898c9885b89.jpg",
     "rating": 4.9,
@@ -1817,7 +1857,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fnicojude%2Fcreate-cinematic-ai-music-videos-animated-visualizers-and-3d-lyric-videos",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fnicojude%252Fcreate-cinematic-ai-music-videos-animated-visualizers-and-3d-lyric-videos",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/483836356/original/da478d15d0200cd2aff4626cd1cc9d5fdb1051a5.png",
     "rating": 4.9,
@@ -1837,7 +1877,7 @@
     "tags": [
       "illustrative"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Flizbecoetzee%2Fillustrate-a-minimal-custom-book-cover-for-any-genre",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Flizbecoetzee%252Fillustrate-a-minimal-custom-book-cover-for-any-genre",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/438467895/original/31b88520416a74736977fa7a3c90c768746d82a8.jpg",
     "rating": 4.9,
@@ -1857,7 +1897,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fpremiumcoverlab%2Fdesign-unique-album-or-single-cover-art",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fpremiumcoverlab%252Fdesign-unique-album-or-single-cover-art",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/483652950/original/f5a4dba4c7ba95cc376d7fc687a8412f7c5c1075.png",
     "rating": 4.6,
@@ -1877,7 +1917,7 @@
     "tags": [
       "illustrative"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fwalilee%2Fdesign-you-rap-album-cover-or-mixtape-cover-or-ep-cover",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fwalilee%252Fdesign-you-rap-album-cover-or-mixtape-cover-or-ep-cover",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/155097847/original/ecc71bb8b5ee3db2cef05084542ff3aefbd9a6cc.jpg",
     "rating": 4.8,
@@ -1897,7 +1937,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fstudioberiman%2Fmake-amazing-custom-illustration-for-your-brand-band-etc",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fstudioberiman%252Fmake-amazing-custom-illustration-for-your-brand-band-etc",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/364387965/original/2204e4d16342700a2e65c6c45a1833af15b62b20.jpg",
     "rating": 4.9,
@@ -1917,7 +1957,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Froteker%2Fcreate-dark-gothic-post-punk-industrial-music-video-for-doomer-obscure-song",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Froteker%252Fcreate-dark-gothic-post-punk-industrial-music-video-for-doomer-obscure-song",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/408590360/original/affc814e3e7e839fed37a9330e1b704c4a65e169.png",
     "rating": 5,
@@ -1937,7 +1977,7 @@
     "tags": [
       "typographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fterz_gr%2Fdesign-your-spotify-album-cover-art-professionally",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fterz_gr%252Fdesign-your-spotify-album-cover-art-professionally",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/323388922/original/9297963f1094da1af002eb4d4be39041e06d96fc.jpg",
     "rating": 5,
@@ -1957,7 +1997,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fcncreations%2Fcreate-a-dark-metal-hardcore-music-video-for-a-rock-song",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fcncreations%252Fcreate-a-dark-metal-hardcore-music-video-for-a-rock-song",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/432450587/original/a4e3fb930a0b9a86d40ced5e7cf61f633fe6adb5.jpg",
     "rating": 4.1,
@@ -1977,7 +2017,7 @@
     "tags": [
       "illustrative"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fabirhasan911%2Fdo-science-fiction-book-cover-design",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fabirhasan911%252Fdo-science-fiction-book-cover-design",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/416651999/original/6a8abb7a6732529fd60d52004e77bd15734f2d9c.jpg",
     "rating": 4.9,
@@ -1997,7 +2037,7 @@
     "tags": [
       "illustrative"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fkianusteve%2Fdo-anime-and-cartoon-album-cover-art",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fkianusteve%252Fdo-anime-and-cartoon-album-cover-art",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/395343050/original/b4de5203e209901da5ce9d8ae092d00860fae375.png",
     "rating": 5,
@@ -2017,7 +2057,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fhakusaladin%2Fcreate-ai-generated-metal-music-video",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fhakusaladin%252Fcreate-ai-generated-metal-music-video",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/311529119/original/15dedfeddceb273cb9321c51250b6c5b46fde61f.jpeg",
     "rating": 4.5,
@@ -2037,7 +2077,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fgalihpanji%2Fcreate-chaotic-dystopian-music-video-for-ebm-metal-post-punk",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fgalihpanji%252Fcreate-chaotic-dystopian-music-video-for-ebm-metal-post-punk",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/426828485/original/ac3011acc3d7f5aa54af6d6f6c34ea6fb27debf3.png",
     "rating": 5,
@@ -2057,7 +2097,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fdime51%2Fmake-cyberpunk-anime-style-illustration-fo-your",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fdime51%252Fmake-cyberpunk-anime-style-illustration-fo-your",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/225904666/original/1114c9a6be1fab0f41934bdc889874a5640418a7.jpg",
     "rating": 5,
@@ -2077,7 +2117,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fjassybaby1%2Fdesign-an-awesome-cd-single-music-album-cover",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fjassybaby1%252Fdesign-an-awesome-cd-single-music-album-cover",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/110311185/original/dccc41f42aed5483aca3e21d4204fdd1c463c59d.jpeg",
     "rating": 5,
@@ -2097,7 +2137,7 @@
     "tags": [
       "typographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fsehrish1111%2Fscience-fiction-book-cover",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fsehrish1111%252Fscience-fiction-book-cover",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/404419870/original/36755c5e0eca8d2cd7d752995756525017e84107.png",
     "rating": 4.8,
@@ -2117,7 +2157,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Ftudorslash%2Fcreate-your-hip-hop-album-cover-art-music-mixtape-artwork",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Ftudorslash%252Fcreate-your-hip-hop-album-cover-art-music-mixtape-artwork",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/350632526/original/ea765c113db426a5a66b6f549cedd0039d0a4f41.jpg",
     "rating": 5,
@@ -2137,7 +2177,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fhoodinhy%2Fdesign-your-music-album-cover-art-or-single-artwork",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fhoodinhy%252Fdesign-your-music-album-cover-art-or-single-artwork",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs2/390953755/original/d95465e4167c5c683aab77f264a829081dfe25ea.jpg",
     "rating": 5,
@@ -2157,7 +2197,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fwhitejude44%2Fcreate-fast-paced-dark-metal-lyric-music-videos-with-gothic-rock-ai-visuals",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fwhitejude44%252Fcreate-fast-paced-dark-metal-lyric-music-videos-with-gothic-rock-ai-visuals",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/466306412/original/b9f28be597369dce10d82ac454a8aea03109e847.png",
     "rating": 3.7,
@@ -2177,7 +2217,7 @@
     "tags": [
       "illustrative"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fdesolubscomics%2Fdesign-anime-hip-hop-emo-album-cover-art-single-rap-mixtape-rnb-retro-y2k-ep",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fdesolubscomics%252Fdesign-anime-hip-hop-emo-album-cover-art-single-rap-mixtape-rnb-retro-y2k-ep",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/491516428/original/f91f6e3a66cb1f13d27f798c33b77a6f26b50291.png",
     "rating": 5,
@@ -2197,7 +2237,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fawanyustira%2Fmake-a-dystopian-music-video-for-metal-post-punk",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fawanyustira%252Fmake-a-dystopian-music-video-for-metal-post-punk",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/473456972/original/a06f770153bcbe8a116f9f65bc3b4b9b9700417f.jpg",
     "rating": 5,
@@ -2217,7 +2257,7 @@
     "tags": [
       "illustrative"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fheryohsams%2Fdesign-anime-cartoon-album-cover-art-in-hiphop-rap-lofi-edm-funk-or-retro-style",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fheryohsams%252Fdesign-anime-cartoon-album-cover-art-in-hiphop-rap-lofi-edm-funk-or-retro-style",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/491211864/original/00873598b6219490e2ba878b86ca68b5789e2700.png",
     "rating": 5,
@@ -2237,7 +2277,7 @@
     "tags": [
       "illustrative"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fjundlunn%2Fdesign-custom-anime-manga-album-cover-art-in-hip-hop-rap-lofi-emo-retro-style",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fjundlunn%252Fdesign-custom-anime-manga-album-cover-art-in-hip-hop-rap-lofi-emo-retro-style",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/454836122/original/0545c98ab82ea065afc5e4d5d8c0cdf9ec1057cf.png",
     "rating": 4.7,
@@ -2257,7 +2297,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fmilestha%2Fcreate-dystopian-dark-music-video-with-gothic-lyric-animation-cinematic-visuals",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fmilestha%252Fcreate-dystopian-dark-music-video-with-gothic-lyric-animation-cinematic-visuals",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/494844891/original/a860d5d182ae2b2bb639f14c493ada1bd4ee9f83.jpeg",
     "rating": 0,
@@ -2277,7 +2317,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fberrybruce4%2Fl-produce-a-cinematic-music-video-with-dark-artistic-visuals",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fberrybruce4%252Fl-produce-a-cinematic-music-video-with-dark-artistic-visuals",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/484008902/original/5c522c4c45ac4936f90669e3fb2c976d42aa679b.jpeg",
     "rating": 0,
@@ -2297,7 +2337,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Ffave543%2Fdesign-steam-capsule-cyberpunk-art-banner-cover-concept-art-game-poster-arpg",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Ffave543%252Fdesign-steam-capsule-cyberpunk-art-banner-cover-concept-art-game-poster-arpg",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/486360444/original/4a16f4b4d9735675c7a4c8cdeb54dd9a3d141e40.png",
     "rating": 0,
@@ -2317,7 +2357,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Flusteamart%2Fcreate-scifi-game-steam-capsule-art-fps-game-key-art-cyberpunk-cover-art-banner",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Flusteamart%252Fcreate-scifi-game-steam-capsule-art-fps-game-key-art-cyberpunk-cover-art-banner",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs2/486670617/original/8697e4a5c009e4974534252b8752d4f6cc1a15d2.png",
     "rating": 0,
@@ -2337,7 +2377,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fuser05663302%2Fdesign-any-cyberpunk-art-cover",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fuser05663302%252Fdesign-any-cyberpunk-art-cover",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/242974494/original/2f06188953bfa7f6f1bd171c87462b9ad30567b4.png",
     "rating": 0,
@@ -2357,7 +2397,7 @@
     "tags": [
       "hip hop"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Faldermanma%2Fmake-cyberpunk-character-art",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Faldermanma%252Fmake-cyberpunk-character-art",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/473908973/original/a54595a02067877b1d92db34bcecdbb69ff87576.png",
     "rating": 0,
@@ -2377,7 +2417,7 @@
     "tags": [
       "illustrative"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fcristhianlondon%2Fillustrate-your-kids-book-with-a-magical-unique-touch",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fcristhianlondon%252Fillustrate-your-kids-book-with-a-magical-unique-touch",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/481097732/original/9ccc9c8762a4c227e2146833dae0eff06e83768a.jpg",
     "rating": 0,
@@ -2397,7 +2437,7 @@
     "tags": [
       "illustrative"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fjoanmpbell%2Fdesign-anime-hip-hop-emo-album-cover-art-single-rap-mixtape-rnb-retro-y2k-ep",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fjoanmpbell%252Fdesign-anime-hip-hop-emo-album-cover-art-single-rap-mixtape-rnb-retro-y2k-ep",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs2/501546051/original/c59494947cb1eebf31fc969164408e46f943e630.png",
     "rating": 0,
@@ -2417,7 +2457,7 @@
     "tags": [
       "illustrative"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fspipau%2Fdo-premium-hip-hop-album-cover-design",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fspipau%252Fdo-premium-hip-hop-album-cover-design",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs3/473081745/original/375f8d769bf60e85a981645e6b3049ea4a125088.png",
     "rating": 0,
@@ -2437,7 +2477,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fiamaerego%2Fdesign-professional-rap-and-hip-hop-album-cover-art",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fiamaerego%252Fdesign-professional-rap-and-hip-hop-album-cover-art",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs2/502084051/original/8df9026cb75fe7b9e733bdf25c32babadcdff53d.png",
     "rating": 0,
@@ -2457,7 +2497,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fnuvisuals%2Fdesign-a-professional-hip-hop-album-cover-art",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fnuvisuals%252Fdesign-a-professional-hip-hop-album-cover-art",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/500486392/original/1731d3cb7642af647284c489cd489a906dee4dac.png",
     "rating": 0,
@@ -2477,7 +2517,7 @@
     "tags": [
       "illustrative"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fhebause%2Fdo-premium-hip-hop-album-cover-design",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fhebause%252Fdo-premium-hip-hop-album-cover-design",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs2/499170481/original/057d2083bcecedd1a28e99d7a15c5dd30b1573d6.png",
     "rating": 0,
@@ -2497,7 +2537,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fpeapilin%2Fdesign-professional-rap-and-hip-hop-album-cover-art",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fpeapilin%252Fdesign-professional-rap-and-hip-hop-album-cover-art",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/498714433/original/27e00d006e1e9632364bb9c2721a1af1effe29d0.png",
     "rating": 0,
@@ -2517,7 +2557,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fkadrearaord%2Fdo-professional-hip-hop-album-cover-design",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fkadrearaord%252Fdo-professional-hip-hop-album-cover-design",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/459973398/original/aae61c4e4b6eedf1600da93d7e42df8db2400aa3.png",
     "rating": 0,
@@ -2537,7 +2577,7 @@
     "tags": [
       "photographic"
     ],
-    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landing_page=https%3A%2F%2Fwww.fiverr.com%2Fbarbaobert%2Fcreate-hip-hop-rap-and-trap-album-cover-design",
+    "link": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fbarbaobert%252Fcreate-hip-hop-rap-and-trap-album-cover-design",
     "linkLabel": "View Gig on Fiverr",
     "image": "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto/gigs/498596400/original/f7c754a098372f8848d0851bbbfd952d00cd0766.png",
     "rating": 0,
