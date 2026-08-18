@@ -42,6 +42,7 @@ import os
 import re
 import urllib.parse
 from collections import defaultdict
+from datetime import datetime
 
 # ---------------------------------------------------------------------------
 # CONFIG
@@ -208,6 +209,97 @@ def clean_producer_name(username):
     return name or username.strip()
 
 
+def format_count(n):
+    """1234 -> '1.2K', 4500000 -> '4.5M', small numbers unchanged."""
+    if n is None:
+        return None
+    n = int(n)
+    if n >= 1_000_000:
+        return f"{n / 1_000_000:.1f}M".replace(".0M", "M")
+    if n >= 1_000:
+        return f"{n / 1_000:.1f}K".replace(".0K", "K")
+    return str(n)
+
+
+def format_upload_date(iso_str):
+    """'2026-08-05T03:31:32Z' -> 'Aug 2026' for a lightweight recency signal."""
+    if not iso_str:
+        return None
+    try:
+        dt = datetime.strptime(iso_str[:10], "%Y-%m-%d")
+        return dt.strftime("%b %Y")
+    except (ValueError, TypeError):
+        return None
+
+
+LANGUAGE_NAMES = {
+    "en": "English", "es": "Spanish", "fr": "French", "de": "German",
+    "it": "Italian", "pt": "Portuguese", "nl": "Dutch", "ru": "Russian",
+    "ar": "Arabic", "tr": "Turkish", "pl": "Polish", "ro": "Romanian",
+    "id": "Indonesian", "hi": "Hindi", "zh-cn": "Chinese", "zh": "Chinese",
+    "ja": "Japanese", "ko": "Korean", "sv": "Swedish", "el": "Greek",
+    "uk": "Ukrainian", "he": "Hebrew", "vi": "Vietnamese", "th": "Thai",
+    "fa": "Persian", "cs": "Czech", "fil": "Filipino", "af": "Afrikaans",
+    "bg": "Bulgarian", "bn": "Bengali", "ca": "Catalan", "si": "Sinhala",
+    "sr": "Serbian", "ta": "Tamil", "ur": "Urdu",
+}
+
+
+def format_languages(codes):
+    if not codes:
+        return None
+    seen = []
+    for c in codes:
+        name = LANGUAGE_NAMES.get(c.lower(), c.upper())
+        if name not in seen:
+            seen.append(name)
+        if len(seen) == 3:
+            break
+    return ", ".join(seen)
+
+
+def summarize_opening_hours(opening_hours):
+    """List of {"day": "Monday", "hours": "Open 24 hours"} -> a short,
+    always-accurate (non-time-sensitive) one-line summary. We deliberately
+    do not compute "open now" since that would need a live clock and this
+    is a static build."""
+    if not opening_hours:
+        return None
+    by_day = {h.get("day"): h.get("hours") for h in opening_hours if h.get("day")}
+    days_order = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    values = [by_day.get(d) for d in days_order]
+    if not any(values):
+        return None
+    if all(v == values[0] for v in values if v):
+        return f"{values[0]}, every day" if values[0] else None
+    weekdays = values[:5]
+    weekend = values[5:]
+    if all(v == weekdays[0] for v in weekdays if v) and all(v == weekend[0] for v in weekend if v) and weekdays[0] and weekend[0]:
+        return f"Mon–Fri {weekdays[0]} · Sat–Sun {weekend[0]}"
+    return "Hours vary by day — see Google Maps listing"
+
+
+def extract_amenity_badges(additional_info):
+    """Google Places 'additionalInfo' is a dict of category -> list of
+    {label: bool}. Surface only a small, useful set of true amenities."""
+    if not additional_info:
+        return []
+    wanted = {
+        "Wi-Fi": "Wi-Fi",
+        "Free parking lot": "Free Parking",
+        "On-site parking": "On-site Parking",
+        "Valet parking": "Valet Parking",
+        "Wheelchair accessible entrance": "Wheelchair Accessible",
+    }
+    found = []
+    for _group, items in additional_info.items():
+        for item in items or []:
+            for label, value in item.items():
+                if value and label in wanted and wanted[label] not in found:
+                    found.append(wanted[label])
+    return found[:3]
+
+
 # ---------------------------------------------------------------------------
 # PRODUCERS  (SoundCloud track search -> one card per producer)
 # ---------------------------------------------------------------------------
@@ -252,6 +344,19 @@ def build_producers(base_dir):
         user = best.get("user") or {}
         location = ", ".join(filter(None, [user.get("city"), country_name(user.get("country_code"))]))
 
+        extra_stats = []
+        followers = format_count(user.get("followers_count"))
+        if followers:
+            extra_stats.append(f"{followers} followers")
+        plays = format_count(best.get("playback_count"))
+        if plays:
+            extra_stats.append(f"{plays} plays")
+        uploaded = format_upload_date(best.get("created_at"))
+        if uploaded:
+            extra_stats.append(f"uploaded {uploaded}")
+
+        badges = ["✓ Verified SoundCloud Account"] if user.get("verified") else []
+
         entries.append({
             "id": f"prod-{len(entries) + 1:03d}",
             "category": "producers",
@@ -268,6 +373,8 @@ def build_producers(base_dir):
             "embed_url": make_soundcloud_embed(best.get("permalink_url", "")),
             "image": best.get("artwork_url") or "",
             "likes": best.get("likes_count") or 0,
+            "extraStats": extra_stats,
+            "badges": badges,
             "featured": (best.get("likes_count") or 0) > 50,
             "sample": False,
         })
@@ -321,6 +428,7 @@ MANUAL_PRODUCER_ADDITIONS = [
         "image": "https://i1.sndcdn.com/artworks-HcwDA773i1U86Zqz-RBcwgg-t500x500.jpg",
         "likes": 113,
         "genre": "Trap",
+        "extra_stats": ["6.1K plays"],
     },
     {
         # Verified: bio "I am a producer #hubertbeat #beats #instrumentals
@@ -357,6 +465,7 @@ MANUAL_PRODUCER_ADDITIONS = [
         "image": "https://i1.sndcdn.com/artworks-000021780032-c4w9yz-t500x500.jpg",
         "likes": 28,
         "genre": "Hip Hop",
+        "extra_stats": ["1.2K followers", "3.3K plays"],
     },
     {
         # Verified: description promotes "purchasing instrumentals",
@@ -369,6 +478,7 @@ MANUAL_PRODUCER_ADDITIONS = [
         "image": "https://i1.sndcdn.com/artworks-000198821432-vpb6wl-t500x500.jpg",
         "likes": 76,
         "genre": "Hip Hop",
+        "extra_stats": ["5.5K plays"],
     },
     {
         # Verified: extensive on-topic tag list (boom bap, old school
@@ -404,6 +514,8 @@ def build_manual_producer_additions(start_index):
             "embed_url": make_soundcloud_embed(item["link"]),
             "image": item["image"],
             "likes": item["likes"],
+            "extraStats": item.get("extra_stats", []),
+            "badges": [],
             "featured": item["likes"] > 50,
             "sample": False,
         })
@@ -476,6 +588,22 @@ def build_fiverr_category(base_dir, folder_key, category, label, id_prefix,
         if rating:
             description += f" · {rating}★"
 
+        extra_stats = []
+        packages = gig.get("packages") or []
+        delivery_days = packages[0].get("durationDays") if packages else None
+        if delivery_days:
+            extra_stats.append(f"{delivery_days}-day delivery")
+        languages = format_languages(gig.get("sellerLanguages"))
+        if languages:
+            extra_stats.append(f"speaks {languages}")
+        gallery_count = len(gig.get("images") or [])
+        if gallery_count > 1:
+            extra_stats.append(f"{gallery_count} portfolio images")
+
+        badges = []
+        if gig.get("isPro"):
+            badges.append("PRO Verified Seller")
+
         entries.append({
             "id": f"{id_prefix}-{len(entries) + 1:03d}",
             "category": category,
@@ -491,6 +619,8 @@ def build_fiverr_category(base_dir, folder_key, category, label, id_prefix,
             "image": (gig.get("images") or [None])[0] or gig.get("sellerImage") or "",
             "rating": rating,
             "reviewsCount": reviews,
+            "extraStats": extra_stats,
+            "badges": badges,
             "featured": (rating or 0) >= 4.9 and reviews >= 500,
             "sample": False,
         })
@@ -528,6 +658,16 @@ def build_studios(base_dir):
         city = place.get("city") or ""
         state = place.get("state") or ""
 
+        extra_stats = []
+        hours_summary = summarize_opening_hours(place.get("openingHours"))
+        if hours_summary:
+            extra_stats.append(hours_summary)
+        images_count = place.get("imagesCount")
+        if images_count:
+            extra_stats.append(f"{format_count(images_count)} photos on Google")
+
+        badges = extract_amenity_badges(place.get("additionalInfo"))
+
         entries.append({
             "id": f"std-{len(entries) + 1:03d}",
             "category": "studios",
@@ -546,6 +686,8 @@ def build_studios(base_dir):
             "image": place.get("imageUrl") or "",
             "rating": rating,
             "reviewsCount": reviews,
+            "extraStats": extra_stats,
+            "badges": badges,
             "featured": (rating or 0) >= 4.8 and reviews >= 100,
             "sample": False,
         })
@@ -697,6 +839,81 @@ MANUAL_FIVERR_LINK_OVERRIDES = {
 
 
 # ---------------------------------------------------------------------------
+# EDITORIAL CURATOR NOTES (producers pilot)
+# ---------------------------------------------------------------------------
+
+# Short, honest "why this listing is here" notes for each of the 21 curated
+# producer profiles. Every sentence is grounded strictly in verifiable data
+# already present in the listing itself (follower count, play count, likes,
+# upload date, location, tags, description) -- nothing is invented. Profiles
+# with very weak or zero real engagement (e.g. prod-006) get a plainly
+# neutral, factual note instead of manufactured enthusiasm, per an explicit
+# decision to keep every producer in the directory while staying honest about
+# thin traction. Applied after producers are built in main() so it never
+# affects sequential ID assignment.
+PRODUCER_CURATOR_NOTES = {
+    "prod-001": "An Atlanta-based beatmaker with a catalog dating back to 2016. "
+                "Engagement on this particular upload is modest, so we'd suggest "
+                "sampling the full SoundCloud profile before reaching out.",
+    "prod-002": "An Atlanta trap producer whose catalog has crossed 1,000 plays "
+                "and built a small, steady following since 2017.",
+    "prod-003": "Based in the Bankhead area of Atlanta with a following of over "
+                "370 on SoundCloud, though this specific 2013 upload has seen "
+                "limited plays -- worth checking the artist's newer material too.",
+    "prod-004": "An Atlanta producer whose 2014 upload has passed 3,800 plays and "
+                "56 likes -- solid organic traction for a single track.",
+    "prod-005": "Atlanta-based, with 470 SoundCloud followers. This beat leans "
+                "into a Russian-rap-influenced style (referencing Скриптонит and "
+                "Truwer), showing range beyond standard US trap.",
+    "prod-006": "A newly uploaded catalog (September 2025) with no engagement "
+                "data yet. There isn't a track record to point to, but it's kept "
+                "in the directory for those exploring newer Atlanta trap producers.",
+    "prod-007": "An Atlanta-based beatmaker with a modest SoundCloud footprint "
+                "(58 followers). Engagement on this catalog is still limited.",
+    "prod-008": "A hip-hop remix specialist -- this rework of Mobb Deep's 'Shook "
+                "Ones Pt. 2' has drawn 538 plays, showing an ear for classic "
+                "boom-bap source material.",
+    "prod-009": "A boom-bap producer with a following approaching 900 on "
+                "SoundCloud and steady engagement (41 likes) on this instrumental.",
+    "prod-010": "The standout profile in this category: a free-use boom-bap "
+                "instrumental out of Medellín, Colombia that has racked up over "
+                "80,000 plays and 1,448 likes -- real, verifiable traction well "
+                "ahead of every other producer listed here.",
+    "prod-011": "371 SoundCloud followers, though engagement on this specific "
+                "upload is light (2 likes, 258 plays) -- worth sampling the track "
+                "directly before deciding.",
+    "prod-012": "A Morocco-based dark-trap producer who publishes exact BPM and "
+                "key details with each beat (this one: 132 BPM, key of B), which "
+                "makes tempo-matching straightforward for artists.",
+    "prod-013": "Canada-based, with a Mac Miller x Wiz Khalifa-style piano beat "
+                "that has drawn over 3,400 plays and 62 likes -- one of the "
+                "stronger engagement numbers in this category.",
+    "prod-014": "A Belgium-based trap producer sourced directly from SoundCloud. "
+                "A smaller catalog so far, worth an audition before booking.",
+    "prod-015": "A Nigeria-based producer offering free-use trap instrumentals in "
+                "a Gunna/Young Thug-adjacent style -- a reasonable starting point "
+                "for testing a sound before commissioning custom work.",
+    "prod-016": "Based in Bahia, Brazil, with a Travis Scott x Orochi-styled trap "
+                "beat that has passed 6,100 plays and 113 likes -- one of the "
+                "more engaged profiles in this category.",
+    "prod-017": "Accra, Ghana-based, blending Afrobeat influences into hip-hop "
+                "instrumentals (this beat is styled after Sarkodie) -- a distinct "
+                "regional sound within the directory.",
+    "prod-018": "A trap/instrumental producer specializing in darker-toned "
+                "beats. A smaller catalog so far, best judged by listening "
+                "directly to the track.",
+    "prod-019": "Based in Rio de Janeiro, Brazil, with 1,200+ SoundCloud "
+                "followers and 3,300 plays on this YG-style trap beat -- a "
+                "well-established international profile.",
+    "prod-020": "A free-use, old-school boom-bap instrumental that has picked up "
+                "over 5,500 plays and 76 likes -- strong organic traction for a "
+                "freely licensable beat.",
+    "prod-021": "An old-school boom-bap producer with a modest but genuine "
+                "following. A smaller catalog, worth sampling directly.",
+}
+
+
+# ---------------------------------------------------------------------------
 # MAIN
 # ---------------------------------------------------------------------------
 
@@ -709,6 +926,14 @@ def main():
     producers = producers + manual_producers
     print(f"  -> {len(producers)} curated producer profiles "
           f"({len(manual_producers)} manually sourced via Google discovery)")
+
+    applied_notes = 0
+    for entry in producers:
+        note = PRODUCER_CURATOR_NOTES.get(entry.get("id"))
+        if note:
+            entry["curatorNote"] = note
+            applied_notes += 1
+    print(f"  -> applied {applied_notes} editorial curator notes to producer profiles")
 
     print("Building sound engineers...")
     engineers = build_fiverr_category(
