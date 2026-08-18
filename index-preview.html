@@ -1,4 +1,243 @@
-[
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>[PREVIEW] HipHopLord | The Underground Hip Hop Production Directory</title>
+<meta name="description" content="Find producers, mixing &amp; mastering engineers, cover art designers, and recording studios for independent hip hop artists. Curated by genre, city, and sound." />
+<link rel="canonical" href="https://hiphoplord.com/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎧</text></svg>" />
+
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="HipHopLord" />
+<meta property="og:title" content="HipHopLord | The Underground Hip Hop Production Directory" />
+<meta property="og:description" content="Find producers, mixing & mastering engineers, cover art designers, and recording studios for independent hip hop artists." />
+<meta property="og:url" content="https://hiphoplord.com/" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="HipHopLord | The Underground Hip Hop Production Directory" />
+<meta name="twitter:description" content="Find producers, mixing & mastering engineers, cover art designers, and recording studios for independent hip hop artists." />
+
+<!-- Structured data: helps search engines understand what this site is -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "HipHopLord",
+  "url": "https://hiphoplord.com/",
+  "description": "A curated directory of hip hop producers, mixing & mastering engineers, cover art designers, and recording studios.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://hiphoplord.com/?q={search_term}",
+    "query-input": "required name=search_term"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "HipHopLord Directory Categories",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Producers & Beatmakers"},
+    {"@type": "ListItem", "position": 2, "name": "Mixing & Mastering Engineers"},
+    {"@type": "ListItem", "position": 3, "name": "Cover Art & Visual Designers"},
+    {"@type": "ListItem", "position": 4, "name": "Recording Studios & Spaces"}
+  ]
+}
+</script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gold:#e2a83f;
+    --gold-soft:#f4c869;
+    --plum:#7c3aed;
+    --ink:#08070a;
+  }
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter', system-ui, sans-serif;
+    background-color: var(--ink);
+    color:#e7e3db;
+    background-image:
+      radial-gradient(circle at 15% 0%, rgba(124,58,237,0.18), transparent 45%),
+      radial-gradient(circle at 85% 8%, rgba(226,168,63,0.12), transparent 40%);
+    background-attachment: fixed;
+  }
+  .noise{
+    position: fixed; inset:0; pointer-events:none; z-index:0; opacity:.05; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .display{ font-family:'Archivo Black', 'Inter', sans-serif; letter-spacing:-0.02em; }
+  .mono{ font-family:'JetBrains Mono', monospace; }
+  .gold-text{ color: var(--gold); }
+  .card{
+    background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01));
+    border:1px solid rgba(255,255,255,0.08);
+    transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+  }
+  .card:hover{
+    transform: translateY(-4px);
+    border-color: rgba(226,168,63,0.55);
+    box-shadow: 0 12px 30px -12px rgba(226,168,63,0.25);
+  }
+  .card.featured{ border-color: rgba(226,168,63,0.4); }
+  .tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10.5px;
+    letter-spacing:.04em;
+    padding:3px 8px;
+    border-radius:999px;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.1);
+    color:#c9c3b6;
+  }
+  .filter-btn{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:.03em;
+  }
+  .filter-btn.active{
+    background: var(--gold);
+    color:#1a1203;
+    border-color: var(--gold);
+  }
+  .sample-ribbon{
+    font-family:'JetBrains Mono', monospace;
+    font-size:9.5px;
+    letter-spacing:.06em;
+  }
+  ::-webkit-scrollbar{ width:10px; }
+  ::-webkit-scrollbar-track{ background:#0c0a10; }
+  ::-webkit-scrollbar-thumb{ background:#2a2430; border-radius:8px; }
+  .vinyl-divider{
+    height:2px;
+    background: repeating-linear-gradient(90deg, rgba(226,168,63,.55) 0 6px, transparent 6px 12px);
+  }
+</style>
+</head>
+<body class="min-h-screen">
+<div class="noise"></div>
+
+<!-- Navigation -->
+<nav class="sticky top-0 z-50 backdrop-blur-md bg-black/60 border-b border-white/10">
+  <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+    <a href="/" class="display text-lg tracking-tight">HIPHOP<span class="gold-text">LORD</span></a>
+    <div class="hidden md:flex items-center gap-7 text-sm text-zinc-300">
+      <a href="#directory" class="hover:text-white transition">Directory</a>
+      <a href="#cities" class="hover:text-white transition">Cities</a>
+      <a href="about.html" class="hover:text-white transition">About</a>
+      <a href="contact.html" class="hover:text-white transition">Contact</a>
+    </div>
+    <a href="#submit" class="mono text-xs px-4 py-2 rounded-full border border-[--gold] gold-text hover:bg-[--gold] hover:text-black transition">+ List Your Service</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="max-w-4xl mx-auto text-center px-5 pt-20 pb-14 relative">
+  <p class="mono text-xs gold-text mb-4 tracking-widest">PRODUCERS · ENGINEERS · VISUALS · STUDIOS</p>
+  <h1 class="display text-4xl md:text-6xl leading-[1.05] mb-5">
+    The Underground <span class="gold-text">Hip&nbsp;Hop</span> Production Directory
+  </h1>
+  <p class="text-zinc-400 text-base md:text-lg max-w-2xl mx-auto">
+    Find beatmakers, mixing &amp; mastering engineers, cover art designers, and recording studios that actually understand the sound you're going for — sorted by genre, city, and price.
+  </p>
+
+  <div class="mt-9 max-w-xl mx-auto relative">
+    <input id="searchInput" type="text"
+      placeholder="Search: trap, boom bap, vocal mixing, Atlanta..."
+      class="w-full bg-white/5 border border-white/15 rounded-xl px-5 py-3.5 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[--gold] transition" />
+    <span class="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-500">⌕</span>
+  </div>
+</header>
+
+<div class="max-w-6xl mx-auto px-5">
+  <div class="vinyl-divider mb-12"></div>
+</div>
+
+<!-- Directory -->
+<main id="directory" class="max-w-6xl mx-auto px-5 pb-8">
+
+  <div class="flex flex-wrap gap-2.5 justify-center mb-10">
+    <button data-filter="all" class="filter-btn active px-4 py-2 rounded-full border border-white/15 text-zinc-300">All</button>
+    <button data-filter="producers" class="filter-btn px-4 py-2 rounded-full border border-white/15 text-zinc-300 hover:border-[--gold]">Producers</button>
+    <button data-filter="engineers" class="filter-btn px-4 py-2 rounded-full border border-white/15 text-zinc-300 hover:border-[--gold]">Engineers</button>
+    <button data-filter="visuals" class="filter-btn px-4 py-2 rounded-full border border-white/15 text-zinc-300 hover:border-[--gold]">Visuals</button>
+    <button data-filter="studios" class="filter-btn px-4 py-2 rounded-full border border-white/15 text-zinc-300 hover:border-[--gold]">Studios</button>
+  </div>
+
+  <div id="grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+    <!-- cards injected by JS -->
+  </div>
+
+  <p id="emptyState" class="hidden text-center text-zinc-500 py-16 mono text-sm">No listings match that search yet.</p>
+</main>
+
+<!-- Cities -->
+<section id="cities" class="max-w-6xl mx-auto px-5 py-16">
+  <div class="vinyl-divider mb-12"></div>
+  <h2 class="display text-2xl md:text-3xl mb-2">Browse by City</h2>
+  <p class="text-zinc-400 text-sm mb-6">Recording spaces and talent, sorted by the scenes that shape them.</p>
+  <div id="cityLinks" class="flex flex-wrap gap-3">
+    <!-- injected by JS -->
+  </div>
+</section>
+
+<!-- Submission CTA -->
+<section id="submit" class="border-t border-white/10 bg-white/[0.02] py-20 px-5">
+  <div class="max-w-xl mx-auto text-center">
+    <h2 class="display text-2xl md:text-3xl mb-3">Are You a Producer, Engineer, Designer, or Studio Owner?</h2>
+    <p class="text-zinc-400 text-sm mb-8">Get listed in front of independent artists actively looking for your service. Submissions are reviewed before going live.</p>
+
+    <form id="listingForm" class="space-y-3.5 text-left">
+      <div>
+        <label class="mono text-xs text-zinc-400 mb-1 block">Name / Brand</label>
+        <input required type="text" class="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[--gold]" />
+      </div>
+      <div>
+        <label class="mono text-xs text-zinc-400 mb-1 block">Email</label>
+        <input required type="email" class="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[--gold]" />
+      </div>
+      <div>
+        <label class="mono text-xs text-zinc-400 mb-1 block">Category</label>
+        <select class="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[--gold]">
+          <option>Producers & Beatmakers</option>
+          <option>Mixing & Mastering Engineers</option>
+          <option>Cover Art & Visual Designers</option>
+          <option>Recording Studios & Spaces</option>
+        </select>
+      </div>
+      <div>
+        <label class="mono text-xs text-zinc-400 mb-1 block">Portfolio / Social Link</label>
+        <input required type="url" placeholder="https://" class="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[--gold]" />
+      </div>
+      <button type="submit" class="w-full bg-[--gold] text-black font-semibold py-3.5 rounded-lg hover:bg-[--gold-soft] transition">Submit Listing</button>
+      <p class="text-[11px] text-zinc-600 text-center pt-1">This form is not wired to a backend yet — connect it to a service like Web3Forms or Tally before launch.</p>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-white/10 py-10 px-5">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <p class="text-xs text-zinc-500">© 2026 HipHopLord Directory. All rights reserved.</p>
+    <div class="flex flex-wrap gap-5 text-xs text-zinc-500">
+      <a href="about.html" class="hover:text-zinc-300 transition">About</a>
+      <a href="contact.html" class="hover:text-zinc-300 transition">Contact</a>
+      <a href="privacy-policy.html" class="hover:text-zinc-300 transition">Privacy Policy</a>
+      <a href="terms.html" class="hover:text-zinc-300 transition">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  let masterData = [];
+  let currentFilter = 'all';
+
+  (() => { const __INLINE_DATA__ = [
   {
     "id": "prod-001",
     "category": "producers",
@@ -9684,4 +9923,147 @@
     "featured": false,
     "sample": false
   }
-]
+]; masterData = __INLINE_DATA__; renderGrid(masterData); renderCities(masterData); })();
+
+  function cardHTML(item){
+    const ribbon = item.sample
+      ? `<span class="sample-ribbon absolute top-3 right-3 bg-black/70 border border-white/15 text-zinc-400 px-2 py-1 rounded-full">SAMPLE</span>`
+      : '';
+    const featuredBadge = item.featured
+      ? `<span class="mono text-[10px] gold-text tracking-widest mb-1 block">★ FEATURED</span>`
+      : '';
+    const tags = (item.tags || []).map(t => `<span class="tag">${escapeHTML(t)}</span>`).join('');
+
+    const subtitleParts = [item.provider_name, item.location].filter(Boolean);
+    const subtitle = subtitleParts.length
+      ? `<p class="text-zinc-500 text-xs mt-1">${subtitleParts.map(escapeHTML).join(' · ')}</p>`
+      : '';
+
+    const ratingBadge = item.rating
+      ? `<span class="mono text-[11px] text-amber-300/90 inline-flex items-center gap-1 mt-2">★ ${item.rating}${item.reviewsCount ? ` <span class="text-zinc-500">(${item.reviewsCount})</span>` : ''}</span>`
+      : '';
+
+    const likesBadge = item.likes
+      ? `<span class="mono text-[11px] text-zinc-500 inline-flex items-center gap-1 mt-2">♥ ${item.likes} likes on SoundCloud</span>`
+      : '';
+
+    const addressBlock = item.address
+      ? `<p class="text-zinc-500 text-xs mt-2 leading-relaxed">${escapeHTML(item.address)}${item.phone ? ` · ${escapeHTML(item.phone)}` : ''}</p>`
+      : '';
+
+    const embedBlock = item.embed_url
+      ? `<iframe class="w-full mt-3 rounded-lg" style="width:100%;max-width:100%;" width="100%" height="80" loading="lazy" scrolling="no" frameborder="no"
+           src="${item.embed_url}"></iframe>`
+      : '';
+
+    const initial = (item.provider_name || item.title || '?').trim().charAt(0).toUpperCase();
+    const altText = `${item.title}${item.provider_name ? ' — ' + item.provider_name : ''} | ${item.categoryLabel || 'HipHopLord'}`;
+    const thumb = item.image
+      ? `<img src="${item.image}" alt="${escapeHTML(altText)}" width="64" height="64" loading="lazy" decoding="async"
+           data-fallback-letter="${escapeHTML(initial)}"
+           class="w-14 h-14 rounded-xl object-cover border border-white/10 flex-shrink-0" onerror="handleImgError(this)">`
+      : `<div class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-900 to-zinc-800 border border-white/10 flex items-center justify-center flex-shrink-0">
+           <span class="mono text-lg gold-text font-bold">${escapeHTML(initial)}</span>
+         </div>`;
+
+    return `
+      <div class="card ${item.featured ? 'featured' : ''} relative rounded-2xl p-6 flex flex-col justify-between" data-category="${item.category}">
+        ${ribbon}
+        <div>
+          <div class="flex items-start gap-3">
+            ${thumb}
+            <div class="min-w-0">
+              <span class="mono text-[10.5px] uppercase tracking-widest text-zinc-500">${escapeHTML(item.categoryLabel || item.category)}</span>
+              ${featuredBadge}
+              <h3 class="text-white font-semibold text-base mt-1 leading-snug">${escapeHTML(item.title)}</h3>
+              ${subtitle}
+            </div>
+          </div>
+          <p class="text-zinc-400 text-sm mt-3 leading-relaxed">${escapeHTML(item.description || '')}</p>
+          ${addressBlock}
+          ${ratingBadge}${likesBadge}
+          ${embedBlock}
+          <div class="flex flex-wrap gap-1.5 mt-4">${tags}</div>
+        </div>
+        <div class="flex items-center justify-between mt-6 pt-4 border-t border-white/10">
+          <span class="text-sm font-semibold text-zinc-200">${escapeHTML(item.price || '')}</span>
+          <a href="${item.link}" target="_blank" rel="noopener" class="mono text-xs px-3.5 py-2 rounded-full bg-white/10 hover:bg-[--gold] hover:text-black transition">${escapeHTML(item.linkLabel || 'View')}</a>
+        </div>
+      </div>`;
+  }
+
+  function renderGrid(data){
+    const grid = document.getElementById('grid');
+    const query = document.getElementById('searchInput').value.trim().toLowerCase();
+
+    const filtered = data.filter(item => {
+      const matchesCategory = currentFilter === 'all' || item.category === currentFilter;
+      const haystack = [item.title, item.provider_name, item.location, item.description, ...(item.tags||[])]
+        .filter(Boolean).join(' ').toLowerCase();
+      const matchesQuery = !query || haystack.includes(query);
+      return matchesCategory && matchesQuery;
+    });
+
+    grid.innerHTML = filtered.map(cardHTML).join('');
+    document.getElementById('emptyState').classList.toggle('hidden', filtered.length > 0);
+  }
+
+  function renderCities(data){
+    const counts = {};
+    data.filter(i => i.category === 'studios' && i.location).forEach(s => {
+      counts[s.location] = (counts[s.location] || 0) + 1;
+    });
+    const cities = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 24);
+
+    const wrap = document.getElementById('cityLinks');
+    wrap.innerHTML = cities.map(([city, count]) => `
+      <button data-city="${escapeHTML(city)}"
+         class="city-btn mono text-xs px-4 py-2.5 rounded-full border border-white/15 text-zinc-300 hover:border-[--gold] hover:text-white transition">
+        ${escapeHTML(city)} <span class="text-zinc-500">(${count})</span>
+      </button>`).join('');
+
+    wrap.querySelectorAll('.city-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        document.querySelector('.filter-btn[data-filter="studios"]').classList.add('active');
+        currentFilter = 'studios';
+        document.getElementById('searchInput').value = btn.dataset.city;
+        renderGrid(masterData);
+        document.getElementById('directory').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  }
+
+  function handleImgError(imgEl){
+    const letter = imgEl.dataset.fallbackLetter || '?';
+    const div = document.createElement('div');
+    div.className = 'w-14 h-14 rounded-xl bg-gradient-to-br from-purple-900 to-zinc-800 border border-white/10 flex items-center justify-center flex-shrink-0';
+    div.innerHTML = `<span class="mono text-lg gold-text font-bold">${letter}</span>`;
+    imgEl.replaceWith(div);
+  }
+
+  function escapeHTML(str){
+    return String(str ?? '').replace(/[&<>"']/g, c => ({
+      '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'
+    }[c]));
+  }
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter;
+      renderGrid(masterData);
+    });
+  });
+
+  document.getElementById('searchInput').addEventListener('input', () => renderGrid(masterData));
+
+  document.getElementById('listingForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('This form needs to be connected to a form backend (Web3Forms, Tally, etc.) before it can actually receive submissions. See the setup notes delivered with this site.');
+  });
+</script>
+
+</body>
+</html>

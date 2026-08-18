@@ -276,6 +276,141 @@ def build_producers(base_dir):
 
 
 # ---------------------------------------------------------------------------
+# MANUALLY-SOURCED PRODUCERS  (found via Google search discovery, e.g.
+# `site:soundcloud.com "type beat" "prod by" hip hop`, then verified by hand
+# by reading each account's bio and at least one track's real play/like
+# counts and artwork on soundcloud.com -- not run through the automated
+# BEAT_SIGNAL filter since there's no bulk raw-track JSON file for these.
+# Each entry cites the exact track used and the stats at verification time
+# so this batch can be re-checked or re-scraped properly later.
+# ---------------------------------------------------------------------------
+
+MANUAL_PRODUCER_ADDITIONS = [
+    {
+        # Verified: bio explicitly "Beatmaker Belge" (Belgium), beatstore in
+        # bio, 51-track catalog of consistent "X Type Beat" titles.
+        "title": 'Rick Ross Type Beat - "Luxurious" [2024] | Rich Trap Type Beat',
+        "provider_name": "Sly The Beatmaker",
+        "location": "Belgium",
+        "tags": ["trap", "type beat"],
+        "link": "https://soundcloud.com/sly-the-beat-maker/rick-ross-type-beat-luxurious-2024-rich-trap-type-beat",
+        "image": "https://i1.sndcdn.com/artworks-zKMXCD8Fv5ZXWpIa-geKQbQ-t500x500.jpg",
+        "likes": 4,
+        "genre": "Trap",
+    },
+    {
+        # Verified: bio "African beatmaker. Trap beats. Type beats...",
+        # 25-track catalog of "X Type Beat (Prod. UnplugBeats)" titles.
+        "title": "[FREE] Gunna x Young Thug DOLLAZ ON MY HEAD Type Beat",
+        "provider_name": "UnplugBeats",
+        "location": "Nigeria",
+        "tags": ["trap", "type beat", "free beat"],
+        "link": "https://soundcloud.com/beatsunplug/free-gunna-x-young-thug-dollaz",
+        "image": "https://i1.sndcdn.com/artworks-000801320986-xs45vu-t500x500.jpg",
+        "likes": 7,
+        "genre": "Hip Hop",
+    },
+    {
+        # Verified: bio "Perfil do BeatMaker 'Mayck Beats' (BRAZIL)",
+        # 53-track catalog, strong engagement (6,125 plays on this track).
+        "title": "Trap Funk Type Beat Orochi x Travis Scott (Instrumental Hip Hop and Trap 808)",
+        "provider_name": "Mayck Beats",
+        "location": "Bahia, Brazil",
+        "tags": ["trap type beat"],
+        "link": "https://soundcloud.com/mayckmc/trap-funk-type-beat-orochi-x-travis-scott-instrumental-hip-hop-and-trap-808-mayck-beats",
+        "image": "https://i1.sndcdn.com/artworks-HcwDA773i1U86Zqz-RBcwgg-t500x500.jpg",
+        "likes": 113,
+        "genre": "Trap",
+    },
+    {
+        # Verified: bio "I am a producer #hubertbeat #beats #instrumentals
+        # #freebeats". Thin catalog (3 tracks) but genuine, real engagement.
+        "title": "Sarkodie instrumental-Type Beat (Prod By HubertBeat)",
+        "provider_name": "HubertBeat",
+        "location": "Accra, Ghana",
+        "tags": ["beats", "afrobeat", "instrumental"],
+        "link": "https://soundcloud.com/hubertbeat/sarkodie-instrumental-type-beat-prod-by-hubertbeat",
+        "image": "https://i1.sndcdn.com/artworks-000637963720-8j67hj-t500x500.jpg",
+        "likes": 8,
+        "genre": "Hip Hop",
+    },
+    {
+        # Verified: track description explicitly asks for "YcBeatmaker"
+        # credit, lists Instagram/email/YouTube contact -- real beatmaker.
+        "title": "Instru Sad Hard Rap | Trap Type Beat Instrumental 2020 [Prod By YCBeatMaker]",
+        "provider_name": "YC BeatMaker",
+        "location": "",
+        "tags": ["trap", "instrumental", "hip hop"],
+        "link": "https://soundcloud.com/yassine-chohra/projet-16-by-ycbeatmaker-mp3",
+        "image": "https://i1.sndcdn.com/artworks-bwfPqQAylu6AQNid-BL0kqA-t500x500.jpg",
+        "likes": 5,
+        "genre": "Hip Hop",
+    },
+    {
+        # Verified: profile "APhoniC Beatz", Rio de Janeiro, 1,222 followers,
+        # 3,324 plays on this track.
+        "title": "YG Type Beat #1",
+        "provider_name": "APhoniC Beatz",
+        "location": "Rio de Janeiro, Brazil",
+        "tags": ["trap", "rap", "hip hop"],
+        "link": "https://soundcloud.com/aphonicbeats/yg-type-beat-1",
+        "image": "https://i1.sndcdn.com/artworks-000021780032-c4w9yz-t500x500.jpg",
+        "likes": 28,
+        "genre": "Hip Hop",
+    },
+    {
+        # Verified: description promotes "purchasing instrumentals",
+        # 5,499 plays on this track -- established commercial beatmaker.
+        "title": "Instrumental Rap Hip Hop Boom Bap Old School Gratis Uso Libre Free Beat",
+        "provider_name": "BeatMaker Beatz",
+        "location": "",
+        "tags": ["boom bap", "old school", "instrumental"],
+        "link": "https://soundcloud.com/beatmaker_beatz/instrumental-rap-hip-hop-boom-bap-old-school-gratis-uso-libre-free-beat",
+        "image": "https://i1.sndcdn.com/artworks-000198821432-vpb6wl-t500x500.jpg",
+        "likes": 76,
+        "genre": "Hip Hop",
+    },
+    {
+        # Verified: extensive on-topic tag list (boom bap, old school
+        # instrumental, rap instrumental...), consistent beat-catalog brand.
+        "title": "Old School Boom Bap Beat | Hip Hop Rap Instrumental - Lifestyle",
+        "provider_name": "Smallz Productions",
+        "location": "",
+        "tags": ["boom bap", "old school instrumental", "rap beat"],
+        "link": "https://soundcloud.com/user-972973697/old-school-boom-bap-beat-hip-hop-rap-instrumental-lifestyle",
+        "image": "https://i1.sndcdn.com/artworks-000478951482-62vbfx-t500x500.jpg",
+        "likes": 13,
+        "genre": "Hip Hop",
+    },
+]
+
+
+def build_manual_producer_additions(start_index):
+    entries = []
+    for i, item in enumerate(MANUAL_PRODUCER_ADDITIONS):
+        entries.append({
+            "id": f"prod-{start_index + i:03d}",
+            "category": "producers",
+            "categoryLabel": "Producers & Beatmakers",
+            "title": title_case_words(item["title"]),
+            "provider_name": item["provider_name"],
+            "location": item["location"],
+            "price": "Contact for licensing",
+            "description": f"Original {item['genre'].lower()} production from {item['provider_name']}, "
+                            f"sampled from their SoundCloud catalog.",
+            "tags": item["tags"][:4],
+            "link": item["link"],
+            "linkLabel": "Listen on SoundCloud",
+            "embed_url": make_soundcloud_embed(item["link"]),
+            "image": item["image"],
+            "likes": item["likes"],
+            "featured": item["likes"] > 50,
+            "sample": False,
+        })
+    return entries
+
+
+# ---------------------------------------------------------------------------
 # ENGINEERS + VISUALS  (Fiverr gig search)
 # ---------------------------------------------------------------------------
 
@@ -419,6 +554,149 @@ def build_studios(base_dir):
 
 
 # ---------------------------------------------------------------------------
+# VERIFIED MANUAL FIVERR AFFILIATE LINKS
+# ---------------------------------------------------------------------------
+
+# Verified Fiverr affiliate deep-links, generated manually through the Fiverr
+# affiliate dashboard's own 'LP URL' tool (Marketing Tools -> Default and Deep
+# Links) by the site owner on 2026-08-18. These are known-correct/working links
+# (unlike the auto-reconstructed ones from make_fiverr_affiliate_link(), which
+# Fiverr does not always honor). Applied as overrides after building engineers/
+# visuals so future re-runs of this script do not lose them.
+# Listings manually removed after verification found the underlying Fiverr
+# gig no longer exists (seller/gig deleted). Filtered out of the final output
+# in main(), after all categories are built, so it never shifts the sequential
+# IDs of any other listing.
+REMOVED_LISTING_IDS = {
+    "vis-074",  # user05663302 / "design any cyberpunk art cover" - gig no longer exists on Fiverr (confirmed 2026-08-18)
+}
+
+MANUAL_FIVERR_LINK_OVERRIDES = {
+    # --- round 2: corrected 2026-08-18 after typo/non-affiliate-link fixes ---
+    "eng-006": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Felemproducer%252Fmix-and-master-your-song-to-the-industry-standard",
+    "eng-011": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fthedripprovider%252Fprofessionally-mix-and-master-a-rap-or-hip-hop-track-for-you",
+    "eng-015": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fenzosilvero%252Fmix-and-master-songs-to-make-them-sound-amazing",
+    "eng-018": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fjacksong1022%252Ftune-up-your-vocals",
+    "vis-024": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fitommyfrank%252Fcreate-a-cyberpunk-or-sci-fi-illustration-for-you",
+    "vis-031": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Faimasterdesign%252Fdesign-high-quality-historical-romance-or-fantasy-cover-fast",
+    "vis-079": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fiamaerego%252Fdesign-professional-rap-and-hip-hop-album-cover-art",
+    "eng-001": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fneksofficial%252Fprofessionally-produce-and-master-song-or-clean-track-of-unwanted-noise-in-24h",
+    "eng-002": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Ferafoos%252Fmix-and-master-your-song-in-3-days",
+    "eng-003": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fglastudios%252Fprofessionally-mix-and-master-rap-vocals",
+    "eng-004": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fmadushdiwya%252Fprofessional-audio-mixing-and-mastering-for-your-music",
+    "eng-005": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fkagenmusic%252Fprofessionally-mix-and-master-your-song",
+    "eng-007": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fcarrotymusic%252Fprofessional-mix-and-mastering-streaming-standard",
+    "eng-008": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fbrendanreza%252Fskillfully-mix-your-songs-to-sweet-sweet-perfection",
+    "eng-009": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fmixedbyhill%252Fmaster-your-music-at-red-factory-studios",
+    "eng-010": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fdankjellberg%252Fdo-pro-mixing-an-mastering-to-your-tracks-and-songs",
+    "eng-012": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fdespiczeljko%252Fmaster-your-song-pop-rock-trap-edm-any-genre",
+    "eng-013": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fjoshermes%252Fmix-and-master-your-hip-hop-trap-rap-song",
+    "eng-014": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fbementallyrich%252Fdo-mix-and-master-to-your-song-in-my-professional-studio",
+    "eng-016": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Falfredoreed%252Fmix-and-mastering-your-song",
+    "eng-017": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Falexreverberi%252Fmix-and-master-your-urban-hiphop-rap-or-solo-singer-song",
+    "eng-019": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fsilasbeats%252Fdo-same-day-mastering",
+    "eng-020": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fmartinetestudio%252Fdo-a-pro-analog-mastering-to-your-mix",
+    "eng-021": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Ftherealbeanzy%252Fbe-your-hip-hop-mixing-engineer",
+    "eng-022": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fprodbyrufuh%252Fmix-and-master-your-chill-drill-trap-uk-drill-song",
+    "eng-023": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fpinavanucci%252Fmake-a-techno-song-for-you",
+    "eng-024": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fdrtinkler%252Fmix-and-master-your-rap-or-hip-hop-track",
+    "eng-025": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fjaitay%252Fbe-mixing-and-mastering-your-rap-song-with-pitch-correction",
+    "eng-026": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fsoufiandesigner%252Fmake-rap-trap-beat-in-less-than-12-hours",
+    "eng-027": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fgabrieleim%252Fmix-and-master-your-song-in-a-clean-progessional-way",
+    "eng-028": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fdoubledstudio%252Fmix-and-master-your-modern-trap-urban-song",
+    "eng-029": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fzaidiboybeats%252Fmake-fire-melody-for-you",
+    "eng-030": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fwiktorcreator%252Fsend-you-more-than-350-professional-fl-studio-vocal-presets",
+    "eng-031": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fiamkaiethan%252Fbe-you-hip-hop-vocal-mix-engeneer",
+    "eng-032": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fseb_del_vecchio%252Fmaster-your-song-ready-for-digital-stores",
+    "eng-033": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Ftonizmusic%252Fmix-your-reggaeton-or-latin-trap-vocals-professionally",
+    "eng-034": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Falexrivermusics%252Fbe-your-male-rapper-producer-and-mixing-engineer-for-rap-or-trap",
+    "eng-035": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fjoeprod17%252Fprofessionally-mix-your-rap-trap-drill-or-reggaeton-vocals",
+    "eng-036": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fvicentedelsante%252Fmix-your-rap-trap-or-drill-vocals-professionally",
+    "eng-037": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Faudioaddict596%252Fbe-your-trap-metal-and-phonk-mixing-and-mastering-engineer",
+    "vis-001": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fmysellertop%252Fdesign-amazing-flyers-brochures",
+    "vis-002": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fsummydesigns%252Fdesign-a-mixtape-or-album-cover",
+    "vis-003": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Ftoinggraphicss%252Fdo-advanced-quality-mixtape-covers-and-album-covers",
+    "vis-004": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fmirkodellamonic%252Fdesign-album-or-single-cover-art",
+    "vis-005": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fflorinbrl%252Fdesign-a-cover-for-your-music-release",
+    "vis-006": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Frichardesigns%252Fdesign-your-album-cover-ce4b",
+    "vis-007": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fspncrrbns%252Fcraft-your-individual-music-artwork",
+    "vis-008": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fkmdesignz%252Fdesign-a-stunning-album-art-or-cd-artwork",
+    "vis-009": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Flavidhiarsyad%252Fcollage-artwork-for-albums-cover-etc",
+    "vis-010": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fsrdesign4u%252Fdesign-cd-covers-mixtapes-or-flyers",
+    "vis-011": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fcrystalgfx%252Fdesign-awesome-single-or-mixtape-cover",
+    "vis-012": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Feemran910%252Fdesign-wonderful-album-art-or-cover",
+    "vis-013": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fdamagegliters%252Fdo-awesome-mixtape-covers-or-album-covers",
+    "vis-014": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fillevenx%252Fcreate-amazing-cover-art-for-your-album-mixtape-ep-song",
+    "vis-015": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Femoca_design%252Fdesign-your-music-album-cover-art-or-music-song-artwork",
+    "vis-016": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fwasan_seoexpert%252Fdesign-attractive-mixtape-cover-and-album-cover-art",
+    "vis-017": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fchapeldesigns%252Fdesign-experimental-abstract-cover-art-for-your-single-or-album",
+    "vis-018": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Foleksandrkurta%252Fdesign-album-cover-or-single-cover-or-music-artwork",
+    "vis-019": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fsujith_s%252Fdesign-mixtape-covers-album-covers-and-single-covers",
+    "vis-020": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fviduboy%252Fdesign-album-or-single-cover-art-28e1",
+    "vis-021": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fkgm1988%252Fcreate-digital-collage-album-cover-art-and-poster",
+    "vis-022": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fnipz2003%252Fmixtape-cover-art-album-cover-art-or-single-cover",
+    "vis-023": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fdegeha%252Fcreate-trippy-psychedelic-surreal-illustration-album-band",
+    "vis-025": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fzalmiart%252Fdesign-fantasy-sci-fi-horror-and-dystopian-book-cover-art",
+    "vis-026": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Flogo_champion%252Fdo-a-mixtape-cover-design-album-cover-or-flyer-c74a",
+    "vis-027": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fhumanoire%252Fcreate-a-high-quality-music-video",
+    "vis-028": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fstndgraphics%252Fprepare-layouts-for-music-vinyl-records",
+    "vis-029": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fjiyaakhtar%252Fdesign-music-album-cover-single-or-mixtape-artwork",
+    "vis-030": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fendryjay%252Fcreate-vaporwave-aesthetic-lofi-vintage-artwork",
+    "vis-032": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fdilanpramoda94%252Fdesign-nft-art-or-cover-art",
+    "vis-033": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fkxrvm07%252Fdraw-single-cover-or-mixtape-cover",
+    "vis-034": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fgloomink%252Fcreate-a-custom-awesome-illustration-for-t-shirt-design",
+    "vis-035": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fcloudbear59%252Fdo-design-a-hip-pop-single-cover-or-album-cover",
+    "vis-036": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fxgoist_%252Fdesign-unique-album-cover-art-for-your-music-release",
+    "vis-037": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fshumaila1408%252Fdesign-unique-amazing-and-brilliant-album-cover-music-or-mixtape-cover",
+    "vis-038": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Ffarwa_desin_art%252Fdesign-unique-cd-podcast-mixtape-single-album-cover",
+    "vis-039": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Ftazp27%252Fdesign-awesome-custom-artwork-for-your-album-cover",
+    "vis-040": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fsabriabdo%252Fcreate-your-portrait-as-a-cartoon",
+    "vis-041": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fjasonmgraphics%252Fstunning-album-cover-or-ep-single-cover-art",
+    "vis-042": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fbonaedit%252Fdesign-a-stunning-album-or-single-cover-art",
+    "vis-043": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fcolorscape%252Fdesign-concept-art-and-photo-real-environments",
+    "vis-044": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fgraphicspro255%252Fdraw-a-cartoon-album-cover-art-for-your-music",
+    "vis-045": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fbijoysana12%252Fdesign-a-professional-metal-album-cover-artwork-f322",
+    "vis-046": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fbrookebagga%252Fcreate-a-custom-3d-vj-loop",
+    "vis-047": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fnibera%252Fdesign-a-professional-album-cover-for-your-music",
+    "vis-048": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fnicojude%252Fcreate-cinematic-ai-music-videos-animated-visualizers-and-3d-lyric-videos",
+    "vis-049": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Flizbecoetzee%252Fillustrate-a-minimal-custom-book-cover-for-any-genre",
+    "vis-050": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fpremiumcoverlab%252Fdesign-unique-album-or-single-cover-art",
+    "vis-051": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fwalilee%252Fdesign-you-rap-album-cover-or-mixtape-cover-or-ep-cover",
+    "vis-052": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fstudioberiman%252Fmake-amazing-custom-illustration-for-your-brand-band-etc",
+    "vis-053": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Froteker%252Fcreate-dark-gothic-post-punk-industrial-music-video-for-doomer-obscure-song",
+    "vis-054": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fterz_gr%252Fdesign-your-spotify-album-cover-art-professionally",
+    "vis-055": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fcncreations%252Fcreate-a-dark-metal-hardcore-music-video-for-a-rock-song",
+    "vis-056": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fabirhasan911%252Fdo-science-fiction-book-cover-design",
+    "vis-057": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fkianusteve%252Fdo-anime-and-cartoon-album-cover-art",
+    "vis-058": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fhakusaladin%252Fcreate-ai-generated-metal-music-video",
+    "vis-059": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fgalihpanji%252Fcreate-chaotic-dystopian-music-video-for-ebm-metal-post-punk",
+    "vis-060": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fdime51%252Fmake-cyberpunk-anime-style-illustration-fo-your",
+    "vis-061": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fjassybaby1%252Fdesign-an-awesome-cd-single-music-album-cover",
+    "vis-062": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fsehrish1111%252Fscience-fiction-book-cover",
+    "vis-063": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Ftudorslash%252Fcreate-your-hip-hop-album-cover-art-music-mixtape-artwork",
+    "vis-064": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fhoodinhy%252Fdesign-your-music-album-cover-art-or-single-artwork",
+    "vis-065": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fwhitejude44%252Fcreate-fast-paced-dark-metal-lyric-music-videos-with-gothic-rock-ai-visuals",
+    "vis-066": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fdesolubscomics%252Fdesign-anime-hip-hop-emo-album-cover-art-single-rap-mixtape-rnb-retro-y2k-ep",
+    "vis-067": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fawanyustira%252Fmake-a-dystopian-music-video-for-metal-post-punk",
+    "vis-068": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fheryohsams%252Fdesign-anime-cartoon-album-cover-art-in-hiphop-rap-lofi-edm-funk-or-retro-style",
+    "vis-069": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fjundlunn%252Fdesign-custom-anime-manga-album-cover-art-in-hip-hop-rap-lofi-emo-retro-style",
+    "vis-070": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fmilestha%252Fcreate-dystopian-dark-music-video-with-gothic-lyric-animation-cinematic-visuals",
+    "vis-071": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fberrybruce4%252Fl-produce-a-cinematic-music-video-with-dark-artistic-visuals",
+    "vis-072": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Ffave543%252Fdesign-steam-capsule-cyberpunk-art-banner-cover-concept-art-game-poster-arpg",
+    "vis-073": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Flusteamart%252Fcreate-scifi-game-steam-capsule-art-fps-game-key-art-cyberpunk-cover-art-banner",
+    "vis-075": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Faldermanma%252Fmake-cyberpunk-character-art",
+    "vis-076": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fcristhianlondon%252Fillustrate-your-kids-book-with-a-magical-unique-touch",
+    "vis-077": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fjoanmpbell%252Fdesign-anime-hip-hop-emo-album-cover-art-single-rap-mixtape-rnb-retro-y2k-ep",
+    "vis-078": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fspipau%252Fdo-premium-hip-hop-album-cover-design",
+    "vis-080": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fnuvisuals%252Fdesign-a-professional-hip-hop-album-cover-art",
+    "vis-081": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fhebause%252Fdo-premium-hip-hop-album-cover-design",
+    "vis-082": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fpeapilin%252Fdesign-professional-rap-and-hip-hop-album-cover-art",
+    "vis-083": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fkadrearaord%252Fdo-professional-hip-hop-album-cover-design",
+    "vis-084": "https://go.fiverr.com/visit/?bta=45990&brand=fiverrmarketplace&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fbarbaobert%252Fcreate-hip-hop-rap-and-trap-album-cover-design",
+}
+
+
+# ---------------------------------------------------------------------------
 # MAIN
 # ---------------------------------------------------------------------------
 
@@ -427,7 +705,10 @@ def main():
 
     print("Building producers...")
     producers = build_producers(base_dir)
-    print(f"  -> {len(producers)} curated producer profiles")
+    manual_producers = build_manual_producer_additions(len(producers) + 1)
+    producers = producers + manual_producers
+    print(f"  -> {len(producers)} curated producer profiles "
+          f"({len(manual_producers)} manually sourced via Google discovery)")
 
     print("Building sound engineers...")
     engineers = build_fiverr_category(
@@ -444,11 +725,24 @@ def main():
     )
     print(f"  -> {len(visuals)} curated designer listings")
 
+    applied_overrides = 0
+    for entry in engineers + visuals:
+        override = MANUAL_FIVERR_LINK_OVERRIDES.get(entry.get("id"))
+        if override:
+            entry["link"] = override
+            applied_overrides += 1
+    print(f"  -> applied {applied_overrides} verified manual Fiverr affiliate links")
+
     print("Building recording studios...")
     studios = build_studios(base_dir)
     print(f"  -> {len(studios)} curated studio listings")
 
     master_data = producers + engineers + visuals + studios
+    before_removal = len(master_data)
+    master_data = [x for x in master_data if x.get("id") not in REMOVED_LISTING_IDS]
+    if before_removal != len(master_data):
+        print(f"  -> removed {before_removal - len(master_data)} discontinued listing(s): "
+              f"{sorted(REMOVED_LISTING_IDS)}")
 
     output_path = os.path.join(base_dir, "directory.json")
     with open(output_path, "w", encoding="utf-8") as f:
