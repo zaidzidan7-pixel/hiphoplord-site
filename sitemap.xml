@@ -26,6 +26,11 @@
     <priority>0.2</priority>
   </url>
   <url>
+    <loc>https://hiphoplord.com/affiliate-disclosure.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
     <loc>https://hiphoplord.com/listings/prod-001.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

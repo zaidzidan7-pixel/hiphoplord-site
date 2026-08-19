@@ -233,6 +233,7 @@
       <a href="contact.html" class="hover:text-zinc-300 transition">Contact</a>
       <a href="privacy-policy.html" class="hover:text-zinc-300 transition">Privacy Policy</a>
       <a href="terms.html" class="hover:text-zinc-300 transition">Terms of Service</a>
+      <a href="affiliate-disclosure.html" class="hover:text-zinc-300 transition">Affiliate Disclosure</a>
     </div>
   </div>
 </footer>
@@ -22037,6 +22038,7 @@
           <span class="text-sm font-semibold text-zinc-200">${escapeHTML(item.price || '')}</span>
           <a href="${item.link}" target="_blank" rel="${item.category === 'engineers' || item.category === 'visuals' ? 'noopener sponsored' : 'noopener'}" class="mono text-xs px-3.5 py-2 rounded-full bg-white/10 hover:bg-[--gold] hover:text-black transition">${escapeHTML(item.linkLabel || 'View')}</a>
         </div>
+        ${item.category === 'engineers' || item.category === 'visuals' ? '<p class="text-[10px] text-zinc-600 mt-2 text-right">Affiliate link — <a href="affiliate-disclosure.html" class="underline hover:text-zinc-400">disclosure</a></p>' : ''}
       </div>`;
   }
 

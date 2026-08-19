@@ -70,6 +70,7 @@ FOOTER_HTML = """
       <a href="../contact.html" class="hover:text-zinc-300 transition">Contact</a>
       <a href="../privacy-policy.html" class="hover:text-zinc-300 transition">Privacy Policy</a>
       <a href="../terms.html" class="hover:text-zinc-300 transition">Terms of Service</a>
+      <a href="../affiliate-disclosure.html" class="hover:text-zinc-300 transition">Affiliate Disclosure</a>
     </div>
   </div>
 </footer>
@@ -294,6 +295,8 @@ def render_page(item, related, style_block):
     cta = (f'<a href="{esc(item.get("link",""))}" target="_blank" rel="{rel_attr}" '
            f'class="mono text-sm px-5 py-3 rounded-full bg-[--gold] text-black font-semibold '
            f'hover:bg-[--gold-soft] transition">{esc(item.get("linkLabel","View"))} →</a>')
+    affiliate_note = ('<p class="text-[10px] text-zinc-600 mt-2 text-right w-full">Affiliate link — '
+                       '<a href="../affiliate-disclosure.html" class="underline hover:text-zinc-400">disclosure</a></p>') if is_affiliate else ""
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -362,6 +365,7 @@ def render_page(item, related, style_block):
     <div class="flex items-center justify-between mt-8 pt-6 border-t border-white/10 flex-wrap gap-4">
       {price_html}
       {cta}
+      {affiliate_note}
     </div>
   </div>
 
@@ -403,6 +407,7 @@ def generate_sitemap(entries):
         ("https://hiphoplord.com/contact.html", "monthly", "0.4"),
         ("https://hiphoplord.com/privacy-policy.html", "yearly", "0.2"),
         ("https://hiphoplord.com/terms.html", "yearly", "0.2"),
+        ("https://hiphoplord.com/affiliate-disclosure.html", "yearly", "0.2"),
     ]
     lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for loc, freq, prio in static_pages:
