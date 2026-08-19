@@ -193,17 +193,21 @@
     <p class="text-zinc-400 text-sm mb-8">Get listed in front of independent artists actively looking for your service. Submissions are reviewed before going live.</p>
 
     <form id="listingForm" class="space-y-3.5 text-left">
+      <input type="hidden" name="access_key" value="fd7408c2-20f8-4208-91bf-c898ae1eeff5" />
+      <input type="hidden" name="subject" value="New HipHopLord listing submission" />
+      <input type="hidden" name="from_name" value="HipHopLord Directory" />
+      <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
       <div>
         <label class="mono text-xs text-zinc-400 mb-1 block">Name / Brand</label>
-        <input required type="text" class="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[--gold]" />
+        <input required type="text" name="name" class="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[--gold]" />
       </div>
       <div>
         <label class="mono text-xs text-zinc-400 mb-1 block">Email</label>
-        <input required type="email" class="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[--gold]" />
+        <input required type="email" name="email" class="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[--gold]" />
       </div>
       <div>
         <label class="mono text-xs text-zinc-400 mb-1 block">Category</label>
-        <select class="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[--gold]">
+        <select name="category" class="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[--gold]">
           <option>Producers & Beatmakers</option>
           <option>Mixing & Mastering Engineers</option>
           <option>Cover Art & Visual Designers</option>
@@ -212,10 +216,10 @@
       </div>
       <div>
         <label class="mono text-xs text-zinc-400 mb-1 block">Portfolio / Social Link</label>
-        <input required type="url" placeholder="https://" class="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[--gold]" />
+        <input required type="url" name="portfolio_url" placeholder="https://" class="w-full bg-white/5 border border-white/15 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[--gold]" />
       </div>
-      <button type="submit" class="w-full bg-[--gold] text-black font-semibold py-3.5 rounded-lg hover:bg-[--gold-soft] transition">Submit Listing</button>
-      <p class="text-[11px] text-zinc-600 text-center pt-1">This form is not wired to a backend yet — connect it to a service like Web3Forms or Tally before launch.</p>
+      <button type="submit" id="listingSubmitBtn" class="w-full bg-[--gold] text-black font-semibold py-3.5 rounded-lg hover:bg-[--gold-soft] transition">Submit Listing</button>
+      <p id="listingFormStatus" class="text-[11px] text-zinc-500 text-center pt-1" aria-live="polite"></p>
     </form>
   </div>
 </section>
@@ -22103,9 +22107,44 @@
 
   document.getElementById('searchInput').addEventListener('input', () => renderGrid(masterData));
 
-  document.getElementById('listingForm').addEventListener('submit', (e) => {
+  document.getElementById('listingForm').addEventListener('submit', async (e) => {
     e.preventDefault();
-    alert('This form needs to be connected to a form backend (Web3Forms, Tally, etc.) before it can actually receive submissions. See the setup notes delivered with this site.');
+    const form = e.target;
+    const statusEl = document.getElementById('listingFormStatus');
+    const btn = document.getElementById('listingSubmitBtn');
+    const accessKey = form.access_key.value;
+
+    if (!accessKey || accessKey === 'YOUR_WEB3FORMS_ACCESS_KEY') {
+      statusEl.textContent = 'This form is not wired to a backend yet — add a real Web3Forms access key before launch.';
+      statusEl.className = 'text-[11px] text-zinc-600 text-center pt-1';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Submitting...';
+    statusEl.textContent = '';
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(form))),
+      });
+      const result = await res.json();
+      if (result.success) {
+        form.reset();
+        statusEl.textContent = 'Thanks — your submission was received. We\'ll review it and follow up by email.';
+        statusEl.className = 'text-[11px] text-emerald-400 text-center pt-1';
+      } else {
+        throw new Error(result.message || 'Submission failed');
+      }
+    } catch (err) {
+      statusEl.textContent = 'Something went wrong sending your submission. Please try again or email contact@hiphoplord.com directly.';
+      statusEl.className = 'text-[11px] text-red-400 text-center pt-1';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Submit Listing';
+    }
   });
 </script>
 
