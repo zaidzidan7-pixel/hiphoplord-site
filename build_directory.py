@@ -533,21 +533,23 @@ def generate_fiverr_curator_note(entry):
     reviews = entry.get("reviewsCount") or 0
     extra_stats = entry.get("extraStats") or []
     badges = entry.get("badges") or []
+    location = entry.get("location")
     noun = "engineer" if entry.get("category") == "engineers" else "designer"
+    based_in = f" based in {location}" if location else ""
 
     delivery = next((s for s in extra_stats if "delivery" in s), None)
     languages = next((s for s in extra_stats if s.startswith("speaks")), None)
     is_pro = "PRO Verified Seller" in badges
 
     if rating and reviews >= 200:
-        base = f"A well-reviewed Fiverr {noun}: {rating}★ across {reviews} reviews"
+        base = f"A well-reviewed Fiverr {noun}{based_in}: {rating}★ across {reviews} reviews"
     elif rating and reviews >= 30:
-        base = f"A Fiverr {noun} with a solid review history: {rating}★ from {reviews} reviews"
+        base = f"A Fiverr {noun}{based_in} with a solid review history: {rating}★ from {reviews} reviews"
     elif rating and reviews > 0:
-        base = (f"A Fiverr {noun} with {reviews} review"
+        base = (f"A Fiverr {noun}{based_in} with {reviews} review"
                 f"{'s' if reviews != 1 else ''} at {rating}★ so far")
     else:
-        base = (f"A Fiverr {noun} with limited review history on this specific gig "
+        base = (f"A Fiverr {noun}{based_in} with limited review history on this specific gig "
                 f"-- worth checking their full profile before booking")
 
     extras = []
@@ -759,11 +761,13 @@ def generate_studio_curator_note(entry):
     rating = entry.get("rating")
     reviews = entry.get("reviewsCount") or 0
     badges = entry.get("badges") or []
+    location = entry.get("location")
+    in_location = f" in {location}" if location else ""
 
     if rating and reviews > 0:
-        base = f"Rated {rating}★ from {reviews} Google review{'s' if reviews != 1 else ''}."
+        base = f"Rated {rating}★ from {reviews} Google review{'s' if reviews != 1 else ''}{in_location}."
     else:
-        base = ("No Google reviews yet on this listing -- worth confirming "
+        base = (f"No Google reviews yet on this listing{in_location} -- worth confirming "
                  "details directly before booking.")
 
     if badges:
@@ -1256,6 +1260,219 @@ PRODUCER_CURATOR_NOTES = {
 
 
 # ---------------------------------------------------------------------------
+# FAQ GENERATION (per-listing, grounded strictly in real fields)
+# ---------------------------------------------------------------------------
+#
+# Every question below is only included when there is real data on the entry
+# to answer it honestly -- a listing with thinner data simply gets fewer FAQ
+# entries rather than a fabricated or generic-sounding answer. This mirrors
+# the same honesty rule used for curatorNote. Answers target the exact
+# long-tail questions a real visitor would type into Google ("how much does
+# it cost to...", "is X a verified seller", "what are the opening hours of
+# X"), which is also what FAQPage structured data is designed to surface in
+# search results.
+
+def _faq_producer(entry):
+    provider = entry.get("provider_name") or "this producer"
+    faq = []
+
+    faq.append({
+        "question": f"How much does it cost to license a beat from {provider}?",
+        "answer": (f"{provider} lists pricing as \"Contact for licensing\" rather than a fixed "
+                   f"rate -- reach out directly via their SoundCloud profile (linked above) to "
+                   f"discuss usage rights and pricing."),
+    })
+
+    tags = entry.get("tags") or []
+    if tags:
+        faq.append({
+            "question": "What style or genre is this beat?",
+            "answer": f"This track is tagged {', '.join(tags)} on SoundCloud.",
+        })
+
+    extra_stats = entry.get("extraStats") or []
+    likes = entry.get("likes")
+    if extra_stats or likes is not None:
+        stats_bits = [f"{likes} like{'s' if likes != 1 else ''}"] if likes is not None else []
+        stats_bits += extra_stats
+        faq.append({
+            "question": f"How much real engagement does this track from {provider} have?",
+            "answer": f"As listed on SoundCloud: {', '.join(stats_bits)}.",
+        })
+
+    if entry.get("location"):
+        faq.append({
+            "question": f"Where is {provider} based?",
+            "answer": f"{provider} lists their location as {entry['location']} on SoundCloud.",
+        })
+
+    if "✓ Verified SoundCloud Account" in (entry.get("badges") or []):
+        faq.append({
+            "question": f"Is {provider}'s SoundCloud account verified?",
+            "answer": f"Yes -- {provider} carries a verified-account badge on SoundCloud.",
+        })
+
+    return faq
+
+
+def _faq_fiverr(entry):
+    noun = "engineer" if entry.get("category") == "engineers" else "designer"
+    provider = entry.get("provider_name") or f"this {noun}"
+    faq = []
+
+    if entry.get("price"):
+        faq.append({
+            "question": f"How much does it cost to work with {provider}?",
+            "answer": f"Pricing for this gig starts {entry['price']} on Fiverr.",
+        })
+
+    extra_stats = entry.get("extraStats") or []
+    delivery = next((s for s in extra_stats if "delivery" in s), None)
+    if delivery:
+        faq.append({
+            "question": "How fast is delivery?",
+            "answer": f"{provider} lists a {delivery} on this gig.",
+        })
+
+    rating = entry.get("rating")
+    reviews = entry.get("reviewsCount") or 0
+    is_pro = "PRO Verified Seller" in (entry.get("badges") or [])
+    if rating and reviews > 0:
+        pro_bit = ", and is a Fiverr Pro-verified seller" if is_pro else ""
+        faq.append({
+            "question": f"Is {provider} a trusted, verified seller?",
+            "answer": (f"{provider} holds a {rating}★ rating across {reviews} Fiverr "
+                       f"review{'s' if reviews != 1 else ''}{pro_bit}."),
+        })
+    else:
+        faq.append({
+            "question": f"Is {provider} a trusted, verified seller?",
+            "answer": ("This gig doesn't have Fiverr reviews on record yet -- worth checking "
+                       "their full Fiverr profile directly before booking."),
+        })
+
+    languages = next((s for s in extra_stats if s.startswith("speaks")), None)
+    if languages:
+        faq.append({
+            "question": f"What languages does {provider} speak?",
+            "answer": f"{provider} {languages}, per their Fiverr profile.",
+        })
+
+    tags = entry.get("tags") or []
+    if tags:
+        faq.append({
+            "question": f"What genres or styles does {provider} work in?",
+            "answer": f"Listed specialties for this gig include: {', '.join(tags)}.",
+        })
+
+    return faq
+
+
+def _faq_studio(entry):
+    title = entry.get("title") or "this studio"
+    faq = []
+
+    if entry.get("price"):
+        faq.append({
+            "question": f"How much does it cost to book {title}?",
+            "answer": (f"{title} lists pricing as \"Contact for rates\" -- contact them "
+                       f"directly (details above) for a quote."),
+        })
+
+    extra_stats = entry.get("extraStats") or []
+    hours = next((s for s in extra_stats
+                  if "AM" in s or "PM" in s or "24 hours" in s or "vary" in s.lower()), None)
+    if hours:
+        faq.append({
+            "question": f"What are {title}'s opening hours?",
+            "answer": f"{title}'s listed hours on Google: {hours}.",
+        })
+
+    badges = entry.get("badges") or []
+    if badges:
+        faq.append({
+            "question": f"What amenities are available at {title}?",
+            "answer": f"Amenities listed on Google for {title}: {', '.join(badges)}.",
+        })
+
+    rating = entry.get("rating")
+    reviews = entry.get("reviewsCount") or 0
+    if rating and reviews > 0:
+        faq.append({
+            "question": f"Is {title} a highly-rated studio?",
+            "answer": (f"{title} holds a {rating}★ rating from {reviews} Google "
+                       f"review{'s' if reviews != 1 else ''}."),
+        })
+    else:
+        faq.append({
+            "question": f"Is {title} a highly-rated studio?",
+            "answer": f"{title} doesn't have Google reviews on record yet.",
+        })
+
+    tags = entry.get("tags") or []
+    extra_tags = [t for t in tags if t != "recording studio"]
+    if extra_tags:
+        faq.append({
+            "question": f"Does {title} offer anything beyond standard recording sessions?",
+            "answer": f"Yes -- its Google listing also covers: {', '.join(extra_tags)}.",
+        })
+
+    return faq
+
+
+def generate_faq(entry):
+    """Returns a list of {"question", "answer"} pairs for a listing, built
+    entirely from real fields already on the entry -- see the category
+    helpers above. Dispatches by category."""
+    category = entry.get("category")
+    if category == "producers":
+        return _faq_producer(entry)
+    if category in ("engineers", "visuals"):
+        return _faq_fiverr(entry)
+    if category == "studios":
+        return _faq_studio(entry)
+    return []
+
+
+def load_manual_faq_additions(base_dir):
+    """Reads faq_additions.xlsx (id, title, question, answer columns; one row
+    per Q&A pair, multiple rows per id allowed) if it exists, and returns a
+    dict of id -> [{"question", "answer"}, ...]. This is the durable,
+    editable place to add hand-written FAQ paragraphs -- for existing
+    listings or ones not yet built -- so that content is never lost or
+    redone on a future re-run of this script. Returns {} if the file is
+    absent (this feature is entirely optional)."""
+    path = os.path.join(base_dir, "faq_additions.xlsx")
+    if not os.path.exists(path):
+        return {}
+
+    from openpyxl import load_workbook
+    wb = load_workbook(path, data_only=True)
+    sheet = wb["FAQ Additions"] if "FAQ Additions" in wb.sheetnames else wb.active
+
+    headers = [str(c.value).strip().lower() if c.value else "" for c in next(sheet.iter_rows(min_row=1, max_row=1))]
+    try:
+        id_col = headers.index("id")
+        q_col = headers.index("question")
+        a_col = headers.index("answer")
+    except ValueError:
+        return {}
+
+    additions = {}
+    for row in sheet.iter_rows(min_row=2, values_only=True):
+        if not row or row[id_col] is None:
+            continue
+        listing_id = str(row[id_col]).strip()
+        question = (row[q_col] or "").strip() if row[q_col] else ""
+        answer = (row[a_col] or "").strip() if row[a_col] else ""
+        if not listing_id or not question or not answer:
+            continue
+        additions.setdefault(listing_id, []).append({"question": question, "answer": answer})
+
+    return additions
+
+
+# ---------------------------------------------------------------------------
 # MAIN
 # ---------------------------------------------------------------------------
 
@@ -1331,6 +1548,27 @@ def main():
           f"notes for featured studios)")
 
     master_data = producers + engineers + visuals + studios
+
+    faq_count = 0
+    for entry in master_data:
+        entry["faq"] = generate_faq(entry)
+        faq_count += len(entry["faq"])
+    print(f"  -> generated {faq_count} algorithmic FAQ entries across "
+          f"{len(master_data)} listings")
+
+    manual_faq = load_manual_faq_additions(base_dir)
+    if manual_faq:
+        applied_manual_faq = 0
+        for entry in master_data:
+            extra = manual_faq.get(entry.get("id"))
+            if extra:
+                entry["faq"] = entry["faq"] + extra
+                applied_manual_faq += len(extra)
+        print(f"  -> merged {applied_manual_faq} hand-written FAQ entries from "
+              f"faq_additions.xlsx ({len(manual_faq)} listings)")
+    else:
+        print("  -> no faq_additions.xlsx found (optional -- skipped)")
+
     before_removal = len(master_data)
     master_data = [x for x in master_data if x.get("id") not in REMOVED_LISTING_IDS]
     if before_removal != len(master_data):
