@@ -31,6 +31,11 @@
     <priority>0.2</priority>
   </url>
   <url>
+    <loc>https://hiphoplord.com/guides/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://hiphoplord.com/listings/prod-001.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -2224,5 +2229,45 @@
     <loc>https://hiphoplord.com/listings/std-298.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://hiphoplord.com/guides/type-beat-vs-custom-beat.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hiphoplord.com/guides/hip-hop-beat-pricing-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hiphoplord.com/guides/mixing-mastering-cost-hip-hop.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hiphoplord.com/guides/mixing-vs-mastering-difference.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hiphoplord.com/guides/hip-hop-cover-art-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hiphoplord.com/guides/choosing-a-recording-studio.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hiphoplord.com/guides/best-cities-to-record-hip-hop.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hiphoplord.com/guides/how-to-release-your-first-hip-hop-track.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

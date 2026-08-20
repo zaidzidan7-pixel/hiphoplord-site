@@ -178,6 +178,42 @@
     vertical-align:-0.05em;
     margin:0 -0.02em;
   }
+
+  /* Guides article body typography -- applied to the hand-written HTML
+     inside each /guides/ page. Keeps long-form reading comfortable while
+     matching the directory's dark/gold visual system. */
+  .prose-guide{
+    color:#d8d3c8;
+    font-size:1.03rem;
+    line-height:1.75;
+  }
+  .prose-guide h2{
+    font-family:'Archivo Black', 'Inter', sans-serif;
+    letter-spacing:-0.01em;
+    color:#f5f1e6;
+    font-size:1.3rem;
+    margin-top:2.4em;
+    margin-bottom:0.7em;
+  }
+  .prose-guide h2:first-child{ margin-top:0; }
+  .prose-guide p{ margin:1em 0; }
+  .prose-guide ul, .prose-guide ol{
+    margin:1.1em 0 1.1em 1.3em;
+    display:flex; flex-direction:column; gap:0.5em;
+  }
+  .prose-guide ul{ list-style:none; }
+  .prose-guide ul li{ position:relative; padding-left:1.4em; }
+  .prose-guide ul li::before{
+    content:"";
+    position:absolute; left:0; top:0.55em;
+    width:7px; height:7px; border-radius:999px;
+    background:var(--gold);
+  }
+  .prose-guide ol{ list-style:decimal; padding-left:0.2em; }
+  .prose-guide ol li{ padding-left:0.4em; }
+  .prose-guide strong{ color:#f5f1e6; font-weight:700; }
+  .prose-guide a{ color:var(--gold); text-decoration:underline; text-underline-offset:2px; }
+  .prose-guide a:hover{ color:var(--gold-soft); }
 </style>
 </head>
 <body class="min-h-screen">
@@ -307,6 +343,7 @@
   <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
     <p class="text-xs text-zinc-500">© 2026 HipHopLord Directory. All rights reserved.</p>
     <div class="flex flex-wrap gap-5 text-xs text-zinc-500">
+      <a href="guides/" class="hover:text-zinc-300 transition">Guides</a>
       <a href="about.html" class="hover:text-zinc-300 transition">About</a>
       <a href="contact.html" class="hover:text-zinc-300 transition">Contact</a>
       <a href="privacy-policy.html" class="hover:text-zinc-300 transition">Privacy Policy</a>

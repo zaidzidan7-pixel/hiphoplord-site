@@ -81,6 +81,7 @@ FOOTER_HTML = """
   <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
     <p class="text-xs text-zinc-500">&copy; 2026 HipHopLord Directory. All rights reserved.</p>
     <div class="flex flex-wrap gap-5 text-xs text-zinc-500">
+      <a href="../guides/" class="hover:text-zinc-300 transition">Guides</a>
       <a href="../about.html" class="hover:text-zinc-300 transition">About</a>
       <a href="../contact.html" class="hover:text-zinc-300 transition">Contact</a>
       <a href="../privacy-policy.html" class="hover:text-zinc-300 transition">Privacy Policy</a>
@@ -488,7 +489,7 @@ def build_related_map(entries):
     return related_map
 
 
-def generate_sitemap(entries):
+def generate_sitemap(entries, guide_slugs=None):
     static_pages = [
         ("https://hiphoplord.com/", "weekly", "1.0"),
         ("https://hiphoplord.com/about.html", "monthly", "0.5"),
@@ -497,6 +498,8 @@ def generate_sitemap(entries):
         ("https://hiphoplord.com/terms.html", "yearly", "0.2"),
         ("https://hiphoplord.com/affiliate-disclosure.html", "yearly", "0.2"),
     ]
+    if guide_slugs:
+        static_pages.append((f"{BASE_URL}/guides/", "monthly", "0.6"))
     lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for loc, freq, prio in static_pages:
         lines.append(f"  <url>\n    <loc>{loc}</loc>\n    <changefreq>{freq}</changefreq>\n    <priority>{prio}</priority>\n  </url>")
@@ -505,6 +508,11 @@ def generate_sitemap(entries):
         lines.append(
             f"  <url>\n    <loc>{BASE_URL}/listings/{e['id']}.html</loc>\n"
             f"    <changefreq>monthly</changefreq>\n    <priority>{prio}</priority>\n  </url>"
+        )
+    for slug in (guide_slugs or []):
+        lines.append(
+            f"  <url>\n    <loc>{BASE_URL}/guides/{slug}.html</loc>\n"
+            f"    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>"
         )
     lines.append("</urlset>")
     return "\n".join(lines) + "\n"
