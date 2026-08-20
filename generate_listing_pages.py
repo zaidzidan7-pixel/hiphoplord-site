@@ -162,6 +162,38 @@ def curator_note_block(item):
             f'</div>')
 
 
+def badge_widget_block(item):
+    """Studios only: an optional, self-serve embeddable HTML badge a real
+    studio owner can grab for their own website or social page if they ever
+    find their listing. Deliberately framed as a free, no-strings-attached
+    courtesy rather than tied to any paid upgrade or reciprocal deal --
+    trading a backlink for something of value is explicitly called out in
+    Google's Link Schemes guidance. Voluntary, unprompted embeds from real
+    industry sites are a legitimate way to build backlinks; keeping the
+    offer optional and non-transactional is what keeps it on the right side
+    of that line."""
+    if item.get("category") != "studios":
+        return ""
+    canonical = f"{BASE_URL}/listings/{item['id']}.html"
+    title = item.get("title", "")
+    alt_text = f"Featured on HipHopLord — {title}"
+    snippet = (f'<a href="{canonical}" target="_blank" rel="noopener">'
+               f'<img src="{BASE_URL}/badge.svg" alt="{esc(alt_text)}" width="180" height="48" '
+               f'style="display:block;border:0;" /></a>')
+    return (
+        '<div class="mt-8 pt-6 border-t border-white/10">'
+        '<span class="mono text-[10.5px] uppercase tracking-widest text-zinc-500">Is This Your Studio?</span>'
+        '<p class="text-zinc-400 text-sm mt-2 leading-relaxed">Feel free to grab this badge for your own '
+        'website or social page — no cost, no obligation, just a way to show off your listing.</p>'
+        '<div class="mt-3 bg-black/40 border border-white/10 rounded-xl p-4">'
+        f'<img src="{BASE_URL}/badge.svg" alt="{esc(alt_text)}" width="180" height="48" '
+        'style="display:block;margin-bottom:12px;" />'
+        '<textarea readonly onclick="this.select()" class="w-full text-[11px] font-mono bg-black/60 '
+        f'text-zinc-400 p-3 rounded-lg border border-white/10 resize-none" rows="3">{esc(snippet)}</textarea>'
+        '</div></div>'
+    )
+
+
 def tags_block(item):
     tags = item.get("tags") or []
     if not tags:
@@ -421,6 +453,7 @@ def render_page(item, related, style_block):
       {cta}
       {affiliate_note}
     </div>
+    {badge_widget_block(item)}
   </div>
 
   <p class="mt-6">
