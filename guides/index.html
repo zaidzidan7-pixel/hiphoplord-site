@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-31TNRD57MQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-31TNRD57MQ');
+</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Guides | HipHopLord</title>
+<meta name="description" content="Practical, no-fluff guides on hip hop production, pricing, and release strategy -- beat licensing, mixing and mastering costs, cover art, studios, and putting out your first track." />
+<link rel="canonical" href="https://hiphoplord.com/guides/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><circle cx=%2212%22 cy=%2212%22 r=%2211%22 fill=%22%230a0a0b%22/><circle cx=%2212%22 cy=%2212%22 r=%229.3%22 fill=%22none%22 stroke=%22%23e2a83f%22 stroke-width=%222.6%22/><circle cx=%2212%22 cy=%2212%22 r=%223%22 fill=%22%23e2a83f%22/></svg>" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="HipHopLord" />
+<meta property="og:title" content="Guides | HipHopLord" />
+<meta property="og:description" content="Practical, no-fluff guides on hip hop production, pricing, and release strategy -- beat licensing, mixing and mastering costs, cover art, studios, and putting out your first track." />
+<meta property="og:url" content="https://hiphoplord.com/guides/" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Guides | HipHopLord" />
+<meta name="twitter:description" content="Practical, no-fluff guides on hip hop production, pricing, and release strategy -- beat licensing, mixing and mastering costs, cover art, studios, and putting out your first track." />
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://hiphoplord.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://hiphoplord.com/guides/"}]}</script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gold:#e2a83f;
+    --gold-soft:#f4c869;
+    --plum:#7c3aed;
+    --ink:#08070a;
+  }
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter', system-ui, sans-serif;
+    background-color: var(--ink);
+    color:#e7e3db;
+    background-image:
+      radial-gradient(circle at 15% 0%, rgba(124,58,237,0.18), transparent 45%),
+      radial-gradient(circle at 85% 8%, rgba(226,168,63,0.12), transparent 40%);
+    background-attachment: fixed;
+  }
+  .noise{
+    position: fixed; inset:0; pointer-events:none; z-index:0; opacity:.05; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .display{ font-family:'Archivo Black', 'Inter', sans-serif; letter-spacing:-0.02em; }
+  .mono{ font-family:'JetBrains Mono', monospace; }
+  .gold-text{ color: var(--gold); }
+  .card{
+    background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01));
+    border:1px solid rgba(255,255,255,0.08);
+    transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+  }
+  .card:hover{
+    transform: translateY(-4px);
+    border-color: rgba(226,168,63,0.55);
+    box-shadow: 0 12px 30px -12px rgba(226,168,63,0.25);
+  }
+  .card.featured{ border-color: rgba(226,168,63,0.4); }
+  .tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10.5px;
+    letter-spacing:.04em;
+    padding:3px 8px;
+    border-radius:999px;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.1);
+    color:#c9c3b6;
+  }
+  .filter-btn{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:.03em;
+  }
+  .filter-btn.active{
+    background: var(--gold);
+    color:#1a1203;
+    border-color: var(--gold);
+  }
+  .sample-ribbon{
+    font-family:'JetBrains Mono', monospace;
+    font-size:9.5px;
+    letter-spacing:.06em;
+  }
+  ::-webkit-scrollbar{ width:10px; }
+  ::-webkit-scrollbar-track{ background:#0c0a10; }
+  ::-webkit-scrollbar-thumb{ background:#2a2430; border-radius:8px; }
+  .vinyl-divider{
+    height:2px;
+    background: repeating-linear-gradient(90deg, rgba(226,168,63,.55) 0 6px, transparent 6px 12px);
+  }
+
+  /* Hero ambiance -- pure CSS/inline-SVG, no image or video request at all.
+     A slowly spinning vinyl-record silhouette behind the headline (nods to
+     the "producers/beatmakers" side of the directory), plus a small
+     equalizer/VU-meter bar strip pulsing just above the search box (nods to
+     mixing/mastering). Both sit at very low opacity purely as background
+     texture -- never competing with the actual text or the search input. */
+  .hero-vinyl{
+    position:absolute; top:50%; left:50%;
+    width:560px; height:560px;
+    transform:translate(-50%,-50%);
+    z-index:0; opacity:.07; pointer-events:none;
+    animation: hero-spin 60s linear infinite;
+  }
+  @keyframes hero-spin{ to{ transform:translate(-50%,-50%) rotate(360deg); } }
+
+  .hero-eq{
+    position:absolute; left:50%; bottom:2px;
+    transform:translateX(-50%);
+    display:flex; align-items:flex-end; gap:5px;
+    height:34px; z-index:0; opacity:.16; pointer-events:none;
+  }
+  .hero-eq span{
+    width:3px; border-radius:2px; background:var(--gold);
+    transform-origin:bottom; animation: hero-eq-bounce 1.4s ease-in-out infinite;
+  }
+  .hero-eq span:nth-child(1){ height:35%; animation-duration:1.1s; animation-delay:-1.3s; }
+  .hero-eq span:nth-child(2){ height:70%; animation-duration:1.4s; animation-delay:-0.4s; }
+  .hero-eq span:nth-child(3){ height:50%; animation-duration:0.9s; animation-delay:-0.8s; }
+  .hero-eq span:nth-child(4){ height:100%; animation-duration:1.6s; animation-delay:-1.0s; }
+  .hero-eq span:nth-child(5){ height:60%; animation-duration:1.2s; animation-delay:-0.2s; }
+  .hero-eq span:nth-child(6){ height:80%; animation-duration:1.0s; animation-delay:-1.5s; }
+  .hero-eq span:nth-child(7){ height:40%; animation-duration:1.3s; animation-delay:-0.6s; }
+  .hero-eq span:nth-child(8){ height:65%; animation-duration:1.5s; animation-delay:-1.1s; }
+  .hero-eq span:nth-child(9){ height:90%; animation-duration:1.1s; animation-delay:-0.3s; }
+  .hero-eq span:nth-child(10){ height:45%; animation-duration:1.4s; animation-delay:-0.9s; }
+  .hero-eq span:nth-child(11){ height:75%; animation-duration:1.0s; animation-delay:-1.4s; }
+  .hero-eq span:nth-child(12){ height:55%; animation-duration:1.2s; animation-delay:-0.5s; }
+  @keyframes hero-eq-bounce{ 0%,100%{ transform:scaleY(.28); } 50%{ transform:scaleY(1); } }
+
+  @media (prefers-reduced-motion: reduce){
+    .hero-vinyl, .hero-eq span{ animation:none; }
+  }
+
+  /* Wordmark logo: the "O" in "LORD" is replaced by a small vinyl-record
+     mark (ring + spindle hole) instead of a separate icon -- ties the
+     logotype directly to the vinyl/equalizer motifs used in the hero. */
+  .logo-o{
+    display:inline-block;
+    width:0.62em; height:0.62em;
+    vertical-align:-0.05em;
+    margin:0 -0.02em;
+  }
+
+  /* Guides article body typography -- applied to the hand-written HTML
+     inside each /guides/ page. Keeps long-form reading comfortable while
+     matching the directory's dark/gold visual system. */
+  .prose-guide{
+    color:#d8d3c8;
+    font-size:1.03rem;
+    line-height:1.75;
+  }
+  .prose-guide h2{
+    font-family:'Archivo Black', 'Inter', sans-serif;
+    letter-spacing:-0.01em;
+    color:#f5f1e6;
+    font-size:1.3rem;
+    margin-top:2.4em;
+    margin-bottom:0.7em;
+  }
+  .prose-guide h2:first-child{ margin-top:0; }
+  .prose-guide p{ margin:1em 0; }
+  .prose-guide ul, .prose-guide ol{
+    margin:1.1em 0 1.1em 1.3em;
+    display:flex; flex-direction:column; gap:0.5em;
+  }
+  .prose-guide ul{ list-style:none; }
+  .prose-guide ul li{ position:relative; padding-left:1.4em; }
+  .prose-guide ul li::before{
+    content:"";
+    position:absolute; left:0; top:0.55em;
+    width:7px; height:7px; border-radius:999px;
+    background:var(--gold);
+  }
+  .prose-guide ol{ list-style:decimal; padding-left:0.2em; }
+  .prose-guide ol li{ padding-left:0.4em; }
+  .prose-guide strong{ color:#f5f1e6; font-weight:700; }
+  .prose-guide a{ color:var(--gold); text-decoration:underline; text-underline-offset:2px; }
+  .prose-guide a:hover{ color:var(--gold-soft); }
+</style>
+</head>
+<body class="min-h-screen">
+<div class="noise"></div>
+
+<nav class="sticky top-0 z-50 backdrop-blur-md bg-black/60 border-b border-white/10">
+  <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+    <a href="../index.html" class="display text-lg tracking-tight" aria-label="HipHopLord">HIPHOP<span class="gold-text">L</span><svg class="logo-o gold-text" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9.3" fill="none" stroke="currentColor" stroke-width="2.6"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg><span class="gold-text">RD</span></a>
+    <div class="hidden md:flex items-center gap-7 text-sm text-zinc-300">
+      <a href="../index.html#directory" class="hover:text-white transition">Directory</a>
+      <a href="../index.html#cities" class="hover:text-white transition">Cities</a>
+      <a href="../about.html" class="hover:text-white transition">About</a>
+      <a href="../contact.html" class="hover:text-white transition">Contact</a>
+    </div>
+    <a href="../index.html#submit" class="mono text-xs px-4 py-2 rounded-full border border-[--gold] gold-text hover:bg-[--gold] hover:text-black transition">+ List Your Service</a>
+  </div>
+</nav>
+
+
+<main class="max-w-5xl mx-auto px-5 pt-12 pb-6">
+  <nav class="mono text-[11px] text-zinc-500 mb-8" aria-label="Breadcrumb">
+    <a href="../index.html" class="hover:text-zinc-300 transition">Home</a>
+    <span class="mx-1.5">/</span>
+    <span class="text-zinc-400">Guides</span>
+  </nav>
+
+  <span class="mono text-[11px] uppercase tracking-widest text-zinc-500">HipHopLord Guides</span>
+  <h1 class="display text-2xl md:text-3xl leading-tight mt-1">Guides for Independent Hip Hop Artists</h1>
+  <p class="text-zinc-400 text-sm mt-3 max-w-2xl leading-relaxed">Straight answers on beat licensing, mixing and mastering costs, cover art, studios, and how to put a first release together -- written from inside the culture, grounded in real numbers from this directory, not generic content-mill filler.</p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10 mb-16">
+    
+        <a href="type-beat-vs-custom-beat.html" class="card rounded-2xl p-6 block hover:no-underline">
+          <span class="mono text-[10.5px] uppercase tracking-widest text-zinc-500">Guide</span>
+          <h2 class="text-white text-base font-semibold mt-2 leading-snug">Type Beat vs. Custom Beat: Which One Should You Actually Buy?</h2>
+          <p class="text-zinc-500 text-sm mt-2 leading-relaxed">Both get you a beat. They don&#x27;t get you the same thing.</p>
+        </a>
+        <a href="hip-hop-beat-pricing-guide.html" class="card rounded-2xl p-6 block hover:no-underline">
+          <span class="mono text-[10.5px] uppercase tracking-widest text-zinc-500">Guide</span>
+          <h2 class="text-white text-base font-semibold mt-2 leading-snug">How Much Does a Hip Hop Beat Cost in 2026? A Realistic Price Guide</h2>
+          <p class="text-zinc-500 text-sm mt-2 leading-relaxed">The honest range, why it swings so wide, and what actually drives the price up.</p>
+        </a>
+        <a href="mixing-mastering-cost-hip-hop.html" class="card rounded-2xl p-6 block hover:no-underline">
+          <span class="mono text-[10.5px] uppercase tracking-widest text-zinc-500">Guide</span>
+          <h2 class="text-white text-base font-semibold mt-2 leading-snug">How Much Does Mixing and Mastering Cost for a Hip Hop Track?</h2>
+          <p class="text-zinc-500 text-sm mt-2 leading-relaxed">Real starting prices from working engineers, and why the number on their profile rarely stays the number.</p>
+        </a>
+        <a href="mixing-vs-mastering-difference.html" class="card rounded-2xl p-6 block hover:no-underline">
+          <span class="mono text-[10.5px] uppercase tracking-widest text-zinc-500">Guide</span>
+          <h2 class="text-white text-base font-semibold mt-2 leading-snug">Mixing vs. Mastering: What&#x27;s the Difference, and Do You Need Both?</h2>
+          <p class="text-zinc-500 text-sm mt-2 leading-relaxed">Two different jobs that get lumped into one line item more often than they should be.</p>
+        </a>
+        <a href="hip-hop-cover-art-guide.html" class="card rounded-2xl p-6 block hover:no-underline">
+          <span class="mono text-[10.5px] uppercase tracking-widest text-zinc-500">Guide</span>
+          <h2 class="text-white text-base font-semibold mt-2 leading-snug">What Makes Good Hip Hop Cover Art? A Guide for Independent Artists</h2>
+          <p class="text-zinc-500 text-sm mt-2 leading-relaxed">The genre has real visual conventions right now. Here&#x27;s what&#x27;s working, and what a good brief to a designer actually looks like.</p>
+        </a>
+        <a href="choosing-a-recording-studio.html" class="card rounded-2xl p-6 block hover:no-underline">
+          <span class="mono text-[10.5px] uppercase tracking-widest text-zinc-500">Guide</span>
+          <h2 class="text-white text-base font-semibold mt-2 leading-snug">How to Choose a Recording Studio for Your First Hip Hop Session</h2>
+          <p class="text-zinc-500 text-sm mt-2 leading-relaxed">What actually matters when you&#x27;re picking a room, and what to ask before you book.</p>
+        </a>
+        <a href="best-cities-to-record-hip-hop.html" class="card rounded-2xl p-6 block hover:no-underline">
+          <span class="mono text-[10.5px] uppercase tracking-widest text-zinc-500">Guide</span>
+          <h2 class="text-white text-base font-semibold mt-2 leading-snug">Best US Cities to Record Hip Hop Music in 2026</h2>
+          <p class="text-zinc-500 text-sm mt-2 leading-relaxed">Where the studios actually are, and why each city&#x27;s scene sounds a little different.</p>
+        </a>
+        <a href="how-to-release-your-first-hip-hop-track.html" class="card rounded-2xl p-6 block hover:no-underline">
+          <span class="mono text-[10.5px] uppercase tracking-widest text-zinc-500">Guide</span>
+          <h2 class="text-white text-base font-semibold mt-2 leading-snug">How to Release Your First Hip Hop Track: A Step-by-Step Guide for Independent Artists</h2>
+          <p class="text-zinc-500 text-sm mt-2 leading-relaxed">Every stage, in order, from an empty session to a link you can actually send someone.</p>
+        </a>
+  </div>
+</main>
+
+
+<footer class="border-t border-white/10 py-10 px-5">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <p class="text-xs text-zinc-500">&copy; 2026 HipHopLord Directory. All rights reserved.</p>
+    <div class="flex flex-wrap gap-5 text-xs text-zinc-500">
+      <a href="../guides/" class="hover:text-zinc-300 transition">Guides</a>
+      <a href="../about.html" class="hover:text-zinc-300 transition">About</a>
+      <a href="../contact.html" class="hover:text-zinc-300 transition">Contact</a>
+      <a href="../privacy-policy.html" class="hover:text-zinc-300 transition">Privacy Policy</a>
+      <a href="../terms.html" class="hover:text-zinc-300 transition">Terms of Service</a>
+      <a href="../affiliate-disclosure.html" class="hover:text-zinc-300 transition">Affiliate Disclosure</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
