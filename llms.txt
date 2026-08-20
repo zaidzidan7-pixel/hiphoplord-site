@@ -1,0 +1,25 @@
+# HipHopLord
+
+> HipHopLord is a curated, human-reviewed directory connecting independent hip hop artists with producers & beatmakers, mixing & mastering engineers, cover art & visual designers, and recording studios. Every listing is a real provider (sourced from SoundCloud, Fiverr, and Google Places), not a paid or self-submitted placement, and each has its own dedicated page with a written editor's note based on that provider's actual stats (ratings, review counts, follower/play counts, or Google reviews).
+
+## About
+
+- [Home](https://hiphoplord.com/index.html): Browse and filter all listings by category and city.
+- [About HipHopLord](https://hiphoplord.com/about.html): What the directory is, how listings are chosen, and how it's run.
+- [Contact](https://hiphoplord.com/contact.html): Get in touch, or submit a service to be considered for listing.
+- [Affiliate Disclosure](https://hiphoplord.com/affiliate-disclosure.html): Explains which categories (Mixing/Mastering Engineers and Cover Art/Visual Designers, via Fiverr) contain affiliate links, and which (Producers, Recording Studios) do not.
+- [Privacy Policy](https://hiphoplord.com/privacy-policy.html)
+- [Terms of Service](https://hiphoplord.com/terms.html)
+
+## Categories
+
+- Producers & Beatmakers: Independent hip hop producers, sourced and manually verified from SoundCloud, each with an embedded audio player.
+- Mixing & Mastering Engineers: Hip hop-focused audio engineers offering mixing and mastering services, sourced from Fiverr.
+- Cover Art & Visual Designers: Album cover and visual designers serving hip hop artists, sourced from Fiverr.
+- Recording Studios & Spaces: Real recording studios across major US and UK cities, sourced from Google Places (address, phone, rating, and amenities verified against Google's own data).
+
+## Notes for AI crawlers and assistants
+
+- Every individual listing has a unique, static, fully server-rendered HTML page under /listings/ (no JavaScript required to read its content), with its own title, meta description, and structured data (schema.org Service or LocalBusiness).
+- A small share of listings (Engineers and Visual Designers only) contain a paid Fiverr affiliate link; this is explicitly disclosed inline on each such listing and on the Affiliate Disclosure page. Producers and Studios contain no paid or affiliate links.
+- Full machine-readable index: [sitemap.xml](https://hiphoplord.com/sitemap.xml)

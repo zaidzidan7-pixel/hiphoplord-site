@@ -29,6 +29,21 @@ BASE_URL = "https://hiphoplord.com"
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 LISTINGS_DIR = os.path.join(BASE_DIR, "listings")
 
+# Short, consistent role keyword for each category. Used to make sure every
+# single listing page's <title> and meta description explicitly names what
+# the page is about ("hip hop producer", "mixing & mastering engineer"...)
+# instead of relying only on raw source data (a messy SoundCloud track name,
+# a lowercase Fiverr gig blurb, or a bare studio name) which often never
+# mentions "hip hop" or the role at all. Keeps keyword usage identical and
+# predictable across all 439 pages -- the exact kind of consistency search
+# engines and AI crawlers look for when deciding what a page is "about".
+CATEGORY_KEYWORDS = {
+    "producers": "Hip Hop Producer",
+    "engineers": "Mixing & Mastering Engineer",
+    "visuals": "Cover Art Designer",
+    "studios": "Recording Studio",
+}
+
 
 def esc(value):
     if value is None:
@@ -270,12 +285,43 @@ def related_listings_html(item, related):
 
 
 def render_page(item, related, style_block):
-    title = item.get("title", "")
+    # A handful of raw SoundCloud track titles contain a literal "|" (e.g.
+    # 'Rick Ross Type Beat - "Luxurious" [2024] | Rich Trap Type Beat'). Left
+    # as-is that reads to search engines like several titles concatenated
+    # together in one <title> tag. Swap it for an en dash so our own "|"
+    # separators (role keyword, provider, brand) stay the only ones.
+    title = (item.get("title", "") or "").replace("|", "–")
     provider = item.get("provider_name", "")
+    category = item.get("category", "")
     category_label = item.get("categoryLabel", "")
-    page_title = f"{title} — {provider} | HipHopLord" if provider else f"{title} | HipHopLord"
+    role_keyword = CATEGORY_KEYWORDS.get(category, "")
+    location = item.get("location", "")
+
+    # Title: lead with the role keyword so every page's <title> names what
+    # it is about even when the raw title/provider text doesn't (messy
+    # SoundCloud track names for producers, lowercase Fiverr gig blurbs for
+    # engineers/visuals). Studios get their real city/state appended instead
+    # of a role prefix, since "Recording Studio" is already implied by the
+    # business name and the location is the stronger, more searched keyword
+    # for that category (298 of 439 pages are studios).
+    if category == "studios":
+        page_title = f"{title} — {role_keyword} in {location} | HipHopLord" if location \
+            else f"{title} — {role_keyword} | HipHopLord"
+    elif provider:
+        page_title = f"{role_keyword}: {title} — {provider} | HipHopLord"
+    else:
+        page_title = f"{role_keyword}: {title} | HipHopLord"
+
     description_src = item.get("curatorNote") or item.get("description") or page_title
-    meta_description = description_src[:300]
+    # Most auto-generated curator notes never say "hip hop" at all (they're
+    # built purely from real stats), so on their own they under-signal what
+    # the page is actually about. Prepend a short, honest keyword lead-in --
+    # the underlying curator note text itself is untouched.
+    # Studio curator notes already state the city/state themselves (e.g.
+    # "...5 Google reviews in Denver, Colorado."), so skip repeating it here
+    # to avoid an awkward duplicate location mention in the same sentence.
+    kw_lead_in = f"{role_keyword} for hip hop artists" + (f" in {location}" if category != "studios" and location else "") + " — "
+    meta_description = (kw_lead_in + description_src)[:300]
     canonical = f"{BASE_URL}/listings/{item['id']}.html"
 
     featured_badge = ('<span class="mono text-[11px] gold-text tracking-widest mb-2 block">★ FEATURED LISTING</span>'
