@@ -181,7 +181,7 @@ def badge_widget_block(item):
                f'<img src="{BASE_URL}/badge.svg" alt="{esc(alt_text)}" width="180" height="48" '
                f'style="display:block;border:0;" /></a>')
     return (
-        '<div class="mt-8 pt-6 border-t border-white/10">'
+        '<div class="card rounded-2xl p-7 md:p-9">'
         '<span class="mono text-[10.5px] uppercase tracking-widest text-zinc-500">Is This Your Studio?</span>'
         '<p class="text-zinc-400 text-sm mt-2 leading-relaxed">Feel free to grab this badge for your own '
         'website or social page — no cost, no obligation, just a way to show off your listing.</p>'
@@ -453,7 +453,6 @@ def render_page(item, related, style_block):
       {cta}
       {affiliate_note}
     </div>
-    {badge_widget_block(item)}
   </div>
 
   <p class="mt-6">
@@ -464,6 +463,8 @@ def render_page(item, related, style_block):
 {faq_block(item)}
 
 {related_listings_html(item, related)}
+
+{f'<section class="max-w-3xl mx-auto px-5 pb-12">{badge_widget_block(item)}</section>' if item.get("category") == "studios" else ""}
 
 {FOOTER_HTML}
 </body>
