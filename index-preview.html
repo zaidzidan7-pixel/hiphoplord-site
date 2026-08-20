@@ -14,7 +14,7 @@
 <title>[PREVIEW] HipHopLord | The Underground Hip Hop Production Directory</title>
 <meta name="description" content="Find producers, mixing &amp; mastering engineers, cover art designers, and recording studios for independent hip hop artists. Curated by genre, city, and sound." />
 <link rel="canonical" href="https://hiphoplord.com/" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎧</text></svg>" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><circle cx=%2212%22 cy=%2212%22 r=%2211%22 fill=%22%230a0a0b%22/><circle cx=%2212%22 cy=%2212%22 r=%229.3%22 fill=%22none%22 stroke=%22%23e2a83f%22 stroke-width=%222.6%22/><circle cx=%2212%22 cy=%2212%22 r=%223%22 fill=%22%23e2a83f%22/></svg>" />
 
 <!-- Open Graph / social sharing -->
 <meta property="og:type" content="website" />
@@ -168,6 +168,16 @@
   @media (prefers-reduced-motion: reduce){
     .hero-vinyl, .hero-eq span{ animation:none; }
   }
+
+  /* Wordmark logo: the "O" in "LORD" is replaced by a small vinyl-record
+     mark (ring + spindle hole) instead of a separate icon -- ties the
+     logotype directly to the vinyl/equalizer motifs used in the hero. */
+  .logo-o{
+    display:inline-block;
+    width:0.62em; height:0.62em;
+    vertical-align:-0.05em;
+    margin:0 -0.02em;
+  }
 </style>
 </head>
 <body class="min-h-screen">
@@ -176,7 +186,7 @@
 <!-- Navigation -->
 <nav class="sticky top-0 z-50 backdrop-blur-md bg-black/60 border-b border-white/10">
   <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
-    <a href="/" class="display text-lg tracking-tight">HIPHOP<span class="gold-text">LORD</span></a>
+    <a href="/" class="display text-lg tracking-tight" aria-label="HipHopLord">HIPHOP<span class="gold-text">L</span><svg class="logo-o gold-text" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9.3" fill="none" stroke="currentColor" stroke-width="2.6"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg><span class="gold-text">RD</span></a>
     <div class="hidden md:flex items-center gap-7 text-sm text-zinc-300">
       <a href="#directory" class="hover:text-white transition">Directory</a>
       <a href="#cities" class="hover:text-white transition">Cities</a>

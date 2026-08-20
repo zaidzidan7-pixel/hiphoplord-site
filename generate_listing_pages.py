@@ -64,7 +64,7 @@ def load_shared_style():
 NAV_HTML = """
 <nav class="sticky top-0 z-50 backdrop-blur-md bg-black/60 border-b border-white/10">
   <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
-    <a href="../index.html" class="display text-lg tracking-tight">HIPHOP<span class="gold-text">LORD</span></a>
+    <a href="../index.html" class="display text-lg tracking-tight" aria-label="HipHopLord">HIPHOP<span class="gold-text">L</span><svg class="logo-o gold-text" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9.3" fill="none" stroke="currentColor" stroke-width="2.6"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg><span class="gold-text">RD</span></a>
     <div class="hidden md:flex items-center gap-7 text-sm text-zinc-300">
       <a href="../index.html#directory" class="hover:text-white transition">Directory</a>
       <a href="../index.html#cities" class="hover:text-white transition">Cities</a>
@@ -392,7 +392,7 @@ def render_page(item, related, style_block):
 <title>{esc(page_title)}</title>
 <meta name="description" content="{esc(meta_description)}" />
 <link rel="canonical" href="{canonical}" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎧</text></svg>" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><circle cx=%2212%22 cy=%2212%22 r=%2211%22 fill=%22%230a0a0b%22/><circle cx=%2212%22 cy=%2212%22 r=%229.3%22 fill=%22none%22 stroke=%22%23e2a83f%22 stroke-width=%222.6%22/><circle cx=%2212%22 cy=%2212%22 r=%223%22 fill=%22%23e2a83f%22/></svg>" />
 
 <meta property="og:type" content="profile" />
 <meta property="og:site_name" content="HipHopLord" />
