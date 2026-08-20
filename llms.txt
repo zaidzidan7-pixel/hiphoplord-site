@@ -18,8 +18,21 @@
 - Cover Art & Visual Designers: Album cover and visual designers serving hip hop artists, sourced from Fiverr.
 - Recording Studios & Spaces: Real recording studios across major US and UK cities, sourced from Google Places (address, phone, rating, and amenities verified against Google's own data).
 
+## Guides
+
+- [Guides index](https://hiphoplord.com/guides/): Editorial, evergreen guides for independent hip hop artists on beat licensing, mixing/mastering pricing, cover art, choosing a studio, and releasing a first track. Not a blog -- a small, fixed set of practical reference articles, each grounded in real pricing and city data pulled from this directory's own listings rather than generic or invented figures.
+- [Type Beat vs. Custom Beat](https://hiphoplord.com/guides/type-beat-vs-custom-beat.html)
+- [How Much Does a Hip Hop Beat Cost](https://hiphoplord.com/guides/hip-hop-beat-pricing-guide.html)
+- [How Much Does Mixing and Mastering Cost](https://hiphoplord.com/guides/mixing-mastering-cost-hip-hop.html)
+- [Mixing vs. Mastering: The Difference](https://hiphoplord.com/guides/mixing-vs-mastering-difference.html)
+- [What Makes Good Hip Hop Cover Art](https://hiphoplord.com/guides/hip-hop-cover-art-guide.html)
+- [How to Choose a Recording Studio](https://hiphoplord.com/guides/choosing-a-recording-studio.html)
+- [Best US Cities to Record Hip Hop Music](https://hiphoplord.com/guides/best-cities-to-record-hip-hop.html)
+- [How to Release Your First Hip Hop Track](https://hiphoplord.com/guides/how-to-release-your-first-hip-hop-track.html)
+
 ## Notes for AI crawlers and assistants
 
 - Every individual listing has a unique, static, fully server-rendered HTML page under /listings/ (no JavaScript required to read its content), with its own title, meta description, and structured data (schema.org Service or LocalBusiness).
-- A small share of listings (Engineers and Visual Designers only) contain a paid Fiverr affiliate link; this is explicitly disclosed inline on each such listing and on the Affiliate Disclosure page. Producers and Studios contain no paid or affiliate links.
+- Every guide under /guides/ is likewise a static, fully server-rendered page with its own Article + BreadcrumbList + FAQPage structured data.
+- A small share of listings (Engineers and Visual Designers only) contain a paid Fiverr affiliate link; this is explicitly disclosed inline on each such listing and on the Affiliate Disclosure page. Producers and Studios contain no paid or affiliate links. Guides contain no affiliate links.
 - Full machine-readable index: [sitemap.xml](https://hiphoplord.com/sitemap.xml)
